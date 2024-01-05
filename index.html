@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Meme</title>
+
+    <!-- STYLE para los iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- MIS ESTILOS, DEBEN IR ÚLTIMO -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+      <!--  ---- HEADER ----  (Título y barra de navegación)  -->
+    <header class="contenedor-header">
+        <h1>Generador de Memes</h1>
+        <nav >
+           <button class="nav-btn">
+                <i class="fa fa-camera icon-col" aria-hidden="true"></i>
+                Imagen
+            </button>
+           <button class="nav-btn">
+                <i class="fa fa-font icon-col" aria-hidden="true"></i>
+                Texto
+            </button>
+
+           <button class="nav-btn">
+                <i class="fa fa-certificate icon-col" aria-hidden="true"></i>
+                Modo oscuro
+            </button>
+        
+        </nav>
+    </header>
+
+    <!--  ---- CONTENEDOR ---- (Main y Aside) -->
+    <div class="contenedor-ppal">
+       
+        <!--  Main  (sector principal para la imagen y el texto) -->
+        <main class="contenedor-main">
+            
+            <div class="cont-img-txt">
+                <p>TOP TEXT</p>
+                <img src="" alt="">
+                <p>BOTTON TEXT</p>
+            </div>
+            <button class="btn-descargar">
+                <i class="fa fa-download" aria-hidden="true"></i>
+                Descargar Meme
+            </button>
+        </main>
+        
+        <!--  Aside  (controles para img y txt) -->
+        <aside>
+
+            <!--  Controles para imagen -->
+            <div>
+
+            </div>
+
+            <!--  Controles para texto -->
+            <div>
+
+            </div>
+
+        </aside>
+    </div>
+
+</body>
+<script src="main.js"></script>
+</html>

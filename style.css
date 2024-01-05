@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital@1&display=swap');
+:root{
+    --color-noche-header:  #101010 ;      /* #191E2B; */
+    --color-noche-cont-ppal:  #202020;   /*  #30343F;*/
+    --color-noche-aside: #252935;
+    --color-noche-fuente: #FFFFFF;
+    --color-noche-fonfoBtn: #4E5565;
+
+    --color-dia-header: #E0E0E0;
+    --color-dia-cont-ppal: #F5F5FA;  /* #EEEEEE;*/
+    --color-dia-aside: #EBEBF4;       /*#FAFAFA;*/
+    --color-dia-fuente: #424242;
+    --color-dia-fonfoBtn: #BDBDBD;
+
+    --variable-ancho-ppal:1300px;
+}  
+
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+html{
+    font-size: 20px;
+    height: 100vh;
+}
+
+body{
+    height: 100%; /* 100% del padre, que es el html*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Lora', serif;
+}
+
+/* color iconos*/
+.icon-col{
+    color: var(--variable-color-ppal);
+}
+
+
+/*--------------------------- HEADER ------------------------*/
+.contenedor-header{
+    height: 15%;
+    width: 100%;
+    color: var(--color-noche-fuente);
+    background-color: var(--color-noche-header);
+    padding: 10px;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.nav-btn{
+    all: unset;         /*quita todo estilo por defecto.*/
+    padding: 10px;
+    font-size: 0.8rem;
+}
+.nav-btn:hover{
+    background-color: var(--color-noche-fonfoBtn);
+    border-radius: 5px ;
+}
+
+
+
+/*--------------------- CONTENEDOR PRINCIPAL  ------------------------*/
+.contenedor-ppal{
+    width: 100%;
+    height: 85%;
+}
+
+.contenedor-main{
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-noche-cont-ppal);
+    padding: 0px 20px;
+}
+
+.cont-img-txt{
+    width: 100%;
+    height: 70%;
+}
+
+.btn-descargar{
+    all: unset;         /*quita todo estilo por defecto.*/
+    background-color: #c8e911;
+    border-radius: 5px ;
+    padding: 10px;
+    font-size: 0.8rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+.btn-descargar:hover{
+    background-color: #e2f092;
+}
