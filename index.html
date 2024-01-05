@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme-color="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,7 +17,7 @@
     
       <!--  ---- HEADER ----  (Título y barra de navegación)  -->
     <header class="contenedor-header">
-        <h1>Generador de Memes</h1>
+        <h1 class="header-titulo">Generador de Memes</h1>
         <nav >
            <button class="nav-btn">
                 <i class="fa fa-camera icon-col" aria-hidden="true"></i>
@@ -28,10 +28,8 @@
                 Texto
             </button>
 
-           <button class="nav-btn">
-                <i class="fa fa-certificate icon-col" aria-hidden="true"></i>
-                Modo oscuro
-            </button>
+           <button class="nav-btn" id="nav-btn-claroOscuro"> 
+            <i class="fa fa-certificate icon-col" aria-hidden="true"> </i> Modo Claro</button>
         
         </nav>
     </header>
@@ -42,12 +40,12 @@
         <!--  Main  (sector principal para la imagen y el texto) -->
         <main class="contenedor-main">
             
-            <div class="cont-img-txt">
-                <p>TOP TEXT</p>
-                <img src="" alt="">
-                <p>BOTTON TEXT</p>
+            <div class="main-img-txt">
+                <p class="main-txt">TOP TEXT</p>
+                <div src alt class="main-img"  aria-label="Imagen para el meme"></div>
+                <p class="main-txt">BOTTON TEXT</p>
             </div>
-            <button class="btn-descargar">
+            <button class="main-btn-descargar">
                 <i class="fa fa-download" aria-hidden="true"></i>
                 Descargar Meme
             </button>
