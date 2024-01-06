@@ -14,8 +14,9 @@
     --color-fonfoBtn: #4E5565;
 
     color-scheme: dark;   /*color por defecto de win*/
+    --transition: 0.1s ease-in-out;
 
-    --variable-ancho-ppal:1300px;
+    --variable-ancho-ppal:1300px; /* ------------------------- todavía no lo usé , veo si dsps lo borro*/
 }  
 
 
@@ -28,8 +29,6 @@
     --color-fonfoBtn: #BDBDBD;
 
     color-scheme: light;   /*color por defecto de win*/
-
-    --variable-ancho-ppal:1300px;
 }
 
 
@@ -39,6 +38,7 @@
     box-sizing: border-box;
     margin: 0px;
     padding: 0px;
+    transition: var(--transition);
 }
 
 html{
@@ -82,7 +82,12 @@ body{
     border-radius: 5px ;
 }
 
-
+.fa-sun-o:before { 
+    content: "\f185"; /* Este valor es del icono del SOL (Font Awesome 4.7.0 Icon) */
+}
+.fa-moon-o:before { 
+    content: "\f186"; /* Este valor es del icono del Luna (Font Awesome 4.7.0 Icon) */
+}
 
 /*--------------------- CONTENEDOR PRINCIPAL  ------------------------*/
 .contenedor-ppal{
@@ -99,6 +104,10 @@ body{
     justify-content: center;
     background-color: var(--color-cont-ppal);
     padding: 0px 20px;
+}
+
+.main-img-txt{
+
 }
 
 .main-img-txt{

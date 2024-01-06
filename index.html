@@ -5,13 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Generador de Meme</title>
 
-    <!-- STYLE para los iconos -->
+    <!------------------ STYLE para los iconos ------------------->
+    <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!-- MIS ESTILOS, DEBEN IR ÚLTIMO -->
+    <!------------------ MIS ESTILOS, DEBEN IR ÚLTIMO ------------->
     <link rel="stylesheet" href="style.css">
+    
 </head>
 <body>
     
@@ -19,17 +21,19 @@
     <header class="contenedor-header">
         <h1 class="header-titulo">Generador de Memes</h1>
         <nav >
-           <button class="nav-btn">
-                <i class="fa fa-camera icon-col" aria-hidden="true"></i>
+            <button class="nav-btn">
+                <i class="fa-solid fa-camera"></i></i>
                 Imagen
             </button>
-           <button class="nav-btn">
+            <button class="nav-btn">
                 <i class="fa fa-font icon-col" aria-hidden="true"></i>
                 Texto
             </button>
 
-           <button class="nav-btn" id="nav-btn-claroOscuro"> 
-            <i class="fa fa-certificate icon-col" aria-hidden="true"> </i> Modo Claro</button>
+            <button class="nav-btn" id="nav-btn-claroOscuro"> 
+                <i class="fa fa-sun-o"></i>
+                Modo Claro
+            </button>
         
         </nav>
     </header>
@@ -45,6 +49,7 @@
                 <div src alt class="main-img"  aria-label="Imagen para el meme"></div>
                 <p class="main-txt">BOTTON TEXT</p>
             </div>
+
             <button class="main-btn-descargar">
                 <i class="fa fa-download" aria-hidden="true"></i>
                 Descargar Meme
