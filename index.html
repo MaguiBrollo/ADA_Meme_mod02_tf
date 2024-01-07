@@ -17,15 +17,15 @@
 </head>
 <body>
     
-      <!--  ---- HEADER ----  (Título y barra de navegación)  -->
+    <!--  ---- HEADER ----  (Título y barra de navegación)  -->
     <header class="contenedor-header">
         <h1 class="header-titulo">Generador de Memes</h1>
         <nav >
-            <button class="nav-btn">
+            <button class="nav-btn" id="nav-btn-img">
                 <i class="fa-solid fa-camera"></i></i>
                 Imagen
             </button>
-            <button class="nav-btn">
+            <button class="nav-btn" id="nav-btn-txt">
                 <i class="fa fa-font icon-col" aria-hidden="true"></i>
                 Texto
             </button>
@@ -44,10 +44,10 @@
         <!--  Main  (sector principal para la imagen y el texto) -->
         <main class="contenedor-main">
             
-            <div class="main-img-txt">
-                <p id="main-txt-superior" class="main-txt">TOP TEXT</p>
+            <div class="main-img-txt" id="main-img-tx">
+                <p id="main-txt-superior" class="main-txt">TEXTO SUPERIOR</p>
                 <div src alt class="main-img"  aria-label="Imagen para el meme"></div>
-                <p id="main-txt-inferior" class="main-txt">BOTTON TEXT</p>
+                <p id="main-txt-inferior" class="main-txt">TEXTO INFERIOR</p>
             </div>
 
             <button class="main-btn-descargar">
@@ -57,16 +57,16 @@
         </main>
         
         <!--  Aside  (controles para img y txt) -->
-        <aside>
+        <aside class="contenedor-paneles">
 
             <!--  Controles para imagen -->
-            <div>
-
+            <div class="panel-img ocultar-panel">
+                <h3>Panel img</h3>
             </div>
 
             <!--  Controles para texto -->
-            <div>
-
+            <div class="panel-txt ocultar-panel">
+                <h3>Panel TEXTO</h3>
             </div>
 
         </aside>

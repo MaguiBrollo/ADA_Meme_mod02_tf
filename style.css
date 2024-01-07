@@ -5,7 +5,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 
-/*-------------------------- COLORES -------------------------------*/
+/* ============================= COLORES =============================*/
 :root{        /* Modo OSCURO*/
     --color-header:  #101010 ;      /* #191E2B; */
     --color-cont-ppal:  #202020;   /*  #30343F;*/
@@ -13,27 +13,25 @@
     --color-fuente: rgba(255,255,255,0.87);
     --color-fonfoBtn: #4E5565;
 
-    color-scheme: dark;   /*color por defecto de win*/
     --transition: 0.1s ease-in-out;
-
-    --variable-ancho-ppal:1300px; /* ------------------------- todavía no lo usé , veo si dsps lo borro*/
+    
+    --cajita_meme-tm-maximo: 600;
+    --cajita_meme-tm-inicial-txt: 50;
+    
+    /* --variable-ancho-ppal:1300px; /* ------------------------- todavía no lo usé , veo si dsps lo borro*/
+    /* color-scheme: light;   /*color por defecto de win*/
 }  
 
-
 :root[data-theme-color="light"] {     /* Modo CLARO*/
-
     --color-header: #E0E0E0;
     --color-cont-ppal:  #EEEEEE;
     --color-aside: #EBEBF4;       /*#FAFAFA;*/
     --color-fuente: #424242;
     --color-fonfoBtn: #BDBDBD;
-
-    color-scheme: light;   /*color por defecto de win*/
 }
 
-
   
-/*-------------------------- CONFIG GENERAL -------------------------------*/
+/* ============================= CONFIG GENERAL =============================*/
 *{
     box-sizing: border-box;
     margin: 0px;
@@ -55,7 +53,7 @@ body{
 }
 
 
-/*--------------------------- HEADER ------------------------*/
+/* ============================= HEADER =============================*/
 .contenedor-header{
     height: 15%;
     width: 100%;
@@ -89,13 +87,14 @@ body{
     content: "\f186"; /* Este valor es del icono del Luna (Font Awesome 4.7.0 Icon) */
 }
 
-/*--------------------- CONTENEDOR PRINCIPAL  ------------------------*/
-.contenedor-ppal{
+/* ============================= CONTENEDOR PRINCIPAL  ============================= */
+.contenedor-ppal{   /* contiene a  "contenedor-main" y al "aside"*/
     width: 100%;
     height: 85%;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: row;
 }
 
 .contenedor-main{   /*contiene a:  main-img-txt y main-btn*/
@@ -105,16 +104,14 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: var(--color-cont-ppal);
-    padding: 0px 20px;
+    background-color: var(--color-cont-ppal);  
 }
 
 .main-img-txt{
     width: 100%;
-    height: 600px;  /* height: 70%;*/
-    max-width: 600px;    
-    margin: 10px; 
-   
+    height: calc(var(--cajita_meme-tm-maximo) * 1px); 
+    max-width: calc(var(--cajita_meme-tm-maximo) * 1px);    
+    
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -161,8 +158,66 @@ body{
 }
 
 
-@media(width>700px ){
+/* ============================= ASIDE (para el panel de txt y img ================= */
+.ocultar-panel{
+    display: none;
+}
+
+.panel-img, .panel-txt{
+    width: 270px;
+    height: 100%;
+
+    /* background-color: var(--color-aside); */
+    padding: 30px 15px;
+    overflow: auto;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 10;
+}
+.panel-img{
+    background-color: #654e63;
+}
+.panel-txt{
+    background-color: #a3be0a;
+}
+
+
+
+
+
+/* ============================= MEDIA QUERY =============================
+ (es poquito por eso está solo al final) */
+@media(width> 640px){
     .header-titulo{
         font-size: 2rem;
+    }
+}
+
+
+/* para ubicar el ASIDE (txt e img) debajo de la Cajia-Meme*/
+@media (width < 850px) {
+    .contenedor-ppal{
+        position: relative;
+        top:0px;
+        width: 100%;
+        height: auto;
+        flex-direction: column;  /*esto cambia*/
+    }
+    
+    .contenedor-main{
+        position: relative;
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+    }
+    .panel-img, .panel-txt{
+        width: 290px;
+        height: 400px;
+    
+        /* background-color: var(--color-aside); */
+       
+        overflow: scroll;
+        position: relative;  /* fixed para que quede a la derecha*/
+
     }
 }
