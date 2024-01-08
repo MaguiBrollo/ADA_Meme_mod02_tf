@@ -53,15 +53,29 @@ window.visualViewport.addEventListener("resize", () => {
 /* -------------- PANEL de IMG Y TXT  -------------------  */
 const panel_img = document.querySelector(".panel-img");
 const panel_txt = document.querySelector(".panel-txt");
+const panel_cnt = document.querySelector(".contenedor-paneles");
 
-document.getElementById("nav-btn-txt").addEventListener("click", (e)=>{
-    panel_img.classList.add("ocultar-panel");
-    panel_txt.classList.remove("ocultar-panel");
-    e.preventDefault();
-})
 
 document.getElementById("nav-btn-img").addEventListener("click", (e)=>{
     panel_txt.classList.add("ocultar-panel");
     panel_img.classList.remove("ocultar-panel");
+    panel_cnt.classList.remove("ocultar-panel");
+    panel_cnt.classList.add("ver-panel");
+    e.preventDefault();
+})
+
+document.getElementById("nav-btn-txt").addEventListener("click", (e)=>{
+    panel_img.classList.add("ocultar-panel");
+    panel_txt.classList.remove("ocultar-panel");
+    panel_cnt.classList.remove("ocultar-panel");
+    panel_cnt.classList.add("ver-panel");
+    e.preventDefault();
+})
+
+document.getElementById("panel-btn-cerrar").addEventListener("click", (e)=>{
+    panel_img.classList.add("ocultar-panel");
+    panel_txt.classList.add("ocultar-panel");
+    panel_cnt.classList.add("ocultar-panel");
+    panel_cnt.classList.remove("ver-panel");
     e.preventDefault();
 })

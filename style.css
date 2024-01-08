@@ -87,6 +87,14 @@ body{
     content: "\f186"; /* Este valor es del icono del Luna (Font Awesome 4.7.0 Icon) */
 }
 
+/* -----  MEDIA QUERY ------- (solo el título del Header) */
+ @media(width> 640px){
+    .header-titulo{
+        font-size: 2rem;
+    }
+}
+
+
 /* ============================= CONTENEDOR PRINCIPAL  ============================= */
 .contenedor-ppal{   /* contiene a  "contenedor-main" y al "aside"*/
     width: 100%;
@@ -159,22 +167,46 @@ body{
 
 
 /* ============================= ASIDE (para el panel de txt y img ================= */
-.ocultar-panel{
-    display: none;
-}
 
-.panel-img, .panel-txt{
-    width: 270px;
+.contenedor-paneles{
+    width: 260px;
     height: 100%;
-
-    /* background-color: var(--color-aside); */
+    display: none;
+    flex-direction: column;
+    background-color: orangered;
     padding: 30px 15px;
     overflow: auto;
     position: fixed;
     top: 0;
     right: 0;
+
     z-index: 10;
 }
+
+.panel-btn-cerrar{
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    
+}
+.fa-times-circle-o:before { 
+    content: "\f05c"; /* Valor del icono de CERRAR (Font Awesome 4.7.0 Icon) */
+}
+
+.ocultar-panel{
+    display: none;
+}
+.ver-panel{
+    display: block;
+}
+
+.panel-img, .panel-txt{
+   width: 100%;
+   height: 95%;
+}
+
 .panel-img{
     background-color: #654e63;
 }
@@ -183,14 +215,18 @@ body{
 }
 
 
+/* -----  MEDIA QUERY  "ASIDE" -------  */
+/*-- ASIDE cuando carga la pg y está a más de 1300 el aside se muestra con IMG */
+@media(width> 1300px){
+    .contenedor-paneles{
+        display: block;
+    }
 
-
-
-/* ============================= MEDIA QUERY =============================
- (es poquito por eso está solo al final) */
-@media(width> 640px){
-    .header-titulo{
-        font-size: 2rem;
+    .panel-img{
+        display: block;
+    }
+    .panel-txt{
+        display: none;
     }
 }
 
@@ -210,14 +246,17 @@ body{
         margin-bottom: 20px;
         padding-bottom: 20px;
     }
-    .panel-img, .panel-txt{
+    .contenedor-paneles{
         width: 290px;
         height: 400px;
-    
-        /* background-color: var(--color-aside); */
-       
+ 
         overflow: scroll;
         position: relative;  /* fixed para que quede a la derecha*/
+    }
 
+    .panel-btn-cerrar{
+        position: absolute;
+        top: 10px;
+        right: 10px;
     }
 }
