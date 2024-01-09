@@ -50,11 +50,31 @@ window.visualViewport.addEventListener("resize", () => {
 })
 
 
-/* -------------- PANEL de IMG Y TXT  -------------------  */
+
+/* -------------- Eventos de los BOTONES de IMG Y TXT  (hacer aparecer un PANEL u otro) -------------------  */
 const panel_img = document.querySelector(".panel-img");
 const panel_txt = document.querySelector(".panel-txt");
 const panel_cnt = document.querySelector(".contenedor-paneles");
 
+function mostrarPanelImagen(){
+    panel_txt.classList.add("ocultar-panel");
+    panel_img.classList.remove("ocultar-panel");
+    panel_cnt.classList.remove("ocultar-panel");
+    panel_cnt.classList.add("ver-panel");
+};
+
+function mostrarPanelImagen1300(){
+    if ( window.innerWidth >= (1300) &&  !panel_cnt.classList.contains("ver-panel") ) {
+        mostrarPanelImagen();
+    }
+}
+/* Cuando se agranda la ventana a más de 1300, debe conservar lo que estaba seleccionado, 
+  o mostrar Panel Imagen, por defecto */
+window.visualViewport.addEventListener("resize", () => {
+    if ( window.innerWidth >= (1300) &&  !panel_cnt.classList.contains("ver-panel") ) {
+           mostrarPanelImagen();
+    }
+});
 
 document.getElementById("nav-btn-img").addEventListener("click", (e)=>{
     panel_txt.classList.add("ocultar-panel");
@@ -79,3 +99,48 @@ document.getElementById("panel-btn-cerrar").addEventListener("click", (e)=>{
     panel_cnt.classList.remove("ver-panel");
     e.preventDefault();
 })
+
+
+/* ------------ Seleccionar origen de la imagen URL / PC ---------------- */
+const subir_url_btn = document.getElementById("subir-url-btn");
+const subir_pc_btn = document.getElementById("subir-pc-btn");
+
+const subir_url_input = document.getElementById("subir-url-input");
+const subir_pc_input = document.getElementById("subir-pc-input");
+
+subir_url_btn.addEventListener("click",()=>{
+    subir_url_input.classList.add("ver-input-subir-img");
+    subir_pc_input.classList.remove("ver-input-subir-img");
+})
+subir_pc_btn.addEventListener("click",()=>{
+    subir_pc_input.classList.add("ver-input-subir-img");
+    subir_url_input.classList.remove("ver-input-subir-img");
+})
+
+/* Si la imagen es por URL*/
+const main_img = document.getElementById("main-img"); /* cajita DIV donde va a ir la img como background*/
+
+subir_url_input.addEventListener("input",(e)=>{
+    main_img.style.backgroundImage = `url("${e.target.value}")`;
+    e.preventDefault();
+})
+
+/* Si la imagen es por PC*/
+const input_file = document.getElementById("input-file");
+input_file.addEventListener("change", (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        main_img.style.backgroundImage = `url("${e.target.result}")`; //imgElement.src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    }
+  });
+  
+
+
+/*--------------------------------------------------------------------------*/
+/* Cuando se carga por 1ra vez la página, el Panel de Imagen debe ser VISIBLE 
+   solo si la ventana está a mas de 1300px*/
+window.onload  = mostrarPanelImagen1300;

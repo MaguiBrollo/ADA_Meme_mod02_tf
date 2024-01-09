@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" data-theme-color="dark">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,19 +9,20 @@
     <!------------------ STYLE para los iconos ------------------->
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!------------------ MIS ESTILOS, DEBEN IR ÚLTIMO ------------->
     <link rel="stylesheet" href="style.css">
-    
+
 </head>
+
 <body>
-    
+
     <!--  ---- HEADER ----  (Título y barra de navegación)  -->
     <header class="contenedor-header">
         <h1 class="header-titulo">Generador de Memes</h1>
-        <nav >
+        <nav>
             <button class="nav-btn" id="nav-btn-img">
                 <i class="fa-solid fa-camera"></i></i>
                 Imagen
@@ -30,22 +32,22 @@
                 Texto
             </button>
 
-            <button class="nav-btn" id="nav-btn-claroOscuro"> 
+            <button class="nav-btn" id="nav-btn-claroOscuro">
                 <i class="fa fa-sun-o"></i>
                 Modo Claro
             </button>
-        
+
         </nav>
     </header>
 
     <!--  ---- CONTENEDOR ---- (Main y Aside) -->
     <div class="contenedor-ppal">
-       
+
         <!--  Main  (sector principal para la imagen y el texto) -->
         <main class="contenedor-main">
             <div class="main-img-txt" id="main-img-tx">
                 <p id="main-txt-superior" class="main-txt">TEXTO SUPERIOR</p>
-                <div src alt class="main-img"  aria-label="Imagen para el meme"></div>
+                <div src alt class="main-img" id="main-img" aria-label="Imagen para el meme"></div>
                 <p id="main-txt-inferior" class="main-txt">TEXTO INFERIOR</p>
             </div>
 
@@ -54,16 +56,75 @@
                 Descargar Meme
             </button>
         </main>
-        
+
         <!--  Aside  (controles para img y txt) -->
         <aside class="contenedor-paneles ocultar-panel">
-            <button class="panel-btn-cerrar" id="panel-btn-cerrar"> 
+            <button class="panel-btn-cerrar" id="panel-btn-cerrar">
                 <i class="fa fa-times-circle-o" aria-hidden="true"></i>
             </button>
 
             <!--  Controles para imagen -->
             <div class="panel-img ocultar-panel">
-                <h3>Panel img</h3>
+
+                <h3 class="panel-titulo">IMAGEN</h3>
+
+                <div class="panel-sectores-controles"> <!-- Origen de la imagen -->
+                    <h6>ORIGEN</h6>
+                    <button class="aside-img-btn-subir" id="subir-url-btn">
+                        <i class="fa-solid fa-link"></i>
+                        URL
+                    </button>
+                    
+                    <button class="aside-img-btn-subir" id="subir-pc-btn">
+                        <i class="fa-solid fa-upload"></i>
+                        PC
+                    </button>
+
+                    <div  class="ocultar-input-subir-img" id="subir-url-input">
+                        <input type="url" name="" aria-label="Seleccionar archivo desde una URL"
+                            placeholder="URL de la imagen">
+                    </div>
+                   
+                    <div class="ocultar-input-subir-img" id="subir-pc-input">
+                        <div class="archivo-img">
+                            <label for="input-file">Seleccionar Archivo</label>
+                            <input type="file" id="input-file" accept="image/png, image/gif, image/jpeg" 
+                                aria-label="Seleccionar archivo desde PC" >
+                        </div>
+                    </div>
+                   
+                </div>
+
+                <div class="panel-sectores-controles"> <!-- Fondo  -->
+                    <h6>FONDO</h6>
+                    <div class="panel-control-columns">
+                        <div class="panel-control-color panel-control-column">
+                            <input aria-label="Color de fondo de imagen" type="color" id="blend-mode-color-input"
+                                value="#FFFFFF" aria-label="Color de fondo de imagen">
+                            <span id="blend-mode-color" aria-hidden="true">#FFFFFF</span>
+                        </div>
+                        <div class="panel-control-column"> <!--  (forma_fondo=unset /name===value) -->
+                            <select name="forma_fondo" aria-label="Forma del fondo" id="blend-mode-select"
+                                class="panel-control-input">
+                                <option value="unset" selected>Ninguno</option>
+                                <option value="lighten">Aclarar</option>
+                                <option value="darken">Oscurecer</option>
+                                <option value="difference">Diferencia</option>
+                                <option value="luminosity">Luminosidad</option>
+                                <option value="multiply">Multiplicar</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel-sectores-controles"> <!-- Filtros -->
+                    <h6>FILTROS</h6>
+                </div>
+
+                <button class="aside-img-btn-restablecer">
+                    <i class="fa fa-undo" aria-hidden="true"></i>
+                    Restablecer
+                </button>
             </div>
 
             <!--  Controles para texto -->
@@ -76,4 +137,5 @@
 
 </body>
 <script src="main.js"></script>
+
 </html>
