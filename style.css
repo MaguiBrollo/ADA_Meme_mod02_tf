@@ -157,12 +157,14 @@ body{
 
 .main-btn-descargar{
     all: unset;         /* Quita todo estilo por defecto.*/
-    background-color: #a3be0a;
+    background-color: #89a105;
     border-radius: 5px ;
     padding: 10px;
     font-size: 0.8rem;
     margin-top: 20px;
     font-weight: bold;
+    cursor: pointer;
+    color: black;
 }
 .main-btn-descargar:hover{
     background-color: #e2f092;

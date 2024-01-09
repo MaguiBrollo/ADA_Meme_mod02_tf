@@ -132,10 +132,23 @@ input_file.addEventListener("change", (e) => {
     if (file) {
       const reader = new FileReader();
       reader.onload = (e) => {
-        main_img.style.backgroundImage = `url("${e.target.result}")`; //imgElement.src = e.target.result;
+        main_img.style.backgroundImage = `url("${e.target.result}")`;
       };
       reader.readAsDataURL(file);
     }
+  });
+  
+
+
+
+
+/* ------------ BOTON descargar MEME como IMG ---------------- */
+const div_img_txt = document.getElementById("main-img-tx");
+const  btn_descargar_meme = document.getElementById("btn-descargar-meme");
+btn_descargar_meme.addEventListener("click", () => {
+    domtoimage.toBlob(div_img_txt).then((blob) => {
+      window.saveAs(blob, "meme.png");
+    });
   });
   
 

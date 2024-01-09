@@ -6,6 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Generador de Meme</title>
 
+    <!------------------ Librerias externas para descargar el MEME com Img ------------------->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"
+        integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"
+        integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    </script>
+
     <!------------------ STYLE para los iconos ------------------->
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
@@ -51,7 +61,7 @@
                 <p id="main-txt-inferior" class="main-txt">TEXTO INFERIOR</p>
             </div>
 
-            <button class="main-btn-descargar">
+            <button class="main-btn-descargar" id="btn-descargar-meme">
                 <i class="fa fa-download" aria-hidden="true"></i>
                 Descargar Meme
             </button>
@@ -74,25 +84,25 @@
                         <i class="fa-solid fa-link"></i>
                         URL
                     </button>
-                    
+
                     <button class="aside-img-btn-subir" id="subir-pc-btn">
                         <i class="fa-solid fa-upload"></i>
                         PC
                     </button>
 
-                    <div  class="ocultar-input-subir-img" id="subir-url-input">
+                    <div class="ocultar-input-subir-img" id="subir-url-input">
                         <input type="url" name="" aria-label="Seleccionar archivo desde una URL"
                             placeholder="URL de la imagen">
                     </div>
-                   
+
                     <div class="ocultar-input-subir-img" id="subir-pc-input">
                         <div class="archivo-img">
                             <label for="input-file">Seleccionar Archivo</label>
-                            <input type="file" id="input-file" accept="image/png, image/gif, image/jpeg" 
-                                aria-label="Seleccionar archivo desde PC" >
+                            <input type="file" id="input-file" accept="image/png, image/gif, image/jpeg"
+                                aria-label="Seleccionar archivo desde PC">
                         </div>
                     </div>
-                   
+
                 </div>
 
                 <div class="panel-sectores-controles"> <!-- Fondo  -->
