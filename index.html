@@ -78,7 +78,7 @@
 
                 <h3 class="panel-titulo">IMAGEN</h3>
 
-                <div class="panel-sectores-controles"> <!-- Origen de la imagen -->
+                <div class="panel-sectores-controles alto-origen-img"> <!-- Origen de la imagen -->
                     <h6>ORIGEN</h6>
                     <button class="aside-img-btn-subir" id="subir-url-btn">
                         <i class="fa-solid fa-link"></i>
@@ -107,15 +107,16 @@
 
                 <div class="panel-sectores-controles"> <!-- Fondo  -->
                     <h6>FONDO</h6>
-                    <div class="panel-control-columns">
-                        <div class="panel-control-color panel-control-column">
-                            <input aria-label="Color de fondo de imagen" type="color" id="blend-mode-color-input"
-                                value="#FFFFFF" aria-label="Color de fondo de imagen">
-                            <span id="blend-mode-color" aria-hidden="true">#FFFFFF</span>
+                    <div class="panel-sector-fondo">
+                        
+                        <div class="panel-sector-fondo-color">
+                            <input type="color" class="input-color" id="input-color" value="#FFFFFF" 
+                               oninput="colorhex.value=value.toUpperCase()" aria-label="Color de fondo de la imagen">
+                            <output id="colorhex">#FFFFFF</output>
                         </div>
-                        <div class="panel-control-column"> <!--  (forma_fondo=unset /name===value) -->
-                            <select name="forma_fondo" aria-label="Forma del fondo" id="blend-mode-select"
-                                class="panel-control-input">
+
+                        <div class="panel-sector-fondo-modoMezcla"> <!--  (forma_fondo=unset /name===value) -->
+                            <select name="modo-mezcla-fondo" class="panel-control-modoMezcla" id="modo-mezcla" aria-label="Modos de mezcla entre color de fondo e imágen">
                                 <option value="unset" selected>Ninguno</option>
                                 <option value="lighten">Aclarar</option>
                                 <option value="darken">Oscurecer</option>
@@ -124,6 +125,7 @@
                                 <option value="multiply">Multiplicar</option>
                             </select>
                         </div>
+
                     </div>
                 </div>
 

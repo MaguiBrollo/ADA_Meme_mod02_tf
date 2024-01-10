@@ -138,8 +138,17 @@ input_file.addEventListener("change", (e) => {
     }
   });
   
+/* ------------ Seleccionar color de FONDO img,  y BLEND MODE (se aplica al background) ---------------- */
+const input_color = document.getElementById("input-color"); //input que selecciona color
+const modo_mezcla = document.getElementById("modo-mezcla"); //label donde muestra el Hexa del color
 
+input_color.addEventListener("input", (e)=>{
+    main_img.style.backgroundColor = `${e.target.value}`;
+})
 
+modo_mezcla.addEventListener("input", (e) => {
+    main_img.style.backgroundBlendMode = `${e.target.value}`;
+});
 
 
 /* ------------ BOTON descargar MEME como IMG ---------------- */

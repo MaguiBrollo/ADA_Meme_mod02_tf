@@ -9,26 +9,29 @@
 
 /* ============================= COLORES =============================*/
 :root{                               /* Modo OSCURO*/
-    --color-header:  #1f2937 ;     /*grey  800 */
-    --color-cont-ppal: #4b5563;    /*grey  600 */
-    --color-aside: #374151;        /*grey  700 */
-    --color-fuente: #f3f4f6;       /*grey  100 */
-    --color-fondoBtn:#6b7280;      /*grey  500 */
-
+    --color-header:    #1f2937 ;    /*grey  800 */
+    --color-aside:     #374151;     /*grey  700 */
+    --color-cont-ppal: #4b5563;     /*grey  600 */
+    --color-fondoBtn:  #6b7280;     /*grey  500 */
+    --color-fuente:    #f3f4f6;     /*grey  100 */
+   
     --transition: color 0.1s, background-color 0.2s ease-in-out;
     
     --cajita_meme-tm-maximo: 600;
     --cajita_meme-tm-inicial-txt: 50;
     
     color-scheme: dark;   /*color por defecto de win, para barras de scroll*/
+
+    --alto-botones-paneles: 27;
 }  
 
 :root[data-theme-color="light"] {     /* Modo CLARO*/
-    --color-header: #d4d4d8;        /* zinc 300*/
-    --color-cont-ppal: #f4f4f5;     /*  100*/
-    --color-aside: #e4e4e7;         /*  200*/
-    --color-fuente: #3f3f46;        /*  700*/
-    --color-fondoBtn: #fafafa;      /*   20*/
+    --color-header:    #9ca3af;        /* gray 400*/
+    --color-aside:     #f3f4f6;       /*  gray 100*/
+    --color-cont-ppal: #d1d5db;       /*  gray 300*/
+    --color-fondoBtn:  #e5e7eb;       /*  gray 200*/
+    --color-fuente:    #1f2937;       /*  gray 800*/
+  
     color-scheme: light;  /*color por defecto de win, para barras de scroll*/
 }
 
@@ -237,6 +240,10 @@ input[type="url"]{
 
 
 /*----------------------- ASIDE: panel de IMAGEN -------------------*/
+/*------------------ ORIGEN */
+.alto-origen-img{
+    height: 85px;
+}
 
 .aside-img-btn-subir{  /* Para el btn de URL/PC. */
     background-color: var(--color-fondoBtn);
@@ -244,8 +251,10 @@ input[type="url"]{
     border: 0px;
     box-shadow: 5px 5px 4px -3px var(--color-cont-ppal);
     padding: 3px;
+    margin-bottom: 5px;
     font-size: 0.7rem;
     width: 110px;
+    height: calc( var(--alto-botones-paneles)* 1px);
     cursor: pointer;  /*Para que aparezca la manito sobre el btn. */
 }
 .aside-img-btn-subir:hover{
@@ -260,8 +269,9 @@ input[type="url"]{
 }
 
 input[type="url"]{
-    height: 27px;
+    height: calc( var(--alto-botones-paneles)* 1px);
     width: 225px;
+    box-shadow: 5px 5px 4px -3px var(--color-cont-ppal);
 }
 ::placeholder{  /* Modifica TXT  del placeholder del input-url */
     color: var(--color-fuente);
@@ -274,7 +284,7 @@ input[type="url"]{
 .archivo-img label{ /* Para btn subir desde PC*/
     margin-top: 3px;
     width: 225px;
-    height: 27px;
+    height: calc( var(--alto-botones-paneles)* 1px);
     background-color: var(--color-fondoBtn);
     display: flex;
     justify-content: center;
@@ -282,12 +292,74 @@ input[type="url"]{
     border-radius: 3px;
     cursor: pointer;
     font-size: 0.7rem;
+    box-shadow: 5px 5px 4px -3px var(--color-cont-ppal);
 }
 .archivo-img label:hover{ /* Para btn subir desde PC*/
     background-color:  #9d9ea0;
 }
 
 
+/*------------------ FONDO */
+.panel-sector-fondo{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 230px;
+}
+
+.panel-sector-fondo-color{
+    background-color: var(--color-fondoBtn);
+    box-shadow: 5px 5px 4px -3px var(--color-cont-ppal);
+    font-size: 0.7rem;
+    width: 118px;
+    border-radius: 3px;
+    margin: 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+}
+
+[type="color"] {       /*Para que input=color, quede redondo*/
+    display: inline-flex;
+    vertical-align: bottom;
+    border: none;
+}
+  ::-webkit-color-swatch-wrapper { /*Para que input=color, quede redondo*/
+    padding: 0;
+    cursor: pointer;
+    height: 20px; /*para el cículo de color*/
+    width: 20px; /*para el cículo de color*/
+  }
+
+  ::-webkit-color-swatch { /*Para que input=color, quede redondo*/
+    border: 0;
+    border-radius: 50%;
+  }
+
+
+.panel-sector-fondo-modoMezcla{
+    background-color: var(--color-fondoBtn);
+    box-shadow: 5px 5px 4px -3px var(--color-cont-ppal);
+    border-radius: 3px;
+}
+
+.panel-sector-fondo-modoMezcla select{
+	display: inline-block;
+	width: 108px;
+    height: var(--alto-botones-paneles)px;
+  	border: 0;
+	background-color: var(--color-fondoBtn);
+	color: var(--color-fuente);
+    font-size: 0.7rem;
+    border-radius: 3px;
+    cursor: pointer;
+}
+ 
+
+
+/*------------------ BTN reestablecer */
 .aside-img-btn-restablecer{
     border: 0px;
     background-color: var(--color-fondoBtn);
