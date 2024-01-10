@@ -10,11 +10,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"
         integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA=="
         crossorigin="anonymous" referrerpolicy="no-referrer">
-    </script>
+        </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"
         integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer">
-    </script>
+        </script>
 
     <!------------------ STYLE para los iconos ------------------->
     <!-- FontAwesome -->
@@ -78,63 +78,82 @@
 
                 <h3 class="panel-titulo">IMAGEN</h3>
 
-                <div class="panel-sectores-controles alto-origen-img"> <!-- Origen de la imagen -->
-                    <h6>ORIGEN</h6>
+                <div class="contenedor-de-origen-y-fondo">
 
-                    <div class="panel-sector-fondo">
-                        <button class="aside-img-btn-subir" id="subir-url-btn">
-                            <i class="fa-solid fa-link"></i>
-                            URL
-                        </button>
+                    <div class="panel-sectores-controles alto-origen-img"> <!-- Origen de la imagen -->
+                        <h6>ORIGEN</h6>
 
-                        <button class="aside-img-btn-subir" id="subir-pc-btn">
-                            <i class="fa-solid fa-upload"></i>
-                            PC
-                        </button>
+                        <div class="panel-sector-fondo">
+                            <button class="aside-img-btn-subir" id="subir-url-btn">
+                                <i class="fa-solid fa-link"></i>
+                                URL
+                            </button>
+
+                            <button class="aside-img-btn-subir" id="subir-pc-btn">
+                                <i class="fa-solid fa-upload"></i>
+                                PC
+                            </button>
+                        </div>
+
+                        <div class="ocultar-input-subir-img" id="subir-url-input">
+                            <input type="url" name="" aria-label="Seleccionar archivo desde una URL"
+                                placeholder="URL de la imagen">
+                        </div>
+
+                        <div class="ocultar-input-subir-img" id="subir-pc-input">
+                            <div class="archivo-img">
+                                <label for="input-file">Seleccionar Archivo</label>
+                                <input type="file" id="input-file" accept="image/png, image/gif, image/jpeg"
+                                    aria-label="Seleccionar archivo desde PC">
+                            </div>
+                        </div>
+
                     </div>
 
-                    <div class="ocultar-input-subir-img" id="subir-url-input">
-                        <input type="url" name="" aria-label="Seleccionar archivo desde una URL"
-                            placeholder="URL de la imagen">
-                    </div>
+                    <div class="panel-sectores-controles"> <!-- Fondo  -->
+                        <h6>FONDO</h6>
+                        <div class="panel-sector-fondo">
 
-                    <div class="ocultar-input-subir-img" id="subir-pc-input">
-                        <div class="archivo-img">
-                            <label for="input-file">Seleccionar Archivo</label>
-                            <input type="file" id="input-file" accept="image/png, image/gif, image/jpeg"
-                                aria-label="Seleccionar archivo desde PC">
+                            <div class="panel-sector-fondo-color">
+                                <input type="color" class="input-color" id="input-color" value="#FFFFFF"
+                                    oninput="colorhex.value=value.toUpperCase()"
+                                    aria-label="Color de fondo de la imagen">
+                                <output id="colorhex">#FFFFFF</output>
+                            </div>
+
+                            <div class="panel-sector-fondo-modoMezcla"> <!--  (forma_fondo=unset /name===value) -->
+                                <select name="modo-mezcla-fondo" class="panel-control-modoMezcla" id="modo-mezcla"
+                                    aria-label="Modos de mezcla entre color de fondo e imágen">
+                                    <option value="unset" selected>Ninguno</option>
+                                    <option value="lighten">Aclarar</option>
+                                    <option value="darken">Oscurecer</option>
+                                    <option value="difference">Diferencia</option>
+                                    <option value="luminosity">Luminosidad</option>
+                                    <option value="multiply">Multiplicar</option>
+                                </select>
+                            </div>
+
                         </div>
                     </div>
-
                 </div>
 
-                <div class="panel-sectores-controles"> <!-- Fondo  -->
-                    <h6>FONDO</h6>
-                    <div class="panel-sector-fondo">
-                        
-                        <div class="panel-sector-fondo-color">
-                            <input type="color" class="input-color" id="input-color" value="#FFFFFF" 
-                               oninput="colorhex.value=value.toUpperCase()" aria-label="Color de fondo de la imagen">
-                            <output id="colorhex">#FFFFFF</output>
-                        </div>
-
-                        <div class="panel-sector-fondo-modoMezcla"> <!--  (forma_fondo=unset /name===value) -->
-                            <select name="modo-mezcla-fondo" class="panel-control-modoMezcla" id="modo-mezcla" aria-label="Modos de mezcla entre color de fondo e imágen">
-                                <option value="unset" selected>Ninguno</option>
-                                <option value="lighten">Aclarar</option>
-                                <option value="darken">Oscurecer</option>
-                                <option value="difference">Diferencia</option>
-                                <option value="luminosity">Luminosidad</option>
-                                <option value="multiply">Multiplicar</option>
-                            </select>
-                        </div>
-
-                    </div>
-                </div>
 
                 <div class="panel-sectores-controles"> <!-- Filtros -->
                     <h6>FILTROS</h6>
                 </div>
+
+                <div class="contenedor-de-filtros-para-dos-columnas">
+                    <div class="contenedor-de-filtros-col-1">
+
+                    </div>
+                    <div class="contenedor-de-filtros-col-2">
+
+                    </div>
+
+                </div>
+
+
+
 
                 <button class="aside-img-btn-restablecer">
                     <i class="fa fa-undo" aria-hidden="true"></i>
