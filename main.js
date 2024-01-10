@@ -74,6 +74,8 @@ window.visualViewport.addEventListener("resize", () => {
     if ( window.innerWidth >= (1300) &&  !panel_cnt.classList.contains("ver-panel") ) {
            mostrarPanelImagen();
     }
+
+    
 });
 
 document.getElementById("nav-btn-img").addEventListener("click", (e)=>{
