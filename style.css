@@ -23,7 +23,7 @@
     color-scheme: dark;   /*color por defecto de win, para barras de scroll*/
 
     --alto-botones-paneles: 27;
-    --ancho-panel-imgtxt: 260; /*  -(10+10) de pading*/
+    --ancho-panel-imgtxt: 260;
 }  
 
 :root[data-theme-color="light"] {     /* Modo CLARO*/
@@ -184,7 +184,8 @@ body{
     flex-direction: column;
     background-color: var(--color-aside);
     padding: 35px 10px 20px 10px;
-    overflow: auto;
+    overflow-y: visible;  /*scroll y visible*/
+    overflow-x: hidden; /*scroll x ocultar*/
     position: fixed;
     top: 0;
     right: 0;
@@ -195,7 +196,7 @@ body{
 .panel-btn-cerrar{
     position: fixed;
     top: 15px;
-    right: 15px;
+    right: 20px;
     cursor: pointer;
     border-radius: 50%;
     border: 0px;
@@ -251,6 +252,15 @@ input[type="url"]{
 .contenedor-de-origen-y-fondo{
     display: flex;
     flex-direction: column;
+
+}
+
+.panel-sectores{  /*Para cada sector (seeciones) de los paneles */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 5px;
 }
 
 /*------------------ ORIGEN */
@@ -266,7 +276,7 @@ input[type="url"]{
     padding: 3px;
     margin-bottom: 5px;
     font-size: 0.7rem;
-    width: 110px;
+    width: calc(50% - 2px);   /*110px;*/
     height: calc( var(--alto-botones-paneles)* 1px);
     cursor: pointer;  /*Para que aparezca la manito sobre el btn. */
 }
@@ -283,7 +293,7 @@ input[type="url"]{
 
 input[type="url"]{
     height: calc( var(--alto-botones-paneles)* 1px);
-    width: 230px;
+    width: calc(100% - 0px);
     box-shadow: 5px 5px 4px -3px var(--color-cont-ppal);
 }
 ::placeholder{  /* Modifica TXT  del placeholder del input-url */
@@ -296,7 +306,7 @@ input[type="url"]{
 }
 .archivo-img label{ /* Para btn subir desde PC*/
     margin-top: 3px;
-    width: 230px;
+    width: 100%;
     height: calc( var(--alto-botones-paneles)* 1px);
     background-color: var(--color-fondoBtn);
     display: flex;
@@ -313,19 +323,11 @@ input[type="url"]{
 
 
 /*------------------ FONDO */
-.panel-sector-fondo{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 230px;
-    margin-top: 5px;
-}
-
 .panel-sector-fondo-color{
     background-color: var(--color-fondoBtn);
     box-shadow: 5px 5px 4px -3px var(--color-cont-ppal);
     font-size: 0.7rem;
-    width: 110px;
+    width: calc(50% - 2px);   /*110px;*/
     border-radius: 3px;
     margin: 0px;
     display: flex;
@@ -337,6 +339,7 @@ input[type="url"]{
 [type="color"] {       /*Para que input=color, quede redondo*/
     display: inline-flex;
     vertical-align: bottom;
+    justify-content: center;
     border: none;
 }
 ::-webkit-color-swatch-wrapper { /*Para que input=color, quede redondo*/
@@ -344,6 +347,7 @@ input[type="url"]{
     cursor: pointer;
     height: 20px; /*para el cículo de color*/
     width: 20px; /*para el cículo de color*/
+    
 }
 ::-webkit-color-swatch { /*Para que input=color, quede redondo*/
     border: 0;
@@ -355,7 +359,7 @@ input[type="url"]{
     box-shadow: 5px 5px 4px -3px var(--color-cont-ppal);
     border-radius: 3px;
     display: flex;
-    width: 110px;
+    width: calc(50% - 2px);   /*110px;*/
     height: var(--alto-botones-paneles)px;
 }
 .panel-sector-fondo-modoMezcla select{
@@ -369,7 +373,7 @@ input[type="url"]{
  
 /* ------------------ Filtros */
 .filtros{
-    width: 230px;
+    width: 100%;
     margin-top: 10px;
     font-size: 0.7rem;
     display: flex;
@@ -392,15 +396,15 @@ input[type='range'] {
   input[type='range']::-webkit-slider-thumb {
     width: 10px;
     height: 10px;
-    border-radius: 5%;
+    border-radius: 30%;
     -webkit-appearance: none;
     cursor: ew-resize;
-    background: rgb(241, 255, 230);
+    background: var(--color-header);
     box-shadow: -110px 0 0 110px var(--color-cont-ppal); /*parte izq*/
   }
 
 .aside-img-btn-reestablecer{ /*  BTN reestablecer */
-    width: 230px;
+    width: 100%;
     border: 0px;
     background-color: var(--color-fondoBtn);
     border-radius: 5px ;
@@ -446,7 +450,7 @@ input[type='range'] {
     }
     .contenedor-paneles{ 
         position: relative;  /* fixed para que quede a la derecha*/
-        width: var(--ancho-panel-imgtxt);
+        width: calc(var(--ancho-panel-imgtxt) * 1px);
         height: 800px;
         margin-bottom: 20px;
         overflow:visible;
@@ -477,19 +481,21 @@ input[type='range'] {
         width: calc(var(--ancho-panel-imgtxt) * 2px);
         height: 490px;
         margin-bottom: 30px;
-        overflow:visible;
     }
     .contenedor-de-origen-y-fondo{
         flex-direction: row;
         justify-content: space-between;
     }
 
+    .filtros-col, .panel-sectores{
+        width: 230px;
+    }
     .contenedor-de-filtros-para-dos-columnas{
         display: flex;
         flex-direction: row;
         justify-content: space-between;
     }
-
+    
     .panel-btn-cerrar{
         position: absolute;
         top: 10px;

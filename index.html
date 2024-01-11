@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Generador de Meme</title>
+    <link rel="icon" href="favicon.ico" type="image/png"  alt="Favicon"/>
 
     <!------------------ Librerias externas para descargar el MEME com Img ------------------->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"
@@ -83,7 +84,7 @@
                     <div class="panel-sectores-controles alto-origen-img"> <!-- Origen de la imagen -->
                         <h6>ORIGEN</h6>
 
-                        <div class="panel-sector-fondo">
+                        <div class="panel-sectores">
                             <button class="aside-img-btn-subir" id="subir-url-btn">
                                 <i class="fa-solid fa-link"></i>
                                 URL
@@ -113,7 +114,7 @@
 
                     <div class="panel-sectores-controles"> <!-- Fondo  -->
                         <h6>FONDO</h6>
-                        <div class="panel-sector-fondo">
+                        <div class="panel-sectores">
 
                             <div class="panel-sector-fondo-color">
                                 <input type="color" class="input-color" id="input-color" value="#FFFFFF"
@@ -144,7 +145,7 @@
                     
                     <div class="contenedor-de-filtros-para-dos-columnas">
                         
-                        <div>
+                        <div class="filtros-col">
                             <div class="filtros">
                                 <label for="brillo">BRILLO</label>
                                 <input type="range" id="brillo" min="0" max="1" value="1" step="0.1">
@@ -172,28 +173,27 @@
 
                         </div>
 
-                        <div class="contenedor-de-filtros-columna-2">
-                            <div class="contenedor-de-filtros-columna-22">
-                                <div class="filtros">
-                                    <label for="sepia">SEPIA</label>
-                                    <input type="range" id="sepia" min="0" max="100" value="0" step="1">
-                                </div>
-        
-                                <div class="filtros">
-                                    <label for="hue">ROTACIÓN DE COLOR</label>
-                                    <input type="range" id="hue" min="0" max="359" value="0" step="1">
-                                </div>
-    
-                                <div class="filtros">
-                                    <label for="saturacion">SATURACIÓN</label>
-                                    <input type="range" id="saturacion" min="100" max="1000" value="100" step="10">
-                                </div>
-    
-                                <div class="filtros">
-                                    <label for="invertido">INVERTIDO</label>
-                                    <input type="range" id="invertido" min="0" max="1" value="1" step="0.1">
-                                </div>
+                        <div  class="filtros-col">
+                            <div class="filtros">
+                                <label for="sepia">SEPIA</label>
+                                <input type="range" id="sepia" min="0" max="100" value="0" step="1">
                             </div>
+    
+                            <div class="filtros">
+                                <label for="hue">ROTACIÓN DE COLOR</label>
+                                <input type="range" id="hue" min="0" max="359" value="0" step="1">
+                            </div>
+
+                            <div class="filtros">
+                                <label for="saturacion">SATURACIÓN</label>
+                                <input type="range" id="saturacion" min="100" max="1000" value="100" step="10">
+                            </div>
+
+                            <div class="filtros">
+                                <label for="invertido">INVERTIDO</label>
+                                <input type="range" id="invertido" min="0" max="1" value="1" step="0.1">
+                            </div>
+                         
                             <button class="aside-img-btn-reestablecer" id="btn-reestablecer-filtros">
                                 <i class="fa fa-undo" aria-hidden="true"></i>
                                 Restablecer Filtros
