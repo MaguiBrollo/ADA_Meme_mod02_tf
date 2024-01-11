@@ -1,4 +1,4 @@
-/* ------------------- CLARO - OSCURO ----------------------------------  */
+/* ======================== CLARO - OSCURO ========================  */
 const btn_oscuro = document.getElementById("nav-btn-claroOscuro");
 
 btn_oscuro.addEventListener("click", cambiar_color);
@@ -15,8 +15,7 @@ function cambiar_color() {
 }
 
 
-
-/* -------------- TAMAÑO DE LA CAJITA DEL MEME (img y txt)-------------------  */
+/*======================== TAMAÑO DE LA CAJITA DEL MEME ======================== */
 const cajita_del_meme = document.getElementById("main-img-tx");
 const cajita_txt_sup = document.getElementById("main-txt-superior");
 const cajita_txt_inf = document.getElementById("main-txt-inferior");
@@ -51,7 +50,7 @@ window.visualViewport.addEventListener("resize", () => {
 
 
 
-/* -------------- Eventos de los BOTONES de IMG Y TXT  (hacer aparecer un PANEL u otro) -------------------  */
+/* ======================== Eventos de los BOTONES de IMG Y TXT  (hacer aparecer un PANEL u otro) ======================== */
 const panel_img = document.querySelector(".panel-img");
 const panel_txt = document.querySelector(".panel-txt");
 const panel_cnt = document.querySelector(".contenedor-paneles");
@@ -63,19 +62,17 @@ function mostrarPanelImagen(){
     panel_cnt.classList.add("ver-panel");
 };
 
-function mostrarPanelImagen1300(){
+function mostrarPanelImagen1300(){  /*Carga pg x 1ra vez, y está a más de 1300px, carga panel de IMG*/
     if ( window.innerWidth >= (1300) &&  !panel_cnt.classList.contains("ver-panel") ) {
         mostrarPanelImagen();
     }
 }
-/* Cuando se agranda la ventana a más de 1300, debe conservar lo que estaba seleccionado, 
-  o mostrar Panel Imagen, por defecto */
-window.visualViewport.addEventListener("resize", () => {
+ 
+window.visualViewport.addEventListener("resize", () => { /* Cuando se agranda la ventana a más de 1300, debe conservar 
+                                                            lo que estaba seleccionado, o mostrar Panel Imagen, por defecto */
     if ( window.innerWidth >= (1300) &&  !panel_cnt.classList.contains("ver-panel") ) {
            mostrarPanelImagen();
     }
-
-    
 });
 
 document.getElementById("nav-btn-img").addEventListener("click", (e)=>{
@@ -102,8 +99,11 @@ document.getElementById("panel-btn-cerrar").addEventListener("click", (e)=>{
     e.preventDefault();
 })
 
+/* ================================================================================================ */
+/*                                       PANEL DE IMAGEN                                            */
+/* ================================================================================================ */
 
-/* ------------ Seleccionar origen de la imagen URL / PC ---------------- */
+/* ======================== Seleccionar origen de la imagen URL / PC ======================== */
 const subir_url_btn = document.getElementById("subir-url-btn");
 const subir_pc_btn = document.getElementById("subir-pc-btn");
 
@@ -140,7 +140,8 @@ input_file.addEventListener("change", (e) => {
     }
   });
   
-/* ------------ Seleccionar color de FONDO img,  y BLEND MODE (se aplica al background) ---------------- */
+
+/* ======================== Seleccionar color de FONDO img,  y BLEND MODE (se aplica al background) ======================== */
 const input_color = document.getElementById("input-color"); //input que selecciona color
 const modo_mezcla = document.getElementById("modo-mezcla"); //label donde muestra el Hexa del color
 
@@ -153,6 +154,77 @@ modo_mezcla.addEventListener("input", (e) => {
 });
 
 
+/* ======================== Aplicar Filtos y Restablecer ======================== */
+const btn_reestablecer_filtros = document.getElementById("btn-reestablecer-filtros"); 
+const brillo = document.getElementById("brillo");
+const opacidad = document.getElementById("opacidad");
+const contraste = document.getElementById("contraste");
+const desenfoque = document.getElementById("desenfoque");
+const grises = document.getElementById("grises");
+const sepia = document.getElementById("sepia");
+const hueR = document.getElementById("hue");
+const saturacion = document.getElementById("saturacion");
+const invertido = document.getElementById("invertido")
+
+brillo.addEventListener('input', obtenerValorFiltros);
+opacidad.addEventListener('input', obtenerValorFiltros);
+contraste.addEventListener('input', obtenerValorFiltros);
+desenfoque.addEventListener('input', obtenerValorFiltros);
+grises.addEventListener('input', obtenerValorFiltros);
+sepia.addEventListener('input', obtenerValorFiltros);
+hueR.addEventListener('input', obtenerValorFiltros);
+saturacion.addEventListener('input', obtenerValorFiltros);
+invertido.addEventListener('input', obtenerValorFiltros);
+
+btn_reestablecer_filtros.addEventListener("click",()=>{
+    const bri = 1; /* Valor inicial de cada uno.*/
+    const opa = 1;
+    const con = 100;
+    const blu = 0;
+    const gri = 0;
+    const sep = 0;
+    const hue = 0;
+    const sat = 100;
+    const inv = 0;
+    filtrarImg(bri, opa, con, blu, gri, sep, hue, sat, inv);
+})
+
+function obtenerValorFiltros(){
+    const bri = brillo.value;
+    const opa = opacidad.value;
+    const con = contraste.value;
+    const blu = desenfoque.value;
+    const gri = grises.value;
+    const sep = sepia.value;
+    const hue = hueR.value;
+    const sat = saturacion.value;
+    const inv = invertido.value ;
+    filtrarImg(bri, opa, con, blu, gri, sep, hue, sat, inv);
+}
+
+function filtrarImg(bri, opa, con, blu, gri, sep, hue, sat, inv){
+    brillo.value    = `${bri}`;
+    opacidad.value  = `${opa}`;
+    contraste.value = `${con}`;
+    desenfoque.value = `${blu}`;
+    grises.value     = `${gri}`;
+    sepia.value      = `${sep}`;
+    hueR.value       = `${hue}`;
+    saturacion.value = `${sat}`;
+    invertido.value  = `${inv}`;
+    main_img.style.filter = `brightness(${bri}) opacity(${opa}) contrast(${con}%) blur(${blu}px) grayscale(${gri}%) sepia(${sep}%) hue-rotate(${hue}deg) saturate(${sat}%) invert(${inv})`
+}
+
+
+
+/* ================================================================================================ */
+/*                                       PANEL DE TEXTO                                             */
+/* ================================================================================================ */
+
+
+
+
+/* ================================================================================================*/
 /* ------------ BOTON descargar MEME como IMG ---------------- */
 const div_img_txt = document.getElementById("main-img-tx");
 const  btn_descargar_meme = document.getElementById("btn-descargar-meme");
@@ -163,8 +235,7 @@ btn_descargar_meme.addEventListener("click", () => {
   });
   
 
-
-/*--------------------------------------------------------------------------*/
+/* ================================================================================================*/
 /* Cuando se carga por 1ra vez la página, el Panel de Imagen debe ser VISIBLE 
    solo si la ventana está a mas de 1300px*/
 window.onload  = mostrarPanelImagen1300;

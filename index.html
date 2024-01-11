@@ -110,6 +110,7 @@
 
                     </div>
 
+
                     <div class="panel-sectores-controles"> <!-- Fondo  -->
                         <h6>FONDO</h6>
                         <div class="panel-sector-fondo">
@@ -140,25 +141,68 @@
 
                 <div class="panel-sectores-controles"> <!-- Filtros -->
                     <h6>FILTROS</h6>
-                </div>
+                    
+                    <div class="contenedor-de-filtros-para-dos-columnas">
+                        
+                        <div>
+                            <div class="filtros">
+                                <label for="brillo">BRILLO</label>
+                                <input type="range" id="brillo" min="0" max="1" value="1" step="0.1">
+                            </div>
+    
+                            <div class="filtros">
+                                <label for="opacidad">OPACIDAD</label>
+                                <input type="range" id="opacidad" min="0" max="1" value="1" step="0.1">
+                            </div>
 
-                <div class="contenedor-de-filtros-para-dos-columnas">
-                    <div class="contenedor-de-filtros-col-1">
+                            <div class="filtros">
+                                <label for="contraste">CONTRASTE</label>
+                                <input type="range" id="contraste" min="100" max="1000" value="100" step="1">
+                            </div>
 
+                            <div class="filtros">
+                                <label for="desenfoque">DESENFOQUE</label>
+                                <input type="range" id="desenfoque" min="0" max="10" value="0" step="0.1">
+                            </div>
+
+                            <div class="filtros">
+                                <label for="grises">ESCALA DE GRISES</label>
+                                <input type="range" id="grises" min="0" max="100" value="0" step="1">
+                            </div>
+
+                        </div>
+
+                        <div class="contenedor-de-filtros-columna-2">
+                            <div class="contenedor-de-filtros-columna-22">
+                                <div class="filtros">
+                                    <label for="sepia">SEPIA</label>
+                                    <input type="range" id="sepia" min="0" max="100" value="0" step="1">
+                                </div>
+        
+                                <div class="filtros">
+                                    <label for="hue">ROTACIÓN DE COLOR</label>
+                                    <input type="range" id="hue" min="0" max="359" value="0" step="1">
+                                </div>
+    
+                                <div class="filtros">
+                                    <label for="saturacion">SATURACIÓN</label>
+                                    <input type="range" id="saturacion" min="100" max="1000" value="100" step="10">
+                                </div>
+    
+                                <div class="filtros">
+                                    <label for="invertido">INVERTIDO</label>
+                                    <input type="range" id="invertido" min="0" max="1" value="1" step="0.1">
+                                </div>
+                            </div>
+                            <button class="aside-img-btn-reestablecer" id="btn-reestablecer-filtros">
+                                <i class="fa fa-undo" aria-hidden="true"></i>
+                                Restablecer Filtros
+                            </button>
+
+                        </div>
+    
                     </div>
-                    <div class="contenedor-de-filtros-col-2">
-
-                    </div>
-
                 </div>
-
-
-
-
-                <button class="aside-img-btn-restablecer">
-                    <i class="fa fa-undo" aria-hidden="true"></i>
-                    Restablecer
-                </button>
             </div>
 
             <!--  Controles para texto -->

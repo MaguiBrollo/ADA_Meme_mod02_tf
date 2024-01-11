@@ -23,7 +23,7 @@
     color-scheme: dark;   /*color por defecto de win, para barras de scroll*/
 
     --alto-botones-paneles: 27;
-    --ancho-panel-imgtxt: 260; /*  -(15+15) de pading*/
+    --ancho-panel-imgtxt: 260; /*  -(10+10) de pading*/
 }  
 
 :root[data-theme-color="light"] {     /* Modo CLARO*/
@@ -183,7 +183,7 @@ body{
     display: none;
     flex-direction: column;
     background-color: var(--color-aside);
-    padding: 35px 15px 20px 15px;
+    padding: 35px 10px 20px 10px;
     overflow: auto;
     position: fixed;
     top: 0;
@@ -242,6 +242,12 @@ input[type="url"]{
 
 /*----------------------- ASIDE: panel de IMAGEN -------------------*/
 
+.panel-sectores-controles{
+    border: 1px solid var(--color-cont-ppal);
+    padding: 5px;
+    border-radius: 10px;
+}
+
 .contenedor-de-origen-y-fondo{
     display: flex;
     flex-direction: column;
@@ -249,7 +255,7 @@ input[type="url"]{
 
 /*------------------ ORIGEN */
 .alto-origen-img{
-    height: 85px;
+    height: 100px;
 }
 
 .aside-img-btn-subir{  /* Para el btn de URL/PC. */
@@ -361,20 +367,50 @@ input[type="url"]{
     cursor: pointer;
 }
  
+/* ------------------ Filtros */
+.filtros{
+    width: 230px;
+    margin-top: 10px;
+    font-size: 0.7rem;
+    display: flex;
+    flex-direction: column;
+}
 
+input[type='range'] {
+    overflow: hidden;
+    -webkit-appearance: none;
+    background-color: var(--color-fondoBtn);/*parte derecha*/
+  }
+  
+ /*  input[type='range']::-webkit-slider-runnable-track {
+    height: 10px;
+    -webkit-appearance: none;
+    color:#a3be0a ;
+    margin-top: -1px;
+  } */
+  
+  input[type='range']::-webkit-slider-thumb {
+    width: 10px;
+    height: 10px;
+    border-radius: 5%;
+    -webkit-appearance: none;
+    cursor: ew-resize;
+    background: rgb(241, 255, 230);
+    box-shadow: -110px 0 0 110px var(--color-cont-ppal); /*parte izq*/
+  }
 
-/*------------------ BTN reestablecer */
-.aside-img-btn-restablecer{
+.aside-img-btn-reestablecer{ /*  BTN reestablecer */
+    width: 230px;
     border: 0px;
     background-color: var(--color-fondoBtn);
     border-radius: 5px ;
-    padding: 8px;
-    font-size: 0.8rem;
-    margin-top: 20px;
+    padding: 7px;
+    font-size: 0.7rem;
+    margin-top: 15px;
     box-shadow: 5px 5px 4px -3px var(--color-cont-ppal);
     cursor: pointer;  
 }
-.aside-img-btn-restablecer:hover{
+.aside-img-btn-reestablecer:hover{
     background-color:  #9d9ea0;
 }
 
@@ -394,7 +430,6 @@ input[type="url"]{
 }
 
 /* Para ubicar el ASIDE (txt e img) debajo de la Cajita-Meme. */
-
 @media (width < 550px) {  /* PANELES flaquitos (UNA columna) y debajo*/
     body{
         height: auto;
@@ -412,8 +447,8 @@ input[type="url"]{
     .contenedor-paneles{ 
         position: relative;  /* fixed para que quede a la derecha*/
         width: var(--ancho-panel-imgtxt);
-        height: 890px;
-        margin-bottom: 30px;
+        height: 800px;
+        margin-bottom: 20px;
         overflow:visible;
     }
 
@@ -440,7 +475,7 @@ input[type="url"]{
     .contenedor-paneles{
         position: relative;  /* fixed para que quede a la derecha*/
         width: calc(var(--ancho-panel-imgtxt) * 2px);
-        height: 500px;
+        height: 490px;
         margin-bottom: 30px;
         overflow:visible;
     }
@@ -448,6 +483,13 @@ input[type="url"]{
         flex-direction: row;
         justify-content: space-between;
     }
+
+    .contenedor-de-filtros-para-dos-columnas{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
     .panel-btn-cerrar{
         position: absolute;
         top: 10px;
