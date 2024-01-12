@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Generador de Meme</title>
-    <link rel="icon" href="favicon.ico" type="image/png"  alt="Favicon"/>
+    <link rel="icon" href="favicon.ico" type="image/png" alt="Favicon" />
 
     <!------------------ Librerias externas para descargar el MEME com Img ------------------->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"
@@ -16,6 +16,9 @@
         integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer">
         </script>
+
+    <!-- animaciones para mis títulos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
     <!------------------ STYLE para los iconos ------------------->
     <!-- FontAwesome -->
@@ -32,7 +35,7 @@
 
     <!--  ---- HEADER ----  (Título y barra de navegación)  -->
     <header class="contenedor-header">
-        <h1 class="header-titulo">Generador de Memes</h1>
+        <h1 class="header-titulo animate__animated animate__fadeInLeft">Generador de Memes</h1>
         <nav>
             <button class="nav-btn" id="nav-btn-img">
                 <i class="fa-solid fa-camera"></i></i>
@@ -77,9 +80,9 @@
             <!--  Controles para imagen -->
             <div class="panel-img ocultar-panel">
 
-                <h3 class="panel-titulo">IMAGEN</h3>
+                <h3 class="panel-titulo animate__animated animate__bounce">IMAGEN</h3>
 
-                <div class="contenedor-de-origen-y-fondo">
+                <div class="contenedor-para-poner-a-dos-columnas">
 
                     <div class="panel-sectores-controles alto-origen-img"> <!-- Origen de la imagen -->
                         <h6>ORIGEN</h6>
@@ -142,15 +145,15 @@
 
                 <div class="panel-sectores-controles"> <!-- Filtros -->
                     <h6>FILTROS</h6>
-                    
-                    <div class="contenedor-de-filtros-para-dos-columnas">
-                        
+
+                    <div class="contenedor-para-poner-a-dos-columnas">
+
                         <div class="filtros-col">
                             <div class="filtros">
                                 <label for="brillo">BRILLO</label>
                                 <input type="range" id="brillo" min="0" max="1" value="1" step="0.1">
                             </div>
-    
+
                             <div class="filtros">
                                 <label for="opacidad">OPACIDAD</label>
                                 <input type="range" id="opacidad" min="0" max="1" value="1" step="0.1">
@@ -173,12 +176,12 @@
 
                         </div>
 
-                        <div  class="filtros-col">
+                        <div class="filtros-col">
                             <div class="filtros">
                                 <label for="sepia">SEPIA</label>
                                 <input type="range" id="sepia" min="0" max="100" value="0" step="1">
                             </div>
-    
+
                             <div class="filtros">
                                 <label for="hue">ROTACIÓN DE COLOR</label>
                                 <input type="range" id="hue" min="0" max="359" value="0" step="1">
@@ -193,21 +196,82 @@
                                 <label for="invertido">INVERTIDO</label>
                                 <input type="range" id="invertido" min="0" max="1" value="1" step="0.1">
                             </div>
-                         
+
                             <button class="aside-img-btn-reestablecer" id="btn-reestablecer-filtros">
                                 <i class="fa fa-undo" aria-hidden="true"></i>
                                 Restablecer Filtros
                             </button>
 
                         </div>
-    
+
                     </div>
                 </div>
             </div>
 
             <!--  Controles para texto -->
             <div class="panel-txt ocultar-panel">
-                <h3>Panel TEXTO</h3>
+                <h3 class="panel-titulo animate__animated animate__bounce">TEXTO</h3>
+                
+                <div class="contenedor-para-poner-a-dos-columnas"> <!--txt sup/inf  -->
+                    <div class="panel-sectores-controles filtros-col">
+                        <h6>SUPERIOR</h6>
+                        <textarea class="input-textarea-supInf" id="input-txt-sup" aria-label="Escriba el texto superior"
+                            placeholder="Texto superior..."></textarea>
+                        <div class="checkbox-txt-supInf">
+                            <input type="checkbox" id="sin-txt-sup">
+                            <label for="sin-txt-sup">Sin texto superior</label>
+                        </div>
+                    </div>
+
+                    <div class="panel-sectores-controles filtros-col">
+                        <h6>INFERIOR</h6>
+                        <textarea class="input-textarea-supInf" id="input-txt-inf"
+                            aria-label="Escriba el texto inferior" placeholder="Texto inferior..."></textarea>
+                        <div class="checkbox-txt-supInf">
+                            <input type="checkbox" id="sin-txt-inf">
+                            <label for="sin-txt-inf">Sin texto inferior</label>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="panel-sectores-controles">
+                    <h6>FUENTE</h6>
+                    <div class="contenedor-para-poner-a-dos-columnas">
+                        <div>
+                            <h5>fuente: arial</h5>
+                        </div>
+                        <div>
+                            <h5>tamaño: 40</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contenedor-para-poner-a-dos-columnas">
+                    <div class="panel-sectores-controles">
+                        <div>
+                            <h6>COLOR</h6>
+                        </div>
+                        <div>
+                            <h6>FONDO</h6>
+                        </div>
+                    </div>
+
+                    <div class="panel-sectores-controles">
+                        <h6>CONTORNO</h6>
+                    </div>
+                </div>
+
+                <div class="contenedor-para-poner-a-dos-columnas">
+                    <div class="panel-sectores-controles">
+                        <h6>ESPACIADO</h6>
+                    </div>
+
+                    <div class="panel-sectores-controles">
+                        <h6>INTERLINEADO</h6>
+                    </div>
+                </div>
             </div>
 
         </aside>

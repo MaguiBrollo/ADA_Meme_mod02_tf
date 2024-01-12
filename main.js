@@ -64,7 +64,7 @@ function mostrarPanelImagen(){
 
 function mostrarPanelImagen1300(){  /*Carga pg x 1ra vez, y está a más de 1300px, carga panel de IMG*/
     if ( window.innerWidth >= (1300) &&  !panel_cnt.classList.contains("ver-panel") ) {
-        mostrarPanelImagen();
+        //mostrarPanelImagen();
     }
 }
  
@@ -220,6 +220,38 @@ function filtrarImg(bri, opa, con, blu, gri, sep, hue, sat, inv){
 /* ================================================================================================ */
 /*                                       PANEL DE TEXTO                                             */
 /* ================================================================================================ */
+
+/* ======================== Aplicar TXT superior y/o inferior ======================== */
+const input_txt_sup = document.getElementById("input-txt-sup");
+const main_txt_superior = document.getElementById("main-txt-superior");
+input_txt_sup.addEventListener("input", (e)=>{
+    main_txt_superior.textContent = input_txt_sup.value;
+})
+
+const input_txt_inf = document.getElementById("input-txt-inf");
+const main_txt_inferior = document.getElementById("main-txt-inferior");
+input_txt_inf.addEventListener("input", (e)=>{
+    main_txt_inferior.textContent = input_txt_inf.value;
+})
+
+const sin_txt_sup = document.getElementById("sin-txt-sup");
+sin_txt_sup.addEventListener('click', function() {
+    if(sin_txt_sup.checked) {
+        main_txt_superior.classList.add("ocultar-panel");
+    } else {
+        main_txt_superior.classList.remove("ocultar-panel");
+    }
+});
+
+
+const sin_txt_inf = document.getElementById("sin-txt-inf");
+sin_txt_inf.addEventListener('click', function() {
+    if(sin_txt_inf.checked) {
+        main_txt_inferior.classList.add("ocultar-panel");
+    } else {
+        main_txt_inferior.classList.remove("ocultar-panel");
+    }
+});
 
 
 

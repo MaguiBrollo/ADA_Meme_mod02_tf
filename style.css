@@ -218,8 +218,11 @@ body{
     justify-content: center;
 }
 
-.panel-sectores-controles{
+.panel-sectores-controles{   /*Borde de cada control*/
     margin-top: 20px;
+    border: 1px solid var(--color-cont-ppal);
+    padding: 5px;
+    border-radius: 10px;
 }
 
 .panel-img, .panel-txt{
@@ -243,25 +246,19 @@ input[type="url"]{
 
 /*----------------------- ASIDE: panel de IMAGEN -------------------*/
 
-.panel-sectores-controles{
-    border: 1px solid var(--color-cont-ppal);
-    padding: 5px;
-    border-radius: 10px;
-}
-
 .contenedor-de-origen-y-fondo{
     display: flex;
     flex-direction: column;
 
 }
 
-.panel-sectores{  /*Para cada sector (seeciones) de los paneles */
+ .panel-sectores{  /*Para acomodar controles que van en fila. Ej: btn de URL y PC */
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
     margin-top: 5px;
-}
+} 
 
 /*------------------ ORIGEN */
 .alto-origen-img{
@@ -382,18 +379,11 @@ input[type="url"]{
 
 input[type='range'] {
     overflow: hidden;
-    -webkit-appearance: none;
+    appearance: none;
     background-color: var(--color-fondoBtn);/*parte derecha*/
   }
   
- /*  input[type='range']::-webkit-slider-runnable-track {
-    height: 10px;
-    -webkit-appearance: none;
-    color:#a3be0a ;
-    margin-top: -1px;
-  } */
-  
-  input[type='range']::-webkit-slider-thumb {
+input[type='range']::-webkit-slider-thumb {
     width: 10px;
     height: 10px;
     border-radius: 30%;
@@ -401,7 +391,7 @@ input[type='range'] {
     cursor: ew-resize;
     background: var(--color-header);
     box-shadow: -110px 0 0 110px var(--color-cont-ppal); /*parte izq*/
-  }
+}
 
 .aside-img-btn-reestablecer{ /*  BTN reestablecer */
     width: 100%;
@@ -421,7 +411,22 @@ input[type='range'] {
 
 /*----------------------- ASIDE: panel de TEXTO -------------------*/
 .panel-txt{
-    background-color: #a3be0a;
+    /* background-color: #a3be0a; */
+}
+
+.input-textarea-supInf{
+    margin-top: 5px;
+    resize: none;
+    font-size: 0.9rem;
+    background-color: var(--color-fondoBtn);
+    width: 100%;
+    height: 70px;
+    overflow-y: scroll;
+
+}
+
+.checkbox-txt-supInf{
+    font-size: 0.7rem;
 }
 
 
@@ -482,18 +487,15 @@ input[type='range'] {
         height: 490px;
         margin-bottom: 30px;
     }
-    .contenedor-de-origen-y-fondo{
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
-    .filtros-col, .panel-sectores{
-        width: 230px;
-    }
-    .contenedor-de-filtros-para-dos-columnas{
+    .contenedor-para-poner-a-dos-columnas{
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+    }
+ 
+   
+    .filtros-col, .panel-sectores{
+        width: 230px;
     }
     
     .panel-btn-cerrar{
