@@ -34,7 +34,7 @@
 <body>
 
     <!--  ---- HEADER ----  (Título y barra de navegación)  -->
-    <header class="contenedor-header">
+    <header class="contenedor-header" id="contenedor-header">
         <h1 class="header-titulo animate__animated animate__fadeInLeft">Generador de Memes</h1>
         <nav>
             <button class="nav-btn" id="nav-btn-img">
@@ -55,7 +55,7 @@
     </header>
 
     <!--  ---- CONTENEDOR ---- (Main y Aside) -->
-    <div class="contenedor-ppal">
+    <div class="contenedor-ppal" id="contenedor-ppal">
 
         <!--  Main  (sector principal para la imagen y el texto) -->
         <main class="contenedor-main">
@@ -94,8 +94,8 @@
                             </button>
 
                             <button class="aside-img-btn-subir" id="subir-pc-btn">
-                                <i class="fa-solid fa-upload"></i>
-                                PC
+                                <i class="fa-solid fa-desktop"></i>
+                                Ordenador
                             </button>
                         </div>
 
@@ -106,7 +106,8 @@
 
                         <div class="ocultar-input-subir-img" id="subir-pc-input">
                             <div class="archivo-img">
-                                <label for="input-file">Seleccionar Archivo</label>
+                                <label for="input-file">
+                                    <i class="fa-solid fa-upload"> </i>. Seleccionar Archivo</label>
                                 <input type="file" id="input-file" accept="image/png, image/gif, image/jpeg"
                                     aria-label="Seleccionar archivo desde PC">
                             </div>
@@ -126,7 +127,7 @@
                                 <output id="colorhex">#FFFFFF</output>
                             </div>
 
-                            <div class="panel-sector-fondo-modoMezcla"> <!--  (forma_fondo=unset /name===value) -->
+                            <div class="panel-sector-fondo-modoMezcla"> 
                                 <select name="modo-mezcla-fondo" class="panel-control-modoMezcla" id="modo-mezcla"
                                     aria-label="Modos de mezcla entre color de fondo e imágen">
                                     <option value="unset" selected>Ninguno</option>
@@ -239,11 +240,40 @@
                 <div class="panel-sectores-controles">
                     <h6>FUENTE</h6>
                     <div class="contenedor-para-poner-a-dos-columnas">
-                        <div>
-                            <h5>fuente: arial</h5>
+                        <div class="panel-sector-seleccionar-fuente">
+                            <select name="Familia de fuente" class="selecionar-fuentes" id="selecionar-fuentes" aria-label="Familia de fuente">
+                                <option value="Arial">Arial</option>
+                                <option value="Arial Black">Arial Black</option>
+                                <option value="American Typewriter">American Typewriter</option>
+                                <option value="Andale Mono">Andale Mono</option>
+                                <option value="Comic Sans MS">Comic Sans MS</option>
+                                <option value="Helvetica">Helvetica</option>
+                                <option value="Impact" selected>Impact</option>
+                                <option value="Verdana">Verdana</option>
+                                <option value="Times New Roman">Times New Roman</option>
+                              </select>
+
                         </div>
-                        <div>
-                            <h5>tamaño: 40</h5>
+                        <div class="contenedor-tmnTxt-alinear">
+                            <input type="number" name="Tamaño del texto" aria-label="Tamaño del texto" 
+                            class="tamanio-txt-meme" id="tamanio-txt-meme" min="12"
+                            value="40"/>
+                          
+                            <div>
+                                <button class="btn-alinear" id="btns-alinear-izq"
+                                    aria-label="Alineación a izquierda">
+                                    <i class="fa-solid fa-align-left"></i>
+                                </button>
+                                    <button class="btn-alinear" id="btns-alinear-cen"
+                                    aria-label="Alineación al centro">
+                                    <i class="fa-solid fa-align-center"></i>
+                                </button>
+                                    <button class="btn-alinear" id="btns-alinear-der"
+                                    aria-label="Alineación a derecha">
+                                    <i class="fa-solid fa-align-right"></i>
+                                </button>
+
+                            </div>
                         </div>
                     </div>
                 </div>

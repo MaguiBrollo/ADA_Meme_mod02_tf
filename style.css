@@ -16,11 +16,12 @@
     --color-fuente:    #f3f4f6;     /*grey  100 */
    
     --transition: color 0.1s, background-color 0.2s ease-in-out;
+
+    color-scheme: dark;   /*color por defecto de win, para barras de scroll*/
     
+    --color-hover:  #9d9ea0;
     --cajita_meme-tm-maximo: 600;
     --cajita_meme-tm-inicial-txt: 50;
-    
-    color-scheme: dark;   /*color por defecto de win, para barras de scroll*/
 
     --alto-botones-paneles: 27;
     --ancho-panel-imgtxt: 260;
@@ -245,14 +246,12 @@ input[type="url"]{
 
 
 /*----------------------- ASIDE: panel de IMAGEN -------------------*/
-
 .contenedor-de-origen-y-fondo{
     display: flex;
     flex-direction: column;
-
 }
 
- .panel-sectores{  /*Para acomodar controles que van en fila. Ej: btn de URL y PC */
+.panel-sectores{  /*Para acomodar controles que van en fila. Ej: btn de URL y PC */
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -276,9 +275,6 @@ input[type="url"]{
     width: calc(50% - 2px);   /*110px;*/
     height: calc( var(--alto-botones-paneles)* 1px);
     cursor: pointer;  /*Para que aparezca la manito sobre el btn. */
-}
-.aside-img-btn-subir:hover{
-    background-color:  #9d9ea0;
 }
 
 .ocultar-input-subir-img{
@@ -314,10 +310,6 @@ input[type="url"]{
     font-size: 0.7rem;
     box-shadow: 5px 5px 4px -3px var(--color-cont-ppal);
 }
-.archivo-img label:hover{ /* Para btn subir desde PC*/
-    background-color:  #9d9ea0;
-}
-
 
 /*------------------ FONDO */
 .panel-sector-fondo-color{
@@ -367,6 +359,7 @@ input[type="url"]{
     border-radius: 3px;
     cursor: pointer;
 }
+
  
 /* ------------------ Filtros */
 .filtros{
@@ -404,16 +397,18 @@ input[type='range']::-webkit-slider-thumb {
     box-shadow: 5px 5px 4px -3px var(--color-cont-ppal);
     cursor: pointer;  
 }
+
+.archivo-img label:hover,
+.panel-sector-fondo-color:hover, [type="color"]:hover,
+.aside-img-btn-subir:hover,
+.panel-sector-fondo-modoMezcla select:hover, 
+.panel-sector-fondo-modoMezcla:hover,
 .aside-img-btn-reestablecer:hover{
-    background-color:  #9d9ea0;
+    background-color: var(--color-hover);
 }
 
 
 /*----------------------- ASIDE: panel de TEXTO -------------------*/
-.panel-txt{
-    /* background-color: #a3be0a; */
-}
-
 .input-textarea-supInf{
     margin-top: 5px;
     resize: none;
@@ -422,12 +417,64 @@ input[type='range']::-webkit-slider-thumb {
     width: 100%;
     height: 70px;
     overflow-y: scroll;
-
 }
 
 .checkbox-txt-supInf{
     font-size: 0.7rem;
 }
+
+.panel-sector-seleccionar-fuente{
+    margin-top: 5px;
+    background-color: var(--color-fondoBtn);
+    box-shadow: 5px 5px 4px -3px var(--color-cont-ppal);
+    border-radius: 3px;
+    display: flex;
+    width: 100%;
+    height: var(--alto-botones-paneles)px;
+}
+.panel-sector-seleccionar-fuente select{
+  	border: 0;
+	background-color: var(--color-fondoBtn);
+	color: var(--color-fuente);
+    font-size: 0.7rem;
+    border-radius: 3px;
+    cursor: pointer;
+    width: 100%;
+    height: calc( var(--alto-botones-paneles)* 1px);
+}
+
+.contenedor-tmnTxt-alinear{   
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.tamanio-txt-meme{
+    margin-top: 5px;
+    width: calc(50% - 2px);
+    height: calc( var(--alto-botones-paneles)* 1px);
+}
+
+.btn-alinear{
+    margin-top: 5px;
+    background-color: var(--color-fondoBtn);
+    border-radius: 5px ;
+    border: 0px;
+    box-shadow: 5px 5px 4px -3px var(--color-cont-ppal);
+    font-size: 0.7rem;
+    width: 30px;   /*110px;*/
+    height: calc( var(--alto-botones-paneles)* 1px);
+
+    cursor: pointer;  /*Para que aparezca la manito sobre el btn. */
+}
+
+.input-textarea-supInf:hover,
+.panel-sector-seleccionar-fuente select:hover, 
+.panel-sector-seleccionar-fuente:hover,
+.tamanio-txt-meme:hover, 
+.btn-alinear:hover{
+    background-color: var(--color-hover);
+}
+
 
 
 /* -----  MEDIA QUERY  "ASIDE" -------  */
@@ -445,7 +492,7 @@ input[type='range']::-webkit-slider-thumb {
     }
     .contenedor-ppal{
         position: relative;
-        height: 100%;
+       
         top:0px;
         flex-direction: column;  /*esto cambia*/
     }
@@ -474,7 +521,7 @@ input[type='range']::-webkit-slider-thumb {
     }
     .contenedor-ppal{
         position: relative;
-        height: 100%;
+        height: 100%; 
         top:0px;
         flex-direction: column;  /*esto cambia*/
     }

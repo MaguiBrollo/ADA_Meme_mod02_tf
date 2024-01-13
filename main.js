@@ -6,7 +6,7 @@ btn_oscuro.addEventListener("click", cambiar_color);
 function cambiar_color() {
     if (btn_oscuro.textContent.trim() === "Modo Claro") {
         document.documentElement.setAttribute("data-theme-color", "light");
-        btn_oscuro.innerHTML = `<i class="fa fa-moon-o" aria-hidden="true"></i> </i> Modo Oscuro`;
+        btn_oscuro.innerHTML = `<i class="fa fa-moon-o" aria-hidden="true"></i> Modo Oscuro`;
     }
     else {
         document.documentElement.setAttribute("data-theme-color", "dark");
@@ -109,6 +109,37 @@ const subir_pc_btn = document.getElementById("subir-pc-btn");
 
 const subir_url_input = document.getElementById("subir-url-input");
 const subir_pc_input = document.getElementById("subir-pc-input");
+
+/* PARA QUE COMPLETE LA PANTALLA DEL CELU
+const contenedor_ppal = document.getElementById("contenedor-ppal");
+const contenedor_header = document.getElementById("contenedor-header");
+const dif = parseInt(screen.height * 0.85);
+console.log(screen.height);
+console.log(window.visualViewport.width);
+ */
+
+function esMobil(){
+    return navigator.userAgent.match(/Android/i) ||
+           navigator.userAgent.match(/iPad/i) ||
+           navigator.userAgent.match(/webOs/i) ||
+           navigator.userAgent.match(/iPod/i) ||
+           navigator.userAgent.match(/iPhone/i) ||
+           navigator.userAgent.match(/BlackBerry/i) ||
+           navigator.userAgent.match(/Windows Phone/i) 
+}
+
+function dispositivoMovil(){ /* Si es celu, cambia el icono de Desktop x Mobile*/
+    if( esMobil() ){
+        subir_pc_btn.innerHTML = `<i class="fa-solid fa-mobile-screen-button"></i>  Mobil`;
+    }
+
+  /*  PARA QUE COMPLETE LA PANTALLA DEL CELU
+    if (window.innerWidth <= (850) && !panel_cnt.classList.contains("ver-panel")){
+        contenedor_ppal.style.height  = `${dif}px`; 
+        console.log(contenedor_ppal.style.height);
+    } */
+}
+
 
 subir_url_btn.addEventListener("click",()=>{
     subir_url_input.classList.add("ver-input-subir-img");
@@ -226,12 +257,14 @@ const input_txt_sup = document.getElementById("input-txt-sup");
 const main_txt_superior = document.getElementById("main-txt-superior");
 input_txt_sup.addEventListener("input", (e)=>{
     main_txt_superior.textContent = input_txt_sup.value;
+    main_txt_superior.textContent = main_txt_superior.textContent.toUpperCase();
 })
 
 const input_txt_inf = document.getElementById("input-txt-inf");
 const main_txt_inferior = document.getElementById("main-txt-inferior");
 input_txt_inf.addEventListener("input", (e)=>{
     main_txt_inferior.textContent = input_txt_inf.value;
+    main_txt_inferior.textContent = main_txt_inferior.textContent.toUpperCase();
 })
 
 const sin_txt_sup = document.getElementById("sin-txt-sup");
@@ -268,6 +301,11 @@ btn_descargar_meme.addEventListener("click", () => {
   
 
 /* ================================================================================================*/
-/* Cuando se carga por 1ra vez la página, el Panel de Imagen debe ser VISIBLE 
-   solo si la ventana está a mas de 1300px*/
-window.onload  = mostrarPanelImagen1300;
+
+function funcionesAEjecutar(){
+    mostrarPanelImagen1300(); /* El Panel de IMG debe ser VISIBLE, si la ventana está a mas de 1300px*/
+    dispositivoMovil();       /* Carga la pg, y es un celu?*/
+}
+
+/* Cuando se termina de cargar la página  */
+window.onload  =  funcionesAEjecutar;
