@@ -270,17 +270,53 @@
                 </div>
 
                 <div class="contenedor-para-poner-a-dos-columnas">
-                    <div class="panel-sectores-controles panel-sectores columnas-txt">
-                        <div>
-                            <h6>COLOR</h6>
+                    
+                    <div class="panel-sectores-controles columnas-txt">
+                        <div class="fila filtros-col">
+                            <div class="panel-sectores columna">
+                                <h6>COLOR</h6>
+                                <div class="panel-sector-fondo-color tamanio">
+                                    <input type="color" class="input-color" id="input-color-txt" value="#FFFFFF"
+                                        oninput="colorhexFuente.value=value.toUpperCase()"
+                                        aria-label="Color del texto">
+                                    <output id="colorhexFuente">#FFFFFF</output>
+                                </div>
+                            </div>
+
+                            <div class="panel-sectores columna">
+                                <h6>FONDO</h6>
+                                <div class="panel-sector-fondo-color tamanio">
+                                    <input type="color" class="input-color" id="input-color-fon" value="#FFFFFF"
+                                        oninput="colorhexFondo.value=value.toUpperCase()"
+                                        aria-label="Color de fondo del texto">
+                                    <output id="colorhexFondo">#FFFFFF</output>
+                                </div>
+                            </div>  
                         </div>
-                        <div >
-                            <h6>FONDO</h6>
+
+                        <div class="checkbox-txt-fondo-transparente">
+                            <input type="checkbox" id="fondo-transparente">
+                            <label for="fondo-transparente">Fondo transparente</label>
                         </div>
                     </div>
+                    
 
                     <div class="panel-sectores-controles columnas-txt">
                         <h6>CONTORNO</h6>
+                        <div class="panel-sectores">
+                            <button class="btn-contorno-ninguno" id="btn-contorno-ninguno">   
+                                Ninguno
+                            </button>
+
+                            <button class="btn-contorno-ninguno" id="btn-contorno-claro">
+                                Claro
+                            </button>
+
+                            <button class="btn-contorno-ninguno" id="btn-contorno-oscuro">
+                                Oscuro
+                            </button>
+                        </div>
+
                     </div>
                 </div>
 
