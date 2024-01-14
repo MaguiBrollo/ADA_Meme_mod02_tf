@@ -4,13 +4,13 @@
 /* Fuente para el meme */
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
-/* Fuente para el aside-panel de txt e img */
+/* Fuente para el Section-panel de txt e img */
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
 /* ============================= COLORES =============================*/
 :root{                               /* Modo OSCURO*/
     --color-header:    #1f2937 ;    /*grey  800 */
-    --color-aside:     #374151;     /*grey  700 */
+    --color-seccion:     #374151;     /*grey  700 */
     --color-cont-ppal: #4b5563;     /*grey  600 */
     --color-fondoBtn:  #6b7280;     /*grey  500 */
     --color-fuente:    #f3f4f6;     /*grey  100 */
@@ -24,12 +24,12 @@
     --cajita_meme-tm-inicial-txt: 50;
 
     --alto-botones-paneles: 27;
-    --ancho-panel-imgtxt: 260;
+    --ancho-panel-imgtxt: 280;
 }  
 
 :root[data-theme-color="light"] {     /* Modo CLARO*/
     --color-header:    #9ca3af;        /* gray 400*/
-    --color-aside:     #f3f4f6;       /*  gray 100*/
+    --color-seccion:     #f3f4f6;       /*  gray 100*/
     --color-cont-ppal: #d1d5db;       /*  gray 300*/
     --color-fondoBtn:  #e5e7eb;       /*  gray 200*/
     --color-fuente:    #1f2937;       /*  gray 800*/
@@ -46,13 +46,14 @@
     transition: var(--transition);
 }
 
-html{
+ html{
     font-size: 20px;
     height: 100vh;
-}
+} 
 
 body{
-    height: 100%; /* para que tome*/
+    height: 100%;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -103,7 +104,7 @@ body{
 
 
 /* ============================= CONTENEDOR PRINCIPAL  ============================= */
-.contenedor-ppal{   /* Contiene a  "contenedor-main" y al "aside". */
+.contenedor-ppal{   /* Contiene a  "contenedor-main" y al "seccion". */
     width: 100%;
     height: 85%;
     display: flex;
@@ -139,10 +140,11 @@ body{
 
 .main-txt{
     font-family: 'Bebas Neue', sans-serif;
+    font-family:;
     font-size: 50px;
+    text-align:center;
     color: black;
     background-color: white;
-    text-align: center;
     padding: 10px 0px 10px 0px;
 }
 #main-txt-superior{
@@ -176,14 +178,14 @@ body{
 }
 
 
-/* ============================= ASIDE (para el panel de txt y img ================= */
+/* ============================= SECTION (para el panel de txt y img ================= */
 
 .contenedor-paneles{
-    width: 260px;
+    width:calc(var(--ancho-panel-imgtxt) * 1px );
     height: 100%;
     display: none;
     flex-direction: column;
-    background-color: var(--color-aside);
+    background-color: var(--color-seccion);
     padding: 35px 10px 20px 10px;
     overflow-y: visible;  /*scroll y visible*/
     overflow-x: hidden; /*scroll x ocultar*/
@@ -207,10 +209,10 @@ body{
     content: "\f05c"; /* Valor del icono de CERRAR (Font Awesome 4.7.0 Icon) */
 }
 
-.ocultar-panel{
+.ocultar{
     display: none;
 }
-.ver-panel{
+.mostrar{
     display: block;
 }
 
@@ -245,7 +247,7 @@ input[type="url"]{
 }
 
 
-/*----------------------- ASIDE: panel de IMAGEN -------------------*/
+/*----------------------- SECTION: panel de IMAGEN -------------------*/
 .contenedor-de-origen-y-fondo{
     display: flex;
     flex-direction: column;
@@ -264,7 +266,7 @@ input[type="url"]{
     height: 100px;
 }
 
-.aside-img-btn-subir{  /* Para el btn de URL/PC. */
+.seccion-img-btn-subir{  /* Para el btn de URL/PC. */
     background-color: var(--color-fondoBtn);
     border-radius: 5px ;
     border: 0px;
@@ -386,7 +388,7 @@ input[type='range']::-webkit-slider-thumb {
     box-shadow: -110px 0 0 110px var(--color-cont-ppal); /*parte izq*/
 }
 
-.aside-img-btn-reestablecer{ /*  BTN reestablecer */
+.seccion-img-btn-reestablecer{ /*  BTN reestablecer */
     width: 100%;
     border: 0px;
     background-color: var(--color-fondoBtn);
@@ -400,15 +402,15 @@ input[type='range']::-webkit-slider-thumb {
 
 .archivo-img label:hover,
 .panel-sector-fondo-color:hover, [type="color"]:hover,
-.aside-img-btn-subir:hover,
+.seccion-img-btn-subir:hover,
 .panel-sector-fondo-modoMezcla select:hover, 
 .panel-sector-fondo-modoMezcla:hover,
-.aside-img-btn-reestablecer:hover{
+.seccion-img-btn-reestablecer:hover{
     background-color: var(--color-hover);
 }
 
 
-/*----------------------- ASIDE: panel de TEXTO -------------------*/
+/*----------------------- SECTION: panel de TEXTO -------------------*/
 .input-textarea-supInf{
     margin-top: 5px;
     resize: none;
@@ -461,7 +463,7 @@ input[type='range']::-webkit-slider-thumb {
     border: 0px;
     box-shadow: 5px 5px 4px -3px var(--color-cont-ppal);
     font-size: 0.7rem;
-    width: 30px;   /*110px;*/
+    width: 30px;  
     height: calc( var(--alto-botones-paneles)* 1px);
 
     cursor: pointer;  /*Para que aparezca la manito sobre el btn. */
@@ -477,7 +479,7 @@ input[type='range']::-webkit-slider-thumb {
 
 
 
-/* -----  MEDIA QUERY  "ASIDE" -------  */
+/* -----  MEDIA QUERY  "SECTION" -------  */
 /*-- Cuando la ventana está es >=1300 el BTN CERRAR panel debe ocultarse.  */
 @media(width> 1300px){
     .panel-btn-cerrar{
@@ -485,27 +487,25 @@ input[type='range']::-webkit-slider-thumb {
     }
 }
 
-/* Para ubicar el ASIDE (txt e img) debajo de la Cajita-Meme. */
+/* Para ubicar el SECTION (txt e img) debajo de la Cajita-Meme. */
 @media (width < 550px) {  /* PANELES flaquitos (UNA columna) y debajo*/
     body{
         height: auto;
     }
-    .contenedor-ppal{
+    .contenedor-ppal{ 
         position: relative;
-       
+        min-height: 88.9vh;
         top:0px;
         flex-direction: column;  /*esto cambia*/
     }
     .contenedor-main{
-        position: relative;
-        
+        position: relative;  
     }
     .contenedor-paneles{ 
-        position: relative;  /* fixed para que quede a la derecha*/
+        position: relative;  
         width: calc(var(--ancho-panel-imgtxt) * 1px);
         height: 800px;
         margin-bottom: 20px;
-        overflow:visible;
     }
 
     .panel-btn-cerrar{
@@ -520,8 +520,8 @@ input[type='range']::-webkit-slider-thumb {
         height: auto;
     }
     .contenedor-ppal{
-        position: relative;
-        height: 100%; 
+        position: relative; 
+        min-height: 87.9vh;
         top:0px;
         flex-direction: column;  /*esto cambia*/
     }
@@ -540,11 +540,12 @@ input[type='range']::-webkit-slider-thumb {
         justify-content: space-between;
     }
  
-   
     .filtros-col, .panel-sectores{
-        width: 230px;
+        width: calc(var(--ancho-panel-imgtxt) * 1px - 25px); 
     }
-    
+    .columnas-txt{
+        width: calc(var(--ancho-panel-imgtxt) * 1px - 15px);
+    }
     .panel-btn-cerrar{
         position: absolute;
         top: 10px;

@@ -56,46 +56,46 @@ const panel_txt = document.querySelector(".panel-txt");
 const panel_cnt = document.querySelector(".contenedor-paneles");
 
 function mostrarPanelImagen(){
-    panel_txt.classList.add("ocultar-panel");
-    panel_img.classList.remove("ocultar-panel");
-    panel_cnt.classList.remove("ocultar-panel");
-    panel_cnt.classList.add("ver-panel");
+    panel_txt.classList.add("ocultar");
+    panel_img.classList.remove("ocultar");
+    panel_cnt.classList.remove("ocultar");
+    panel_cnt.classList.add("mostrar");
 };
 
 function mostrarPanelImagen1300(){  /*Carga pg x 1ra vez, y está a más de 1300px, carga panel de IMG*/
-    if ( window.innerWidth >= (1300) &&  !panel_cnt.classList.contains("ver-panel") ) {
-        //mostrarPanelImagen();
+    if ( window.innerWidth >= (1300) &&  !panel_cnt.classList.contains("mostrar") ) {
+        mostrarPanelImagen();
     }
 }
  
 window.visualViewport.addEventListener("resize", () => { /* Cuando se agranda la ventana a más de 1300, debe conservar 
                                                             lo que estaba seleccionado, o mostrar Panel Imagen, por defecto */
-    if ( window.innerWidth >= (1300) &&  !panel_cnt.classList.contains("ver-panel") ) {
+    if ( window.innerWidth >= (1300) &&  !panel_cnt.classList.contains("mostrar") ) {
            mostrarPanelImagen();
     }
 });
 
 document.getElementById("nav-btn-img").addEventListener("click", (e)=>{
-    panel_txt.classList.add("ocultar-panel");
-    panel_img.classList.remove("ocultar-panel");
-    panel_cnt.classList.remove("ocultar-panel");
-    panel_cnt.classList.add("ver-panel");
+    panel_txt.classList.add("ocultar");
+    panel_img.classList.remove("ocultar");
+    panel_cnt.classList.remove("ocultar");
+    panel_cnt.classList.add("mostrar");
     e.preventDefault();
 })
 
 document.getElementById("nav-btn-txt").addEventListener("click", (e)=>{
-    panel_img.classList.add("ocultar-panel");
-    panel_txt.classList.remove("ocultar-panel");
-    panel_cnt.classList.remove("ocultar-panel");
-    panel_cnt.classList.add("ver-panel");
+    panel_img.classList.add("ocultar");
+    panel_txt.classList.remove("ocultar");
+    panel_cnt.classList.remove("ocultar");
+    panel_cnt.classList.add("mostrar");
     e.preventDefault();
 })
 
 document.getElementById("panel-btn-cerrar").addEventListener("click", (e)=>{
-    panel_img.classList.add("ocultar-panel");
-    panel_txt.classList.add("ocultar-panel");
-    panel_cnt.classList.add("ocultar-panel");
-    panel_cnt.classList.remove("ver-panel");
+    panel_img.classList.add("ocultar");
+    panel_txt.classList.add("ocultar");
+    panel_cnt.classList.add("ocultar");
+    panel_cnt.classList.remove("mostrar");
     e.preventDefault();
 })
 
@@ -110,15 +110,7 @@ const subir_pc_btn = document.getElementById("subir-pc-btn");
 const subir_url_input = document.getElementById("subir-url-input");
 const subir_pc_input = document.getElementById("subir-pc-input");
 
-/* PARA QUE COMPLETE LA PANTALLA DEL CELU
-const contenedor_ppal = document.getElementById("contenedor-ppal");
-const contenedor_header = document.getElementById("contenedor-header");
-const dif = parseInt(screen.height * 0.85);
-console.log(screen.height);
-console.log(window.visualViewport.width);
- */
-
-function esMobil(){
+function esMovil(){
     return navigator.userAgent.match(/Android/i) ||
            navigator.userAgent.match(/iPad/i) ||
            navigator.userAgent.match(/webOs/i) ||
@@ -127,19 +119,11 @@ function esMobil(){
            navigator.userAgent.match(/BlackBerry/i) ||
            navigator.userAgent.match(/Windows Phone/i) 
 }
-
-function dispositivoMovil(){ /* Si es celu, cambia el icono de Desktop x Mobile*/
-    if( esMobil() ){
-        subir_pc_btn.innerHTML = `<i class="fa-solid fa-mobile-screen-button"></i>  Mobil`;
+function dispositivoMovil(){ /* Si es celu, cambia el icono de subir img por Desktop a Mobile*/
+    if( esMovil() ){
+        subir_pc_btn.innerHTML = `<i class="fa-solid fa-mobile-screen-button"></i>  Móvil`;
     }
-
-  /*  PARA QUE COMPLETE LA PANTALLA DEL CELU
-    if (window.innerWidth <= (850) && !panel_cnt.classList.contains("ver-panel")){
-        contenedor_ppal.style.height  = `${dif}px`; 
-        console.log(contenedor_ppal.style.height);
-    } */
 }
-
 
 subir_url_btn.addEventListener("click",()=>{
     subir_url_input.classList.add("ver-input-subir-img");
@@ -270,22 +254,63 @@ input_txt_inf.addEventListener("input", (e)=>{
 const sin_txt_sup = document.getElementById("sin-txt-sup");
 sin_txt_sup.addEventListener('click', function() {
     if(sin_txt_sup.checked) {
-        main_txt_superior.classList.add("ocultar-panel");
+        main_txt_superior.classList.add("ocultar");
     } else {
-        main_txt_superior.classList.remove("ocultar-panel");
+        main_txt_superior.classList.remove("ocultar");
     }
 });
-
 
 const sin_txt_inf = document.getElementById("sin-txt-inf");
 sin_txt_inf.addEventListener('click', function() {
     if(sin_txt_inf.checked) {
-        main_txt_inferior.classList.add("ocultar-panel");
+        main_txt_inferior.classList.add("ocultar");
     } else {
-        main_txt_inferior.classList.remove("ocultar-panel");
+        main_txt_inferior.classList.remove("ocultar");
     }
 });
 
+/* ======================== Fuente - Tamaño - Alineación ======================== */
+const selecionar_fuentes = document.getElementById("selecionar-fuentes");
+function cargarFuentes(){
+    var fuentes = "";
+    let array=[ "Arial","Arial Black", "Bradley Hand", "Brush Script MT",
+                "Cambria", "Comic Sans MS", "Courier",
+                "Didot", "Garamond", "Georgia", "Helvetica", 
+                "Impact", "Lucida Console", "Luminari",
+                "Tahoma", "Times New Roman",
+                "Trebuchet MS", "Verdana"      
+            ];     
+    for (var i = 0; i < array.length; i++) {
+        fuentes += `<option value="`+array[i]+ `">`+ array[i]+`</option>`;
+    }
+    selecionar_fuentes.innerHTML = fuentes;   
+}
+
+selecionar_fuentes.addEventListener("change", ()=>{
+    main_txt_superior.style.fontFamily = selecionar_fuentes.value;
+    main_txt_inferior.style.fontFamily = selecionar_fuentes.value;
+})
+
+const tamanio_txt_meme = document.getElementById("tamanio-txt-meme");
+tamanio_txt_meme.addEventListener("click", ()=>{
+    main_txt_superior.style.fontSize = `${tamanio_txt_meme.value}px`;
+    main_txt_inferior.style.fontSize = `${tamanio_txt_meme.value}px`;
+})
+
+document.getElementById("btn-alinear-izq").addEventListener("click", ()=>{
+    main_txt_superior.style.textAlign = "left";
+    main_txt_inferior.style.textAlign = "left";
+})
+
+document.getElementById("btn-alinear-cen").addEventListener("click", ()=>{
+    main_txt_superior.style.textAlign = "center";
+    main_txt_inferior.style.textAlign = "center";
+})
+
+document.getElementById("btn-alinear-der").addEventListener("click", ()=>{
+    main_txt_superior.style.textAlign = "right";
+    main_txt_inferior.style.textAlign = "right";
+})
 
 
 
@@ -305,6 +330,7 @@ btn_descargar_meme.addEventListener("click", () => {
 function funcionesAEjecutar(){
     mostrarPanelImagen1300(); /* El Panel de IMG debe ser VISIBLE, si la ventana está a mas de 1300px*/
     dispositivoMovil();       /* Carga la pg, y es un celu?*/
+    cargarFuentes();
 }
 
 /* Cuando se termina de cargar la página  */

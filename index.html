@@ -54,10 +54,10 @@
         </nav>
     </header>
 
-    <!--  ---- CONTENEDOR ---- (Main y Aside) -->
+    <!--  ---- CONTENEDOR ---- (MAIN y SECTION) -->
     <div class="contenedor-ppal" id="contenedor-ppal">
 
-        <!--  Main  (sector principal para la imagen y el texto) -->
+        <!--  Main  (sector principal para la imagen y el texto del MEME) -->
         <main class="contenedor-main">
             <div class="main-img-txt" id="main-img-tx">
                 <p id="main-txt-superior" class="main-txt">TEXTO SUPERIOR</p>
@@ -71,14 +71,14 @@
             </button>
         </main>
 
-        <!--  Aside  (controles para img y txt) -->
-        <aside class="contenedor-paneles ocultar-panel">
+        <!--  SECTION  (controles para img y txt) -->
+        <section class="contenedor-paneles ocultar">
             <button class="panel-btn-cerrar" id="panel-btn-cerrar">
                 <i class="fa fa-times-circle-o" aria-hidden="true"></i>
             </button>
 
             <!--  Controles para imagen -->
-            <div class="panel-img ocultar-panel">
+            <div class="panel-img ocultar">
 
                 <h3 class="panel-titulo animate__animated animate__bounce">IMAGEN</h3>
 
@@ -88,14 +88,14 @@
                         <h6>ORIGEN</h6>
 
                         <div class="panel-sectores">
-                            <button class="aside-img-btn-subir" id="subir-url-btn">
+                            <button class="seccion-img-btn-subir" id="subir-url-btn">
                                 <i class="fa-solid fa-link"></i>
                                 URL
                             </button>
 
-                            <button class="aside-img-btn-subir" id="subir-pc-btn">
+                            <button class="seccion-img-btn-subir" id="subir-pc-btn">
                                 <i class="fa-solid fa-desktop"></i>
-                                Ordenador
+                                Computadora
                             </button>
                         </div>
 
@@ -128,7 +128,7 @@
                             </div>
 
                             <div class="panel-sector-fondo-modoMezcla"> 
-                                <select name="modo-mezcla-fondo" class="panel-control-modoMezcla" id="modo-mezcla"
+                                <select name="" class="panel-control-modoMezcla" id="modo-mezcla"
                                     aria-label="Modos de mezcla entre color de fondo e imágen">
                                     <option value="unset" selected>Ninguno</option>
                                     <option value="lighten">Aclarar</option>
@@ -198,7 +198,7 @@
                                 <input type="range" id="invertido" min="0" max="1" value="1" step="0.1">
                             </div>
 
-                            <button class="aside-img-btn-reestablecer" id="btn-reestablecer-filtros">
+                            <button class="seccion-img-btn-reestablecer" id="btn-reestablecer-filtros">
                                 <i class="fa fa-undo" aria-hidden="true"></i>
                                 Restablecer Filtros
                             </button>
@@ -210,11 +210,11 @@
             </div>
 
             <!--  Controles para texto -->
-            <div class="panel-txt ocultar-panel">
+            <div class="panel-txt ocultar">
                 <h3 class="panel-titulo animate__animated animate__bounce">TEXTO</h3>
                 
                 <div class="contenedor-para-poner-a-dos-columnas"> <!--txt sup/inf  -->
-                    <div class="panel-sectores-controles filtros-col">
+                    <div class="panel-sectores-controles columnas-txt">
                         <h6>SUPERIOR</h6>
                         <textarea class="input-textarea-supInf" id="input-txt-sup" aria-label="Escriba el texto superior"
                             placeholder="Texto superior..."></textarea>
@@ -224,7 +224,7 @@
                         </div>
                     </div>
 
-                    <div class="panel-sectores-controles filtros-col">
+                    <div class="panel-sectores-controles  columnas-txt">
                         <h6>INFERIOR</h6>
                         <textarea class="input-textarea-supInf" id="input-txt-inf"
                             aria-label="Escriba el texto inferior" placeholder="Texto inferior..."></textarea>
@@ -236,39 +236,30 @@
 
                 </div>
 
-
                 <div class="panel-sectores-controles">
                     <h6>FUENTE</h6>
                     <div class="contenedor-para-poner-a-dos-columnas">
-                        <div class="panel-sector-seleccionar-fuente">
-                            <select name="Familia de fuente" class="selecionar-fuentes" id="selecionar-fuentes" aria-label="Familia de fuente">
-                                <option value="Arial">Arial</option>
-                                <option value="Arial Black">Arial Black</option>
-                                <option value="American Typewriter">American Typewriter</option>
-                                <option value="Andale Mono">Andale Mono</option>
-                                <option value="Comic Sans MS">Comic Sans MS</option>
-                                <option value="Helvetica">Helvetica</option>
-                                <option value="Impact" selected>Impact</option>
-                                <option value="Verdana">Verdana</option>
-                                <option value="Times New Roman">Times New Roman</option>
-                              </select>
-
+                        <div class="panel-sector-seleccionar-fuente filtros-col">
+                            <select name="" class="selecionar-fuentes" id="selecionar-fuentes" aria-label="Familia de fuente">
+                                <!-- Las fuenstes se cargan en main.js -->
+                            </select>
                         </div>
-                        <div class="contenedor-tmnTxt-alinear">
-                            <input type="number" name="Tamaño del texto" aria-label="Tamaño del texto" 
-                            class="tamanio-txt-meme" id="tamanio-txt-meme" min="12"
-                            value="40"/>
-                          
+
+                        <div class="contenedor-tmnTxt-alinear filtros-col">
+                            <input type="number" name="" aria-label="Tamaño del texto" 
+                            class="tamanio-txt-meme" id="tamanio-txt-meme" 
+                            min="10" max="80" value="50" step="2"/>
+                         
                             <div>
-                                <button class="btn-alinear" id="btns-alinear-izq"
+                                <button class="btn-alinear" id="btn-alinear-izq"
                                     aria-label="Alineación a izquierda">
                                     <i class="fa-solid fa-align-left"></i>
                                 </button>
-                                    <button class="btn-alinear" id="btns-alinear-cen"
+                                    <button class="btn-alinear" id="btn-alinear-cen"
                                     aria-label="Alineación al centro">
                                     <i class="fa-solid fa-align-center"></i>
                                 </button>
-                                    <button class="btn-alinear" id="btns-alinear-der"
+                                    <button class="btn-alinear" id="btn-alinear-der"
                                     aria-label="Alineación a derecha">
                                     <i class="fa-solid fa-align-right"></i>
                                 </button>
@@ -279,32 +270,32 @@
                 </div>
 
                 <div class="contenedor-para-poner-a-dos-columnas">
-                    <div class="panel-sectores-controles">
+                    <div class="panel-sectores-controles panel-sectores columnas-txt">
                         <div>
                             <h6>COLOR</h6>
                         </div>
-                        <div>
+                        <div >
                             <h6>FONDO</h6>
                         </div>
                     </div>
 
-                    <div class="panel-sectores-controles">
+                    <div class="panel-sectores-controles columnas-txt">
                         <h6>CONTORNO</h6>
                     </div>
                 </div>
 
                 <div class="contenedor-para-poner-a-dos-columnas">
-                    <div class="panel-sectores-controles">
+                    <div class="panel-sectores-controles columnas-txt">
                         <h6>ESPACIADO</h6>
                     </div>
 
-                    <div class="panel-sectores-controles">
+                    <div class="panel-sectores-controles columnas-txt">
                         <h6>INTERLINEADO</h6>
                     </div>
                 </div>
             </div>
 
-        </aside>
+        </section>
     </div>
 
 </body>
