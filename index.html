@@ -4,6 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <!-- De esta forma indicas a los rastreadores que no muestren la versión almacenada en la caché en los resultados de búsqueda, sino la actual.-->
+    <meta name="robots" content="noarchive"> 
+
     <title>Generador de Meme</title>
     <link rel="icon" href="favicon.ico" type="image/png" alt="Favicon" />
 
@@ -11,11 +15,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"
         integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA=="
         crossorigin="anonymous" referrerpolicy="no-referrer">
-        </script>
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"
         integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer">
-        </script>
+    </script>
 
     <!-- animaciones para mis títulos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
@@ -72,13 +76,13 @@
         </main>
 
         <!--  SECTION  (controles para img y txt) -->
-        <section class="contenedor-paneles ocultar">
+        <section class="contenedor-paneles ocultar" id="contenedor-paneles">
             <button class="panel-btn-cerrar" id="panel-btn-cerrar">
                 <i class="fa fa-times-circle-o" aria-hidden="true"></i>
             </button>
 
             <!--  Controles para imagen -->
-            <div class="panel-img ocultar">
+            <div class="panel-img ocultar" id="panel-img">
 
                 <h3 class="panel-titulo animate__animated animate__bounce">IMAGEN</h3>
 
@@ -99,12 +103,12 @@
                             </button>
                         </div>
 
-                        <div class="ocultar-input-subir-img" id="subir-url-input">
+                        <div class="ocultar" id="subir-url-input">
                             <input type="url" name="" aria-label="Seleccionar archivo desde una URL"
                                 placeholder="URL de la imagen">
                         </div>
 
-                        <div class="ocultar-input-subir-img" id="subir-pc-input">
+                        <div class="ocultar" id="subir-pc-input">
                             <div class="archivo-img">
                                 <label for="input-file">
                                     <i class="fa-solid fa-upload"> </i>. Seleccionar Archivo</label>
@@ -210,7 +214,7 @@
             </div>
 
             <!--  Controles para texto -->
-            <div class="panel-txt ocultar">
+            <div class="panel-txt ocultar"  id="panel-txt">
                 <h3 class="panel-titulo animate__animated animate__bounce">TEXTO</h3>
                 
                 <div class="contenedor-para-poner-a-dos-columnas"> <!--txt sup/inf  -->
@@ -236,19 +240,19 @@
 
                 </div>
 
-                <div class="panel-sectores-controles">
+                <div class="panel-sectores-controles">  <!--Fuentes, tmñ, alinear  -->
                     <h6>FUENTE</h6>
                     <div class="contenedor-para-poner-a-dos-columnas">
                         <div class="panel-sector-seleccionar-fuente filtros-col">
-                            <select name="" class="selecionar-fuentes" id="selecionar-fuentes" aria-label="Familia de fuente">
-                                <!-- Las fuenstes se cargan en main.js -->
+                            <select name="" class="selecionar-fuentes" id="selecionar-fuentes" aria-label="Seleccionar fuente para el texto">
+                                <!-- Las fuentes se cargan en main.js -->
                             </select>
                         </div>
 
                         <div class="contenedor-tmnTxt-alinear filtros-col">
                             <input type="number" name="" aria-label="Tamaño del texto" 
-                            class="tamanio-txt-meme" id="tamanio-txt-meme" 
-                            min="10" max="80" value="50" step="2"/>
+                                class="tamanio-txt-meme" id="tamanio-txt-meme" 
+                                min="10" max="80" value="50" step="2"/>
                          
                             <div>
                                 <button class="btn-alinear" id="btn-alinear-izq"
@@ -273,7 +277,7 @@
                     
                     <div class="panel-sectores-controles columnas-txt">
                         <div class="fila filtros-col">
-                            <div class="panel-sectores columna">
+                            <div class="panel-sectores columna sin-margin">
                                 <h6>COLOR</h6>
                                 <div class="panel-sector-fondo-color tamanio">
                                     <input type="color" class="input-color" id="input-color-txt" value="#FFFFFF"
@@ -283,7 +287,7 @@
                                 </div>
                             </div>
 
-                            <div class="panel-sectores columna">
+                            <div class="panel-sectores columna sin-margin">
                                 <h6>FONDO</h6>
                                 <div class="panel-sector-fondo-color tamanio">
                                     <input type="color" class="input-color" id="input-color-fon" value="#FFFFFF"
@@ -323,17 +327,40 @@
                 <div class="contenedor-para-poner-a-dos-columnas">
                     <div class="panel-sectores-controles columnas-txt">
                         <h6>ESPACIADO</h6>
+                        <input type="number" name="" aria-label="Separación entre el texto y la imagen" 
+                        class="espaciado-txt-meme ancho-alto-esp-inter" id="espaciado-txt-meme" 
+                        min="10" max="50" value="30" step="1"/>
                     </div>
 
                     <div class="panel-sectores-controles columnas-txt">
                         <h6>INTERLINEADO</h6>
+                        <div class="panel-sector-fondo-modoMezcla ancho-alto-esp-inter"> 
+                            <select name="" class="panel-control-modoMezcla" id="interlineado-txt-meme"
+                                aria-label="Seleccionar interlineado del texto">
+                                <option value=1  selected>1</option>
+                                <option value=1.15       >1.15</option>
+                                <option value=2          >2   </option>
+                                <option value=2.5        >2.5 </option>
+                            </select>
+                        </div>
                     </div>
                 </div>
             </div>
-
         </section>
     </div>
 
+    <!-- BOTON DE IR PARA ARRIBA/ABAJO SOLO EN pantalla < 850px-->
+    <div>
+        <a class="ir-arriba-abajo arriba ocultar" href="#contenedor-header"  id="ir-arriba" >
+            <i class="fa-solid fa-circle-up"></i>   
+        </a>
+
+        <a class="ir-arriba-abajo abajo ocultar" href="#contenedor-paneles"  id="ir-abajo" >
+            <i class="fa-solid fa-circle-down"></i> 
+        </a>
+
+    </div>
+   
 </body>
 <script src="main.js"></script>
 

@@ -51,9 +51,12 @@ window.visualViewport.addEventListener("resize", () => {
 
 
 /* ======================== Eventos de los BOTONES de IMG Y TXT  (hacer aparecer un PANEL u otro) ======================== */
-const panel_img = document.querySelector(".panel-img");
-const panel_txt = document.querySelector(".panel-txt");
-const panel_cnt = document.querySelector(".contenedor-paneles");
+const ir_arriba = document.getElementById("ir-arriba");
+const ir_abajo = document.getElementById("ir-abajo");
+
+const panel_img = document.getElementById("panel-img");
+const panel_txt = document.getElementById("panel-txt");
+const panel_cnt = document.getElementById("contenedor-paneles");
 
 function mostrarPanelImagen(){
     panel_txt.classList.add("ocultar");
@@ -73,6 +76,11 @@ window.visualViewport.addEventListener("resize", () => { /* Cuando se agranda la
     if ( window.innerWidth >= (1300) &&  !panel_cnt.classList.contains("mostrar") ) {
            mostrarPanelImagen();
     }
+
+    if ( window.innerWidth <= (850) &&  panel_cnt.classList.contains("mostrar") ) {
+        ir_arriba.classList.remove("ocultar");
+        ir_abajo.classList.remove("ocultar");
+    }
 });
 
 document.getElementById("nav-btn-img").addEventListener("click", (e)=>{
@@ -80,6 +88,11 @@ document.getElementById("nav-btn-img").addEventListener("click", (e)=>{
     panel_img.classList.remove("ocultar");
     panel_cnt.classList.remove("ocultar");
     panel_cnt.classList.add("mostrar");
+
+    if ( window.innerWidth <= (850) &&  panel_cnt.classList.contains("mostrar") ) {
+        ir_arriba.classList.remove("ocultar");
+        ir_abajo.classList.remove("ocultar");
+    }
     e.preventDefault();
 })
 
@@ -88,6 +101,11 @@ document.getElementById("nav-btn-txt").addEventListener("click", (e)=>{
     panel_txt.classList.remove("ocultar");
     panel_cnt.classList.remove("ocultar");
     panel_cnt.classList.add("mostrar");
+  
+    if ( window.innerWidth <= (850) &&  panel_cnt.classList.contains("mostrar") ) {
+        ir_arriba.classList.remove("ocultar");
+        ir_abajo.classList.remove("ocultar");
+    }
     e.preventDefault();
 })
 
@@ -96,6 +114,11 @@ document.getElementById("panel-btn-cerrar").addEventListener("click", (e)=>{
     panel_txt.classList.add("ocultar");
     panel_cnt.classList.add("ocultar");
     panel_cnt.classList.remove("mostrar");
+   
+    if ( window.innerWidth <= (850) ) {
+        ir_arriba.classList.add("ocultar");
+        ir_abajo.classList.add("ocultar");
+    }
     e.preventDefault();
 })
 
@@ -126,12 +149,12 @@ function dispositivoMovil(){ /* Si es celu, cambia el icono de subir img por Des
 }
 
 subir_url_btn.addEventListener("click",()=>{
-    subir_url_input.classList.add("ver-input-subir-img");
-    subir_pc_input.classList.remove("ver-input-subir-img");
+    subir_url_input.classList.add("mostrar");
+    subir_pc_input.classList.remove("mostrar");
 })
 subir_pc_btn.addEventListener("click",()=>{
-    subir_pc_input.classList.add("ver-input-subir-img");
-    subir_url_input.classList.remove("ver-input-subir-img");
+    subir_pc_input.classList.add("mostrar");
+    subir_url_input.classList.remove("mostrar");
 })
 
 /* Si la imagen es por URL*/
@@ -158,7 +181,7 @@ input_file.addEventListener("change", (e) => {
 
 /* ======================== Seleccionar color de FONDO img,  y BLEND MODE (se aplica al background) ======================== */
 const input_color = document.getElementById("input-color"); //input que selecciona color
-const modo_mezcla = document.getElementById("modo-mezcla"); //label donde muestra el Hexa del color
+const modo_mezcla = document.getElementById("modo-mezcla"); 
 
 input_color.addEventListener("input", (e)=>{
     main_img.style.backgroundColor = `${e.target.value}`;
@@ -292,7 +315,7 @@ selecionar_fuentes.addEventListener("change", ()=>{
 })
 
 const tamanio_txt_meme = document.getElementById("tamanio-txt-meme");
-tamanio_txt_meme.addEventListener("click", ()=>{
+tamanio_txt_meme.addEventListener("input", ()=>{
     main_txt_superior.style.fontSize = `${tamanio_txt_meme.value}px`;
     main_txt_inferior.style.fontSize = `${tamanio_txt_meme.value}px`;
 })
@@ -312,6 +335,86 @@ document.getElementById("btn-alinear-der").addEventListener("click", ()=>{
     main_txt_inferior.style.textAlign = "right";
 })
 
+
+/* ======================== Color de la fuente, color de fondo, y fondo transparente ======================== */
+const input_color_txt = document.getElementById("input-color-txt");
+const input_color_fon = document.getElementById("input-color-fon");
+const fondo_transparente = document.getElementById("fondo-transparente");
+
+input_color_txt.addEventListener("input", ()=>{
+    main_txt_superior.style.color = `${input_color_txt.value}`;
+    main_txt_inferior.style.color = `${input_color_txt.value}`;
+})
+
+input_color_fon.addEventListener("input", ()=>{
+    if(fondo_transparente.checked) {
+        main_txt_superior.style.backgroundColor = `transparent`;
+        main_txt_inferior.style.backgroundColor = `transparent`;
+    } else {
+        main_txt_superior.style.backgroundColor = `${input_color_fon.value}`;
+        main_txt_inferior.style.backgroundColor = `${input_color_fon.value}`;
+    }
+})
+
+fondo_transparente.addEventListener('click', ()=> {
+    if(fondo_transparente.checked) {
+        main_txt_superior.style.backgroundColor = `transparent`;
+        main_txt_inferior.style.backgroundColor = `transparent`;
+    } else {
+        main_txt_superior.style.backgroundColor = `${input_color_fon.value}`;
+        main_txt_inferior.style.backgroundColor = `${input_color_fon.value}`;
+    }
+});
+
+
+/* ======================== Contorno de la fuente ======================== */
+const btn_contorno_ninguno = document.getElementById("btn-contorno-ninguno");
+const btn_contorno_claro = document.getElementById("btn-contorno-claro");
+const btn_contorno_oscuro = document.getElementById("btn-contorno-oscuro");
+
+btn_contorno_ninguno.addEventListener("click", ()=>{
+    main_txt_superior.style.textShadow = `none`;
+    main_txt_inferior.style.textShadow = `none`;
+});
+
+btn_contorno_claro.addEventListener("click", ()=>{
+    /* desplazamiento hor (X-offset), el desplazamiento vert (Y-offset), el desenfoque (blur) y el color (color*/
+    main_txt_superior.style.textShadow = `2px  0px 0px white, 
+                                         -2px  0px 0px white,
+                                          0px  2px 0px white,
+                                          0px -2px 0px white`;
+    main_txt_inferior.style.textShadow = `2px  0px 0px white, 
+                                          -2px  0px 0px white,
+                                           0px  2px 0px white,
+                                           0px -2px 0px white`;
+});
+
+btn_contorno_oscuro.addEventListener("click", ()=>{
+    /* desplazamiento hor (X-offset), el desplazamiento vert (Y-offset), el desenfoque (blur) y el color (color*/
+    main_txt_superior.style.textShadow = `2px  0px 0px black, 
+                                         -2px  0px 0px black,
+                                          0px  2px 0px black,
+                                          0px -2px 0px black`;
+    main_txt_inferior.style.textShadow = `2px  0px 0px black, 
+                                          -2px  0px 0px black,
+                                           0px  2px 0px black,
+                                           0px -2px 0px black`;                                      
+});
+
+/* ======================== Espaciado e Interlineado ======================== */
+const espaciado_txt_meme = document.getElementById("espaciado-txt-meme");
+const interlineado_txt_meme = document.getElementById("interlineado-txt-meme");
+
+espaciado_txt_meme.addEventListener("change", () => {
+    main_txt_superior.style.padding = `${espaciado_txt_meme.value}px 20px`;
+    main_txt_inferior.style.padding = `${espaciado_txt_meme.value}px 20px`;
+});
+  
+interlineado_txt_meme.addEventListener("change", () => {
+    main_txt_superior.style.lineHeight = `${interlineado_txt_meme.value}`;
+    main_txt_inferior.style.lineHeight = `${interlineado_txt_meme.value}`;
+});
+  
 
 
 /* ================================================================================================*/
@@ -334,4 +437,5 @@ function funcionesAEjecutar(){
 }
 
 /* Cuando se termina de cargar la página  */
-window.onload  =  funcionesAEjecutar;
+window.onload  =  funcionesAEjecutar; 
+/* window.onpageshow = funcionesAEjecutar; */

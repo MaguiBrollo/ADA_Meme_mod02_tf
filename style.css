@@ -221,7 +221,7 @@ body{
 }
 
 .panel-sectores-controles{   /*Borde de cada control*/
-    margin-top: 20px;
+    margin-top: 10px;
     border: 1px solid var(--color-cont-ppal);
     padding: 5px;
     border-radius: 10px;
@@ -278,13 +278,6 @@ input[type="url"]{
     cursor: pointer;  /*Para que aparezca la manito sobre el btn. */
 }
 
-.ocultar-input-subir-img{
-    display: none;
-}
-.ver-input-subir-img{
-    display: block;
-}
-
 input[type="url"]{
     height: calc( var(--alto-botones-paneles)* 1px);
     width: calc(100% - 0px);
@@ -335,8 +328,8 @@ input[type="url"]{
 ::-webkit-color-swatch-wrapper { /*Para que input=color, quede redondo*/
     padding: 0;
     cursor: pointer;
-    height: 20px; /*para el cículo de color*/
-    width: 20px; /*para el cículo de color*/
+    height: 20px; /*Para el cículo de color*/
+    width: 20px;  /*Para el cículo de color*/
     
 }
 ::-webkit-color-swatch { /*Para que input=color, quede redondo*/
@@ -349,8 +342,10 @@ input[type="url"]{
     box-shadow: 5px 5px 4px -3px var(--color-cont-ppal);
     border-radius: 3px;
     display: flex;
-    width: calc(50% - 2px);   /*110px;*/
+    width: calc(50% - 2px);  
     height: var(--alto-botones-paneles)px;
+    display: flex;
+    align-items: center;
 }
 .panel-sector-fondo-modoMezcla select{
   	border: 0;
@@ -361,7 +356,6 @@ input[type="url"]{
     cursor: pointer;
     width: 100%;
 }
-
  
 /* ------------------ Filtros */
 .filtros{
@@ -385,7 +379,7 @@ input[type='range']::-webkit-slider-thumb {
     -webkit-appearance: none;
     cursor: ew-resize;
     background: var(--color-header);
-    box-shadow: -110px 0 0 110px var(--color-cont-ppal); /*parte izq*/
+    box-shadow: -120px 0 0 120px var(--color-cont-ppal); /*parte izq*/
 }
 
 .seccion-img-btn-reestablecer{ /*  BTN reestablecer */
@@ -400,11 +394,17 @@ input[type='range']::-webkit-slider-thumb {
     cursor: pointer;  
 }
 
+
+.panel-sector-fondo-color:hover .input-color{ /*Para que tome a los dos al mismo tiempo*/
+    background-color: var(--color-hover);    /*Esto tmbn sirve para panel de TXT*/
+}
+
 .archivo-img label:hover,
-.panel-sector-fondo-color:hover, [type="color"]:hover,
-.seccion-img-btn-subir:hover,
-.panel-sector-fondo-modoMezcla select:hover, 
+.panel-sector-fondo-color:hover, 
+[type="color"]:hover,
+.panel-sector-fondo-modoMezcla:hover select, 
 .panel-sector-fondo-modoMezcla:hover,
+.seccion-img-btn-subir:hover,
 .seccion-img-btn-reestablecer:hover{
     background-color: var(--color-hover);
 }
@@ -463,7 +463,7 @@ input[type='range']::-webkit-slider-thumb {
     border: 0px;
     box-shadow: 5px 5px 4px -3px var(--color-cont-ppal);
     font-size: 0.7rem;
-    width: 30px;  
+    width: 35px;  
     height: calc( var(--alto-botones-paneles)* 1px);
 
     cursor: pointer;  /*Para que aparezca la manito sobre el btn. */
@@ -489,7 +489,7 @@ input[type='range']::-webkit-slider-thumb {
     margin-top: 5px;
 }
 
-.btn-contorno-ninguno{  /* Para el btn de URL/PC. */
+.btn-contorno-ninguno{ 
     background-color: var(--color-fondoBtn);
     border-radius: 5px ;
     border: 0px;
@@ -499,7 +499,17 @@ input[type='range']::-webkit-slider-thumb {
     font-size: 0.7rem;
     width: calc(33% - 2px);   
     height: calc( var(--alto-botones-paneles)* 1px);
-    cursor: pointer;  /*Para que aparezca la manito sobre el btn. */
+    cursor: pointer; 
+}
+
+.ancho-alto-esp-inter{
+    margin-top: 5px;
+    width: 100%;
+    height: calc( var(--alto-botones-paneles)* 1px);
+}
+
+.sin-margin{
+    margin: 0px;
 }
 
 .input-textarea-supInf:hover,
@@ -513,6 +523,26 @@ input[type='range']::-webkit-slider-thumb {
 
 
 
+/*   BOTONES ARRIBA-ABAJO solo en pantala <850px */
+.ir-arriba-abajo{
+	padding:5px;
+	background: var(--color-fondoBtn);
+	font-size: 1rem;
+	color:var(--color-fuente);
+    box-shadow: 5px 5px 3px -3px var(--color-cont-ppal);
+	border-radius: 5px ;
+    cursor:pointer;
+	position: fixed;
+    right:10px;
+}
+.arriba{
+	top:10px;
+}
+
+.abajo{
+	bottom:10px;
+}
+
 /* -----  MEDIA QUERY  "SECTION" -------  */
 /*-- Cuando la ventana está es >=1300 el BTN CERRAR panel debe ocultarse.  */
 @media(width> 1300px){
@@ -522,7 +552,7 @@ input[type='range']::-webkit-slider-thumb {
 }
 
 /* Para ubicar el SECTION (txt e img) debajo de la Cajita-Meme. */
-@media (width < 550px) {  /* PANELES flaquitos (UNA columna) y debajo*/
+@media (width < 570px) {  /* PANELES flaquitos (UNA columna) y debajo*/
     body{
         height: auto;
     }
@@ -549,7 +579,7 @@ input[type='range']::-webkit-slider-thumb {
     }
 }
 
-@media (550px <= width <= 850px) {  /* PANELES gorditos (DOS columnas) y debajo*/
+@media (570px <= width <= 850px) {  /* PANELES gorditos (DOS columnas) y debajo*/
     body{
         height: auto;
     }
@@ -566,7 +596,7 @@ input[type='range']::-webkit-slider-thumb {
         position: relative;  /* fixed para que quede a la derecha*/
         width: calc(var(--ancho-panel-imgtxt) * 2px);
         height: 490px;
-        margin-bottom: 30px;
+        margin-bottom: 50px;
     }
     .contenedor-para-poner-a-dos-columnas{
         display: flex;
