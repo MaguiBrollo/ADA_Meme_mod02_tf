@@ -33,7 +33,7 @@ window.visualViewport.addEventListener("resize", () => {
     if (window.innerWidth <= (600 + cajita_margin)) {
         const tm_ancho = window.visualViewport.width - cajita_margin;
         const tm_txt = Math.ceil(( (window.innerWidth - cajita_margin) / 10) - 10); /*inicialmente da 60, es muy grande por eso le quito 10*/
-    
+        
         cajita_del_meme.style.width  = `${tm_ancho}px`;
         cajita_del_meme.style.height = `${tm_ancho}px`;
 
@@ -89,11 +89,12 @@ document.getElementById("nav-btn-img").addEventListener("click", (e)=>{
     panel_cnt.classList.remove("ocultar");
     panel_cnt.classList.add("mostrar");
 
+   // subir_url_btn.focus(); 
+
     if ( window.innerWidth <= (850) &&  panel_cnt.classList.contains("mostrar") ) {
         ir_arriba.classList.remove("ocultar");
         ir_abajo.classList.remove("ocultar");
     }
-    e.preventDefault();
 })
 
 document.getElementById("nav-btn-txt").addEventListener("click", (e)=>{
@@ -101,12 +102,11 @@ document.getElementById("nav-btn-txt").addEventListener("click", (e)=>{
     panel_txt.classList.remove("ocultar");
     panel_cnt.classList.remove("ocultar");
     panel_cnt.classList.add("mostrar");
-  
+
     if ( window.innerWidth <= (850) &&  panel_cnt.classList.contains("mostrar") ) {
         ir_arriba.classList.remove("ocultar");
         ir_abajo.classList.remove("ocultar");
     }
-    e.preventDefault();
 })
 
 document.getElementById("panel-btn-cerrar").addEventListener("click", (e)=>{
@@ -119,7 +119,6 @@ document.getElementById("panel-btn-cerrar").addEventListener("click", (e)=>{
         ir_arriba.classList.add("ocultar");
         ir_abajo.classList.add("ocultar");
     }
-    e.preventDefault();
 })
 
 /* ================================================================================================ */
@@ -160,9 +159,15 @@ subir_pc_btn.addEventListener("click",()=>{
 /* Si la imagen es por URL*/
 const main_img = document.getElementById("main-img"); /* cajita DIV donde va a ir la img como background*/
 
+function formatearImg(){
+    main_img.style.backgroundSize = `100%` ;
+    main_img.style.backgroundRepeat= `no-repeat`;
+    main_img.style.backgroundPosition= `center center`;
+}
+
 subir_url_input.addEventListener("input",(e)=>{
     main_img.style.backgroundImage = `url("${e.target.value}")`;
-    e.preventDefault();
+    formatearImg();
 })
 
 /* Si la imagen es por PC*/
@@ -173,6 +178,7 @@ input_file.addEventListener("change", (e) => {
       const reader = new FileReader();
       reader.onload = (e) => {
         main_img.style.backgroundImage = `url("${e.target.result}")`;
+        formatearImg();
       };
       reader.readAsDataURL(file);
     }
@@ -309,7 +315,7 @@ function cargarFuentes(){
     selecionar_fuentes.innerHTML = fuentes;   
 }
 
-selecionar_fuentes.addEventListener("change", ()=>{
+selecionar_fuentes.addEventListener("input", ()=>{  /*estaba change y no tomaba*/
     main_txt_superior.style.fontFamily = selecionar_fuentes.value;
     main_txt_inferior.style.fontFamily = selecionar_fuentes.value;
 })
@@ -405,7 +411,7 @@ btn_contorno_oscuro.addEventListener("click", ()=>{
 const espaciado_txt_meme = document.getElementById("espaciado-txt-meme");
 const interlineado_txt_meme = document.getElementById("interlineado-txt-meme");
 
-espaciado_txt_meme.addEventListener("change", () => {
+espaciado_txt_meme.addEventListener("input", () => {
     main_txt_superior.style.padding = `${espaciado_txt_meme.value}px 20px`;
     main_txt_inferior.style.padding = `${espaciado_txt_meme.value}px 20px`;
 });

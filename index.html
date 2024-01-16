@@ -9,9 +9,9 @@
     <meta name="robots" content="noarchive"> 
 
     <title>Generador de Meme</title>
-    <link rel="icon" href="favicon.ico" type="image/png" alt="Favicon" />
+    <link rel="icon" href="favicon.ico" type="image/png"/>
 
-    <!------------------ Librerias externas para descargar el MEME com Img ------------------->
+    <!-- Librerías externas para descargar el MEME com Img -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"
         integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA=="
         crossorigin="anonymous" referrerpolicy="no-referrer">
@@ -21,28 +21,27 @@
         crossorigin="anonymous" referrerpolicy="no-referrer">
     </script>
 
-    <!-- animaciones para mis títulos -->
+    <!-- Animaciones para mis títulos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
-    <!------------------ STYLE para los iconos ------------------->
-    <!-- FontAwesome -->
+    <!-- STYLE para los iconos  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!------------------ MIS ESTILOS, DEBEN IR ÚLTIMO ------------->
+    <!--  MIS ESTILOS, DEBEN IR ÚLTIMO  -->
     <link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
 
-    <!--  ---- HEADER ----  (Título y barra de navegación)  -->
+    <!--   HEADER  (Título y barra de navegación)  -->
     <header class="contenedor-header" id="contenedor-header">
         <h1 class="header-titulo animate__animated animate__fadeInLeft">Generador de Memes</h1>
         <nav>
             <button class="nav-btn" id="nav-btn-img">
-                <i class="fa-solid fa-camera"></i></i>
+                <i class="fa-solid fa-camera"></i>
                 Imagen
             </button>
             <button class="nav-btn" id="nav-btn-txt">
@@ -58,15 +57,18 @@
         </nav>
     </header>
 
-    <!--  ---- CONTENEDOR ---- (MAIN y SECTION) -->
+    <!--  CONTENEDOR (MAIN y SECTION) -->
     <div class="contenedor-ppal" id="contenedor-ppal">
 
         <!--  Main  (sector principal para la imagen y el texto del MEME) -->
         <main class="contenedor-main">
             <div class="main-img-txt" id="main-img-tx">
-                <p id="main-txt-superior" class="main-txt">TEXTO SUPERIOR</p>
-                <div src alt class="main-img" id="main-img" aria-label="Imagen para el meme"></div>
-                <p id="main-txt-inferior" class="main-txt">TEXTO INFERIOR</p>
+                
+                <div class="main-img" id="main-img">
+                    <p id="main-txt-superior" class="main-txt">TEXTO SUPERIOR</p>
+                    <p id="main-txt-inferior" class="main-txt">TEXTO INFERIOR</p>
+                </div>
+                
             </div>
 
             <button class="main-btn-descargar" id="btn-descargar-meme">
@@ -104,7 +106,7 @@
                         </div>
 
                         <div class="ocultar" id="subir-url-input">
-                            <input type="url" name="" aria-label="Seleccionar archivo desde una URL"
+                            <input type="url" aria-label="Seleccionar archivo desde una URL"
                                 placeholder="URL de la imagen">
                         </div>
 
@@ -132,7 +134,7 @@
                             </div>
 
                             <div class="panel-sector-fondo-modoMezcla"> 
-                                <select name="" class="panel-control-modoMezcla" id="modo-mezcla"
+                                <select class="panel-control-modoMezcla" id="modo-mezcla"
                                     aria-label="Modos de mezcla entre color de fondo e imágen">
                                     <option value="unset" selected>Ninguno</option>
                                     <option value="lighten">Aclarar</option>
@@ -244,15 +246,14 @@
                     <h6>FUENTE</h6>
                     <div class="contenedor-para-poner-a-dos-columnas">
                         <div class="panel-sector-seleccionar-fuente filtros-col">
-                            <select name="" class="selecionar-fuentes" id="selecionar-fuentes" aria-label="Seleccionar fuente para el texto">
+                            <select class="selecionar-fuentes" id="selecionar-fuentes" aria-label="Seleccionar fuente para el texto">
                                 <!-- Las fuentes se cargan en main.js -->
                             </select>
                         </div>
 
                         <div class="contenedor-tmnTxt-alinear filtros-col">
-                            <input type="number" name="" aria-label="Tamaño del texto" 
-                                class="tamanio-txt-meme" id="tamanio-txt-meme" 
-                                min="10" max="80" value="50" step="2"/>
+                            <input type="number" class="tamanio-txt-meme" id="tamanio-txt-meme" 
+                                min="10" max="80" value="50" step="2" aria-label="Tamaño del texto"/>
                          
                             <div>
                                 <button class="btn-alinear" id="btn-alinear-izq"
@@ -308,15 +309,15 @@
                     <div class="panel-sectores-controles columnas-txt">
                         <h6>CONTORNO</h6>
                         <div class="panel-sectores">
-                            <button class="btn-contorno-ninguno" id="btn-contorno-ninguno">   
+                            <button class="btn-contorno" id="btn-contorno-ninguno">   
                                 Ninguno
                             </button>
 
-                            <button class="btn-contorno-ninguno" id="btn-contorno-claro">
+                            <button class="btn-contorno" id="btn-contorno-claro">
                                 Claro
                             </button>
 
-                            <button class="btn-contorno-ninguno" id="btn-contorno-oscuro">
+                            <button class="btn-contorno" id="btn-contorno-oscuro">
                                 Oscuro
                             </button>
                         </div>
@@ -327,15 +328,14 @@
                 <div class="contenedor-para-poner-a-dos-columnas">
                     <div class="panel-sectores-controles columnas-txt">
                         <h6>ESPACIADO</h6>
-                        <input type="number" name="" aria-label="Separación entre el texto y la imagen" 
-                        class="espaciado-txt-meme ancho-alto-esp-inter" id="espaciado-txt-meme" 
-                        min="10" max="50" value="30" step="1"/>
+                        <input type="number" class="ancho-alto-esp-inter" id="espaciado-txt-meme" 
+                        min="10" max="50" value="30" step="1" aria-label="Separación entre el texto y la imagen" />
                     </div>
 
                     <div class="panel-sectores-controles columnas-txt">
                         <h6>INTERLINEADO</h6>
                         <div class="panel-sector-fondo-modoMezcla ancho-alto-esp-inter"> 
-                            <select name="" class="panel-control-modoMezcla" id="interlineado-txt-meme"
+                            <select class="panel-control-modoMezcla" id="interlineado-txt-meme"
                                 aria-label="Seleccionar interlineado del texto">
                                 <option value=1  selected>1</option>
                                 <option value=1.15       >1.15</option>
