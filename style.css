@@ -587,7 +587,7 @@ input[type="color"] :hover,
     }
     .contenedor-ppal{ 
         position: relative;
-        min-height: 88.9vh;
+        min-height: 100vh;
         top:0px;
         flex-direction: column;  /*esto cambia*/
     }
@@ -614,7 +614,7 @@ input[type="color"] :hover,
     }
     .contenedor-ppal{
         position: relative; 
-        min-height: 87.9vh;
+        min-height: 100vh;
         top:0px;
         flex-direction: column;  /*esto cambia*/
     }
