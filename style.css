@@ -7,10 +7,33 @@
 /* Fuente para el Section-panel de txt e img */
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
+
+/* ====== Google fonts Para elegir las fuentes para el TXT del meme  ===== */
+/* Alegreya ExtraBold 800 Italic*/
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@1,800&display=swap');
+/* Amaranth Bold 700 Italic*/
+@import url('https://fonts.googleapis.com/css2?family=Amaranth:ital,wght@1,700&display=swap');
+/* Roboto Condensed ExtraBold 800 */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@800&display=swap');
+/* Quicksand Bold 700*/
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap');
+/* Josefin Slab SemiBold 600*/
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@600&display=swap');
+/* Playfair Display SemiBold 600 Italic*/
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&display=swap');
+/* Oswald Regular 400*/
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+/* Dosis Bold 700 */
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@700&display=swap');
+/* Cabin Condensed Regular 400*/
+@import url('https://fonts.googleapis.com/css2?family=Cabin+Condensed&display=swap');
+
+
+
 /* ============================= COLORES =============================*/
 :root{                               /* Modo OSCURO*/
     --color-header:    #1f2937 ;    /*grey  800 */
-    --color-seccion:     #374151;     /*grey  700 */
+    --color-seccion:   #374151;     /*grey  700 */
     --color-cont-ppal: #4b5563;     /*grey  600 */
     --color-fondoBtn:  #6b7280;     /*grey  500 */
     --color-fuente:    #f3f4f6;     /*grey  100 */
@@ -25,11 +48,12 @@
 
     --alto-botones-paneles: 27;
     --ancho-panel-imgtxt: 280;
+    --color-focus: #111827; /*grey 900*/
 }  
 
 :root[data-theme-color="light"] {     /* Modo CLARO*/
     --color-header:    #9ca3af;        /* gray 400*/
-    --color-seccion:     #f3f4f6;       /*  gray 100*/
+    --color-seccion:    #f3f4f6;       /*  gray 100*/
     --color-cont-ppal: #d1d5db;       /*  gray 300*/
     --color-fondoBtn:  #e5e7eb;       /*  gray 200*/
     --color-fuente:    #1f2937;       /*  gray 800*/
@@ -60,6 +84,9 @@ body{
     font-family: 'Lora', serif;
 }
 
+:focus { /*Resalta el borde cuando se selecciona con clic, o teclado (x ej TAB)*/
+    outline: 2px solid var(--color-focus);
+}
 
 /* ============================= HEADER =============================*/
 .contenedor-header{
@@ -79,9 +106,13 @@ body{
     font-size: 1.6rem;
 }
 .nav-btn{
-    all: unset;         /* Quita todo estilo por defecto.*/
+  /*   all: unset;         /*Quita todo estilo por defecto.*/
     padding: 10px;
     font-size: 0.8rem;
+    background-color: transparent;
+    cursor: pointer;
+    border: 0;
+    border-radius: 5px ;
 }
 .nav-btn:hover{
     background-color: var(--color-fondoBtn);
@@ -128,12 +159,10 @@ body{
     width: 100%;
     height: calc(var(--cajita_meme-tm-maximo) * 1px); 
     max-width: calc(var(--cajita_meme-tm-maximo) * 1px);    
-    
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-
 .main-txt,.main-img{
     width: 100%;
 }
@@ -157,13 +186,14 @@ body{
 
 .main-img{
     height: 100%;
-    background-color: black;
+    background-color: var(--color-header);
     background-size: cover;
     position: relative;
 }
 
 .main-btn-descargar{
-    all: unset;         /* Quita todo estilo por defecto.*/
+    /*  all: unset;       Quita todo estilo por defecto.*/
+    border: 0;
     background-color: #89a105;
     box-shadow: 3px 3px 3px var(--color-header);
     border-radius: 5px ;
@@ -184,7 +214,6 @@ body{
 .contenedor-paneles{
     width:calc(var(--ancho-panel-imgtxt) * 1px );
     height: 100%;
-    display: none;
     flex-direction: column;
     background-color: var(--color-seccion);
     padding: 35px 10px 20px 10px;
@@ -213,9 +242,9 @@ body{
 .ocultar{
     display: none;
 }
-.mostrar{
+/* .mostrar{
     display: block;
-}
+} */
 
 .panel-titulo{
     display: flex;

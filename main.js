@@ -59,25 +59,27 @@ const panel_txt = document.getElementById("panel-txt");
 const panel_cnt = document.getElementById("contenedor-paneles");
 
 function mostrarPanelImagen(){
-    panel_txt.classList.add("ocultar");
     panel_img.classList.remove("ocultar");
     panel_cnt.classList.remove("ocultar");
-    panel_cnt.classList.add("mostrar");
+    panel_txt.classList.add("ocultar");
 };
 
 function mostrarPanelImagen1300(){  /*Carga pg x 1ra vez, y está a más de 1300px, carga panel de IMG*/
-    if ( window.innerWidth >= (1300) &&  !panel_cnt.classList.contains("mostrar") ) {
+    
+    document.getElementById("nav-btn-img").focus(); /* carga la pg, y el focus lo tiene el btn imagen*/
+
+    if ( window.innerWidth >= (1300) &&  panel_cnt.classList.contains("ocultar") ) {
         mostrarPanelImagen();
     }
 }
  
 window.visualViewport.addEventListener("resize", () => { /* Cuando se agranda la ventana a más de 1300, debe conservar 
                                                             lo que estaba seleccionado, o mostrar Panel Imagen, por defecto */
-    if ( window.innerWidth >= (1300) &&  !panel_cnt.classList.contains("mostrar") ) {
+    if ( window.innerWidth >= (1300) &&  panel_cnt.classList.contains("ocultar") ) {
            mostrarPanelImagen();
     }
 
-    if ( window.innerWidth <= (850) &&  panel_cnt.classList.contains("mostrar") ) {
+    if ( window.innerWidth <= (850) &&  !panel_cnt.classList.contains("ocultar") ) {
         ir_arriba.classList.remove("ocultar");
         ir_abajo.classList.remove("ocultar");
     }
@@ -87,11 +89,11 @@ document.getElementById("nav-btn-img").addEventListener("click", (e)=>{
     panel_txt.classList.add("ocultar");
     panel_img.classList.remove("ocultar");
     panel_cnt.classList.remove("ocultar");
-    panel_cnt.classList.add("mostrar");
 
-   // subir_url_btn.focus(); 
-
-    if ( window.innerWidth <= (850) &&  panel_cnt.classList.contains("mostrar") ) {
+    subir_url_input.classList.add("ocultar"); /* Siempre que cargue IMG, deben estar ocultos*/
+    subir_pc_input.classList.add("ocultar");
+   
+    if ( window.innerWidth <= (850) &&  !panel_cnt.classList.contains("ocultar") ) {
         ir_arriba.classList.remove("ocultar");
         ir_abajo.classList.remove("ocultar");
     }
@@ -101,9 +103,9 @@ document.getElementById("nav-btn-txt").addEventListener("click", (e)=>{
     panel_img.classList.add("ocultar");
     panel_txt.classList.remove("ocultar");
     panel_cnt.classList.remove("ocultar");
-    panel_cnt.classList.add("mostrar");
+    
 
-    if ( window.innerWidth <= (850) &&  panel_cnt.classList.contains("mostrar") ) {
+    if ( window.innerWidth <= (850) &&  !panel_cnt.classList.contains("ocultar") ) {
         ir_arriba.classList.remove("ocultar");
         ir_abajo.classList.remove("ocultar");
     }
@@ -113,7 +115,6 @@ document.getElementById("panel-btn-cerrar").addEventListener("click", (e)=>{
     panel_img.classList.add("ocultar");
     panel_txt.classList.add("ocultar");
     panel_cnt.classList.add("ocultar");
-    panel_cnt.classList.remove("mostrar");
    
     if ( window.innerWidth <= (850) ) {
         ir_arriba.classList.add("ocultar");
@@ -148,12 +149,12 @@ function dispositivoMovil(){ /* Si es celu, cambia el icono de subir img por Des
 }
 
 subir_url_btn.addEventListener("click",()=>{
-    subir_url_input.classList.add("mostrar");
-    subir_pc_input.classList.remove("mostrar");
+    subir_url_input.classList.remove("ocultar");
+    subir_pc_input.classList.add("ocultar");
 })
 subir_pc_btn.addEventListener("click",()=>{
-    subir_pc_input.classList.add("mostrar");
-    subir_url_input.classList.remove("mostrar");
+    subir_pc_input.classList.remove("ocultar");
+    subir_url_input.classList.add("ocultar");
 })
 
 /* Si la imagen es por URL*/
@@ -308,8 +309,21 @@ function cargarFuentes(){
                 "Impact", "Lucida Console", "Luminari",
                 "Tahoma", "Times New Roman",
                 "Trebuchet MS", "Verdana"      
-            ];     
+            ]; 
+    /* let array = [
+        { "familia": "'Alegreya', serif",              "fuente":"Alegreya" },
+        { "familia": "'Amaranth', sans-serif",         "fuente":"Amaranth" },
+        { "familia": "'Cabin Condensed', sans-serif",  "fuente":"Cabin Condensed" },
+        { "familia": "'Dosis', sans-serif",            "fuente":"Dosis" },
+        { "familia": "'Josefin Slab', serif",          "fuente":"Josefin Slab" },
+        { "familia": "'Oswald', sans-serif",           "fuente":"Oswald" },
+        { "familia": "'Playfair Display', serif",      "fuente":"Playfair Display" },
+        { "familia": "'Quicksand', sans-serif",        "fuente":"Quicksand" },
+        { "familia": "'Roboto Condensed', sans-serif", "fuente":"Roboto Condensed" }
+    ] ;    */ 
+
     for (var i = 0; i < array.length; i++) {
+        /* fuentes += `<option value="`+array[i].familia+ `">`+ array[i].fuente+`</option>`; */
         fuentes += `<option value="`+array[i]+ `">`+ array[i]+`</option>`;
     }
     selecionar_fuentes.innerHTML = fuentes;   
@@ -444,4 +458,3 @@ function funcionesAEjecutar(){
 
 /* Cuando se termina de cargar la página  */
 window.onload  =  funcionesAEjecutar; 
-/* window.onpageshow = funcionesAEjecutar; */
