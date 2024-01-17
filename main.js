@@ -324,7 +324,8 @@ function cargarFuentes(){
                 "Didot", "Garamond", "Georgia", "Helvetica", 
                 "Impact", "Lucida Console", "Luminari",
                 "Tahoma", "Times New Roman",
-                "Trebuchet MS", "Verdana"      
+                "Trebuchet MS", "Verdana" ,
+                "Oswald", "Lemon","Pattaya"    
             ]; 
     /* let array = [
         { "familia": "'Alegreya', serif",              "fuente":"Alegreya" },

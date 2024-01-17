@@ -9,25 +9,19 @@
 
 
 /* ====== Google fonts Para elegir las fuentes para el TXT del meme  ===== */
-/* Alegreya ExtraBold 800 Italic*/
-@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@1,800&display=swap');
-/* Amaranth Bold 700 Italic*/
-@import url('https://fonts.googleapis.com/css2?family=Amaranth:ital,wght@1,700&display=swap');
-/* Roboto Condensed ExtraBold 800 */
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@800&display=swap');
-/* Quicksand Bold 700*/
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap');
-/* Josefin Slab SemiBold 600*/
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@600&display=swap');
-/* Playfair Display SemiBold 600 Italic*/
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&display=swap');
-/* Oswald Regular 400*/
-@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
-/* Dosis Bold 700 */
-@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@700&display=swap');
-/* Cabin Condensed Regular 400*/
-@import url('https://fonts.googleapis.com/css2?family=Cabin+Condensed&display=swap');
 
+@font-face {
+    font-family: 'Lemon';
+    src: url(/fuentes/Lemon-Regular.ttf);
+}
+@font-face {
+    font-family: 'Oswald';
+    src: url(/fuentes/Oswald-VariableFont_wght.ttf);
+}
+@font-face {
+    font-family: 'Pattaya';
+    src: url(/fuentes/Pattaya-Regular.ttf);
+}
 
 
 /* ============================= COLORES =============================*/
@@ -587,7 +581,7 @@ input[type="color"] :hover,
     }
     .contenedor-ppal{ 
         position: relative;
-        min-height: 89vh;
+        /* min-height: 89vh; */
         top:0px;
         flex-direction: column;  /*esto cambia*/
     }
@@ -614,7 +608,7 @@ input[type="color"] :hover,
     }
     .contenedor-ppal{
         position: relative; 
-        min-height: 89vh;
+       /*  min-height: 89vh; */
         top:0px;
         flex-direction: column;  /*esto cambia*/
     }
