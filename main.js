@@ -15,6 +15,22 @@ function cambiar_color() {
 }
 
 
+function altoContenedorPpal(){
+    if (window.innerWidth <= 850) {
+        let element = document.getElementById('contenedor-header');
+        let compStyles = window.getComputedStyle(element);
+        let altura = compStyles.getPropertyValue('height');
+        let alturaContenedor = window.visualViewport.height - parseInt(altura);
+       
+        document.getElementById("contenedor-ppal").style.minHeight = `${alturaContenedor}px`;
+        
+        /* console.log('win   ',window.visualViewport.height);
+        console.log('var alt  ', alturaContenedor);
+        console.log('alt header = ', compStyles.getPropertyValue('height'));
+        console.log('cont ', document.getElementById("contenedor-ppal").style.minHeight); */
+    }
+}
+
 /*======================== TAMAÑO DE LA CAJITA DEL MEME ======================== */
 const cajita_del_meme = document.getElementById("main-img-tx");
 const cajita_txt_sup = document.getElementById("main-txt-superior");
@@ -46,11 +62,11 @@ window.visualViewport.addEventListener("resize", () => {
         cajita_txt_sup.style.fontSize =  getTamanioMaximoCajitaMeme();
         cajita_txt_inf.style.fontSize =  getTamanioMaximoCajitaMeme();
     }
-})
+    altoContenedorPpal(); /*Calcula el alto del contenedor-ppal, según el alto de la Ventaga Gráfica*/
+});
 
 
-
-/* ======================== Eventos de los BOTONES de IMG Y TXT  (hacer aparecer un PANEL u otro) ======================== */
+/* ========== Eventos de los BOTONES de IMG Y TXT  (hacer aparecer un PANEL u otro) ======================== */
 const ir_arriba = document.getElementById("ir-arriba");
 const ir_abajo = document.getElementById("ir-abajo");
 
@@ -452,8 +468,9 @@ btn_descargar_meme.addEventListener("click", () => {
 
 function funcionesAEjecutar(){
     mostrarPanelImagen1300(); /* El Panel de IMG debe ser VISIBLE, si la ventana está a mas de 1300px*/
-    dispositivoMovil();       /* Carga la pg, y es un celu?*/
-    cargarFuentes();
+    dispositivoMovil();       /* Carga la pg, y es un celu? */
+    cargarFuentes();          /* Para el panel de TXT */
+    altoContenedorPpal();     /*Calcula el alto del contenedor-ppal, según el alto de la Ventaga Gráfica*/
 }
 
 /* Cuando se termina de cargar la página  */
