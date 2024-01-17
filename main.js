@@ -1,9 +1,17 @@
+/* ======================== BREAKPOINT ========================  */
+let breakPointUno = () =>
+    parseInt(getComputedStyle(document.documentElement)
+        .getPropertyValue('--breakpoints-uno'));          /* 1300 */
+
+let breakPointDos = () =>
+parseInt(getComputedStyle(document.documentElement)
+    .getPropertyValue('--breakpoints-dos'));             /* 850 */
+
+
 /* ======================== CLARO - OSCURO ========================  */
 const btn_oscuro = document.getElementById("nav-btn-claroOscuro");
 
-btn_oscuro.addEventListener("click", cambiar_color);
-
-function cambiar_color() {
+btn_oscuro.addEventListener("click", ()=> {
     if (btn_oscuro.textContent.trim() === "Modo Claro") {
         document.documentElement.setAttribute("data-theme-color", "light");
         btn_oscuro.innerHTML = `<i class="fa fa-moon-o" aria-hidden="true"></i> Modo Oscuro`;
@@ -12,11 +20,12 @@ function cambiar_color() {
         document.documentElement.setAttribute("data-theme-color", "dark");
         btn_oscuro.innerHTML = `<i class="fa fa-sun-o"></i> Modo Claro`;
     }
-}
+});
 
 
+/* ======================== Alto del contenedor ppal ========================  */
 function altoContenedorPpal(){
-    if (window.innerWidth <= 850) {
+    if (window.innerWidth <= ( breakPointDos() )) {
         let element = document.getElementById('contenedor-header');
         let compStyles = window.getComputedStyle(element);
         let altura = compStyles.getPropertyValue('height');
@@ -24,12 +33,14 @@ function altoContenedorPpal(){
        
         document.getElementById("contenedor-ppal").style.minHeight = `${alturaContenedor}px`;
         
-        /* console.log('win   ',window.visualViewport.height);
-        console.log('var alt  ', alturaContenedor);
+        console.log('win          ',window.visualViewport.height);
         console.log('alt header = ', compStyles.getPropertyValue('height'));
-        console.log('cont ', document.getElementById("contenedor-ppal").style.minHeight); */
+        console.log('var alt      ', alturaContenedor);
+        
+        console.log('cont ', document.getElementById("contenedor-ppal").style.minHeight); 
     }
 }
+
 
 /*======================== TAMAÑO DE LA CAJITA DEL MEME ======================== */
 const cajita_del_meme = document.getElementById("main-img-tx");
@@ -84,18 +95,18 @@ function mostrarPanelImagen1300(){  /*Carga pg x 1ra vez, y está a más de 1300
     
     document.getElementById("nav-btn-img").focus(); /* carga la pg, y el focus lo tiene el btn imagen*/
 
-    if ( window.innerWidth >= (1300) &&  panel_cnt.classList.contains("ocultar") ) {
+    if ( window.innerWidth >= ( breakPointUno() ) &&  panel_cnt.classList.contains("ocultar") ) {
         mostrarPanelImagen();
     }
 }
  
 window.visualViewport.addEventListener("resize", () => { /* Cuando se agranda la ventana a más de 1300, debe conservar 
                                                             lo que estaba seleccionado, o mostrar Panel Imagen, por defecto */
-    if ( window.innerWidth >= (1300) &&  panel_cnt.classList.contains("ocultar") ) {
+    if ( window.innerWidth >= ( breakPointUno() ) &&  panel_cnt.classList.contains("ocultar") ) {
            mostrarPanelImagen();
     }
 
-    if ( window.innerWidth <= (850) &&  !panel_cnt.classList.contains("ocultar") ) {
+    if ( window.innerWidth <= ( breakPointDos() ) &&  !panel_cnt.classList.contains("ocultar") ) {
         ir_arriba.classList.remove("ocultar");
         ir_abajo.classList.remove("ocultar");
     }
@@ -109,7 +120,7 @@ document.getElementById("nav-btn-img").addEventListener("click", (e)=>{
     subir_url_input.classList.add("ocultar"); /* Siempre que cargue IMG, deben estar ocultos*/
     subir_pc_input.classList.add("ocultar");
    
-    if ( window.innerWidth <= (850) &&  !panel_cnt.classList.contains("ocultar") ) {
+    if ( window.innerWidth <= ( breakPointDos() ) &&  !panel_cnt.classList.contains("ocultar") ) {
         ir_arriba.classList.remove("ocultar");
         ir_abajo.classList.remove("ocultar");
     }
@@ -121,7 +132,7 @@ document.getElementById("nav-btn-txt").addEventListener("click", (e)=>{
     panel_cnt.classList.remove("ocultar");
     
 
-    if ( window.innerWidth <= (850) &&  !panel_cnt.classList.contains("ocultar") ) {
+    if ( window.innerWidth <= ( breakPointDos() ) &&  !panel_cnt.classList.contains("ocultar") ) {
         ir_arriba.classList.remove("ocultar");
         ir_abajo.classList.remove("ocultar");
     }
@@ -132,7 +143,7 @@ document.getElementById("panel-btn-cerrar").addEventListener("click", (e)=>{
     panel_txt.classList.add("ocultar");
     panel_cnt.classList.add("ocultar");
    
-    if ( window.innerWidth <= (850) ) {
+    if ( window.innerWidth <= ( breakPointDos() ) ) {
         ir_arriba.classList.add("ocultar");
         ir_abajo.classList.add("ocultar");
     }
@@ -438,6 +449,7 @@ btn_contorno_oscuro.addEventListener("click", ()=>{
                                            0px -2px 0px black`;                                      
 });
 
+
 /* ======================== Espaciado e Interlineado ======================== */
 const espaciado_txt_meme = document.getElementById("espaciado-txt-meme");
 const interlineado_txt_meme = document.getElementById("interlineado-txt-meme");
@@ -452,7 +464,6 @@ interlineado_txt_meme.addEventListener("change", () => {
     main_txt_inferior.style.lineHeight = `${interlineado_txt_meme.value}`;
 });
   
-
 
 /* ================================================================================================*/
 /* ------------ BOTON descargar MEME como IMG ---------------- */

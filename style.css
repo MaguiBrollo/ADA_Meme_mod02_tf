@@ -12,15 +12,15 @@
 
 @font-face {
     font-family: 'Lemon';
-    src: url(/fuentes/Lemon-Regular.ttf);
+    src: url(fuentes/Lemon-Regular.ttf);
 }
 @font-face {
     font-family: 'Oswald';
-    src: url(/fuentes/Oswald-VariableFont_wght.ttf);
+    src: url(fuentes/Oswald-VariableFont_wght.ttf);
 }
 @font-face {
     font-family: 'Pattaya';
-    src: url(/fuentes/Pattaya-Regular.ttf);
+    src: url(fuentes/Pattaya-Regular.ttf);
 }
 
 
@@ -31,18 +31,21 @@
     --color-cont-ppal: #4b5563;     /*grey  600 */
     --color-fondoBtn:  #6b7280;     /*grey  500 */
     --color-fuente:    #f3f4f6;     /*grey  100 */
+
+    --color-hover:  #9d9ea0;
+    --color-focus: #111827; /*grey 900*/
+    color-scheme: dark;   /*color por defecto de win, para barras de scroll*/
    
     --transition: color 0.1s, background-color 0.2s ease-in-out;
 
-    color-scheme: dark;   /*color por defecto de win, para barras de scroll*/
-    
-    --color-hover:  #9d9ea0;
     --cajita_meme-tm-maximo: 600;
     --cajita_meme-tm-inicial-txt: 50;
-
     --alto-botones-paneles: 27;
     --ancho-panel-imgtxt: 280;
-    --color-focus: #111827; /*grey 900*/
+
+    --breakpoints-uno: 1300;
+    --breakpoints-dos: 850;
+    --breakpoints-tres: 570;
 }  
 
 :root[data-theme-color="light"] {     /* Modo CLARO*/
@@ -546,7 +549,7 @@ input[type="color"] :hover,
 
 
 
-/*   BOTONES ARRIBA-ABAJO solo en pantala <850px */
+/*   BOTONES ARRIBA-ABAJO solo en pantala  <=breakPointDos (850px) */
 .ir-arriba-abajo{
 	padding:5px;
     background-color: #89a105;
@@ -568,14 +571,15 @@ input[type="color"] :hover,
 
 /* -----  MEDIA QUERY  "SECTION" -------  */
 /*-- Cuando la ventana está es >=1300 el BTN CERRAR panel debe ocultarse.  */
-@media(width> 1300px){
+@media(width> 1300px){  /* OJO.. si cambia 1300, cambiar la var ROOT: breakpoint-uno*/
     .panel-btn-cerrar{
         display: none;
     }
 }
 
 /* Para ubicar el SECTION (txt e img) debajo de la Cajita-Meme. */
-@media (width < 570px) {  /* PANELES flaquitos (UNA columna) y debajo*/
+ /* PANELES: UNA columna, y debajo*/
+@media (width < 570px) { /* OJO.. si cambia 570, cambiar la var ROOT: breakpoint-tres*/
     body{
         height: auto;
     }
@@ -602,13 +606,14 @@ input[type="color"] :hover,
     }
 }
 
-@media (570px <= width <= 850px) {  /* PANELES gorditos (DOS columnas) y debajo*/
+/* PANELES: DOS columnas, y debajo*/
+@media (570px <= width <= 850px) {  /* OJO.. si cambia 850, cambiar la var ROOT: breakpoint-dos*/
     body{
         height: auto;
     }
     .contenedor-ppal{
         position: relative; 
-       /*  min-height: 89vh; */
+        /* min-height: 89vh; */
         top:0px;
         flex-direction: column;  /*esto cambia*/
     }
