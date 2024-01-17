@@ -33,11 +33,10 @@ function altoContenedorPpal(){
        
         document.getElementById("contenedor-ppal").style.minHeight = `${alturaContenedor}px`;
         
-        console.log('win          ',window.visualViewport.height);
-        console.log('alt header = ', compStyles.getPropertyValue('height'));
-        console.log('var alt      ', alturaContenedor);
-        
-        console.log('cont ', document.getElementById("contenedor-ppal").style.minHeight); 
+        // console.log('win          ',window.visualViewport.height);
+        // console.log('alt header = ', compStyles.getPropertyValue('height'));
+        // console.log('var alt      ', alturaContenedor);
+        // console.log('cont ', document.getElementById("contenedor-ppal").style.minHeight); 
     }
 }
 
@@ -330,29 +329,31 @@ sin_txt_inf.addEventListener('click', function() {
 const selecionar_fuentes = document.getElementById("selecionar-fuentes");
 function cargarFuentes(){
     var fuentes = "";
-    let array=[ "Arial","Arial Black", "Bradley Hand", "Brush Script MT",
-                "Cambria", "Comic Sans MS", "Courier",
-                "Didot", "Garamond", "Georgia", "Helvetica", 
-                "Impact", "Lucida Console", "Luminari",
-                "Tahoma", "Times New Roman",
-                "Trebuchet MS", "Verdana" ,
-                "Oswald", "Lemon","Pattaya"    
-            ]; 
-    /* let array = [
-        { "familia": "'Alegreya', serif",              "fuente":"Alegreya" },
-        { "familia": "'Amaranth', sans-serif",         "fuente":"Amaranth" },
-        { "familia": "'Cabin Condensed', sans-serif",  "fuente":"Cabin Condensed" },
-        { "familia": "'Dosis', sans-serif",            "fuente":"Dosis" },
-        { "familia": "'Josefin Slab', serif",          "fuente":"Josefin Slab" },
-        { "familia": "'Oswald', sans-serif",           "fuente":"Oswald" },
-        { "familia": "'Playfair Display', serif",      "fuente":"Playfair Display" },
-        { "familia": "'Quicksand', sans-serif",        "fuente":"Quicksand" },
-        { "familia": "'Roboto Condensed', sans-serif", "fuente":"Roboto Condensed" }
-    ] ;    */ 
+/*     let array=[ "Arial","Arial Black", "Bradley Hand", "Brush Script MT",
+        "Cambria", "Comic Sans MS", "Courier",
+        "Didot", "Garamond", "Georgia", "Helvetica", 
+        "Impact", "Lucida Console", "Luminari",
+        "Tahoma", "Times New Roman",
+        "Trebuchet MS", "Verdana" ,
+        "Oswald", "Lemon","Pattaya"    
+    ];  */
+
+    let array = [
+        { "familia": "'Alegreya', serif",          "fuente":"Alegreya" },
+        { "familia": "'Amaranth', sans-serif",     "fuente":"Amaranth" },
+        { "familia": "'Dosis', sans-serif",        "fuente":"Dosis" },
+        { "familia": "'Instrument Serif', serif",  "fuente":"Instrument Serif" },
+        { "familia": "'Langar', system-ui",        "fuente":"Langar" },
+        { "familia": "'Lemon', serif",             "fuente":"Lemon" },
+        { "familia": "'Luckiest Guy', sans-serif", "fuente":"Luckiest Guya" },
+        { "familia": "'Pattaya', sans-serif",      "fuente":"Pattaya" },
+        { "familia": "'Permanent Marker', cursive","fuente":"Permanent Marker" },
+        { "familia": "'Twinkle Star', cursive",    "fuente":"Twinkle Star" }
+    ] ;    
 
     for (var i = 0; i < array.length; i++) {
-        /* fuentes += `<option value="`+array[i].familia+ `">`+ array[i].fuente+`</option>`; */
-        fuentes += `<option value="`+array[i]+ `">`+ array[i]+`</option>`;
+        /* fuentes += `<option value="`+array[i]+ `">`+ array[i]+`</option>`; */
+        fuentes += `<option value="`+array[i].familia+ `">`+ array[i].fuente+`</option>`;
     }
     selecionar_fuentes.innerHTML = fuentes;   
 }

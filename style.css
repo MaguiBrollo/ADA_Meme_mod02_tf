@@ -10,18 +10,74 @@
 
 /* ====== Google fonts Para elegir las fuentes para el TXT del meme  ===== */
 
+
+@font-face {
+    font-family: 'Alegreya';
+    src: url(fuentes/AlegreyaSC-Regular.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Amaranth';
+    src: url(fuentes/Amaranth-BoldItalic.ttf);
+    font-weight: bold;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Dosis';
+    src: url(fuentes/Dosis-VariableFont_wght.ttf);
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Instrument Serif';
+    src: url(fuentes/InstrumentSerif-Regular.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Langar';
+    src: url(fuentes/Langar-Regular.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
 @font-face {
     font-family: 'Lemon';
     src: url(fuentes/Lemon-Regular.ttf);
+    font-weight: normal;
+    font-style: normal;
 }
 @font-face {
-    font-family: 'Oswald';
-    src: url(fuentes/Oswald-VariableFont_wght.ttf);
+    font-family: 'Luckiest Guy';
+    src: url(fuentes/LuckiestGuy-Regular.ttf);
+    font-weight: normal;
+    font-style: normal;
 }
 @font-face {
     font-family: 'Pattaya';
     src: url(fuentes/Pattaya-Regular.ttf);
+    font-weight: normal;
+    font-style: normal;
 }
+@font-face {
+    font-family: 'Permanent Marker';
+    src: url(fuentes/PermanentMarker-Regular.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Twinkle Star';
+    src: url(fuentes/TwinkleStar-Regular.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* @font-face {                 BUSCA FUENTES EN LA PC pero no funciona en celus
+    font-family: 'Pattaya';
+    src: local("jokerman");
+    font-weight: normal;
+    font-style: normal;
+} */
 
 
 /* ============================= COLORES =============================*/
@@ -173,10 +229,12 @@ body{
     padding: 10px 0px 10px 0px;
 }
 #main-txt-superior{
+    font-family: 'Alegreya', serif;
     position: absolute;
     top: 0;
 }
 #main-txt-inferior{
+    font-family: 'Alegreya', serif;
     position: absolute;
     bottom: 0;
 }
