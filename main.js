@@ -42,7 +42,7 @@ function altoContenedorPpal(){
 
 
 /*======================== TAMAÑO DE LA CAJITA DEL MEME ======================== */
-const cajita_del_meme = document.getElementById("main-img-tx");
+const cajita_del_meme = document.getElementById("main-img-txt");
 const cajita_txt_sup = document.getElementById("main-txt-superior");
 const cajita_txt_inf = document.getElementById("main-txt-inferior");
 const cajita_margin = 40; /* para que no quede muy pegado al borde (der e izq) de la ventana */
@@ -187,7 +187,7 @@ subir_pc_btn.addEventListener("click",()=>{
 const main_img = document.getElementById("main-img"); /* cajita DIV donde va a ir la img como background*/
 
 function formatearImg(){
-    main_img.style.backgroundSize = `100%` ;
+    main_img.style.backgroundSize = `cover` ; /* cover/contain/100%/auto 100%/*/
     main_img.style.backgroundRepeat= `no-repeat`;
     main_img.style.backgroundPosition= `center center`;
 }
@@ -248,29 +248,17 @@ saturacion.addEventListener('input', obtenerValorFiltros);
 invertido.addEventListener('input', obtenerValorFiltros);
 
 btn_reestablecer_filtros.addEventListener("click",()=>{
-    const bri = 1; /* Valor inicial de cada uno.*/
-    const opa = 1;
-    const con = 100;
-    const blu = 0;
-    const gri = 0;
-    const sep = 0;
-    const hue = 0;
-    const sat = 100;
-    const inv = 0;
-    filtrarImg(bri, opa, con, blu, gri, sep, hue, sat, inv);
+    /* Valor inicial de cada uno.*/
+    /*         bri, opa  const,Desen, gris sep, HUE, sat, inv  */
+    filtrarImg(  1,   1,   100,    0,    0,  0, 0  , 100,   0);
 })
 
 function obtenerValorFiltros(){
-    const bri = brillo.value;
-    const opa = opacidad.value;
-    const con = contraste.value;
-    const blu = desenfoque.value;
-    const gri = grises.value;
-    const sep = sepia.value;
-    const hue = hueR.value;
-    const sat = saturacion.value;
-    const inv = invertido.value ;
-    filtrarImg(bri, opa, con, blu, gri, sep, hue, sat, inv);
+    filtrarImg( brillo.value,   opacidad.value, 
+                contraste.value,desenfoque.value, 
+                grises.value,   sepia.value, 
+                hueR.value,     saturacion.value, 
+                invertido.value);
 }
 
 function filtrarImg(bri, opa, con, blu, gri, sep, hue, sat, inv){
@@ -284,8 +272,33 @@ function filtrarImg(bri, opa, con, blu, gri, sep, hue, sat, inv){
     saturacion.value = `${sat}`;
     invertido.value  = `${inv}`;
     main_img.style.filter = `brightness(${bri}) opacity(${opa}) contrast(${con}%) blur(${blu}px) grayscale(${gri}%) sepia(${sep}%) hue-rotate(${hue}deg) saturate(${sat}%) invert(${inv})`
+    mostarValorFiltros()
 }
 
+/* Mostrar valor de los filtros */
+
+
+function mostarValorFiltros(){
+    const label_bri = document.querySelector('label[for="brillo"]'); 
+    const label_opa = document.querySelector('label[for="opacidad"]'); 
+    const label_con = document.querySelector('label[for="contraste"]'); 
+    const label_des = document.querySelector('label[for="desenfoque"]'); 
+    const label_gri = document.querySelector('label[for="grises"]'); 
+    const label_sep = document.querySelector('label[for="sepia"]'); 
+    const label_hue = document.querySelector('label[for="hue"]'); 
+    const label_sat = document.querySelector('label[for="saturacion"]'); 
+    const label_inv = document.querySelector('label[for="invertido"]');
+
+    label_bri.innerHTML = `BRILLO [${brillo.value * 100}%]`;
+    label_opa.innerHTML = `OPACIDAD [${opacidad.value * 100}%]`;
+    label_con.innerHTML = `CONTRASTE [${contraste.value}%]`;
+    label_des.innerHTML = `DESENFOQUE [${desenfoque.value}px]`;
+    label_gri.innerHTML = `ESCALA DE GRISES [${grises.value}%]`;
+    label_sep.innerHTML = `SEPIA [${sepia.value}%]`;
+    label_hue.innerHTML = `ROTACIÓN DE COLOR [${hueR.value}deg]`;
+    label_sat.innerHTML = `SATURACIÓN [${saturacion.value}%]`;
+    label_inv.innerHTML = `INVERTIDO [${invertido.value * 100}%]`;
+}
 
 
 /* ================================================================================================ */
@@ -409,9 +422,15 @@ fondo_transparente.addEventListener('click', ()=> {
     if(fondo_transparente.checked) {
         main_txt_superior.style.backgroundColor = `transparent`;
         main_txt_inferior.style.backgroundColor = `transparent`;
+
+        main_txt_superior.style.position = `absolute`;
+        main_txt_inferior.style.position = `absolute`;
     } else {
         main_txt_superior.style.backgroundColor = `${input_color_fon.value}`;
         main_txt_inferior.style.backgroundColor = `${input_color_fon.value}`;
+
+        main_txt_superior.style.position = `static`;
+        main_txt_inferior.style.position = `static`;
     }
 });
 
@@ -468,7 +487,7 @@ interlineado_txt_meme.addEventListener("change", () => {
 
 /* ================================================================================================*/
 /* ------------ BOTON descargar MEME como IMG ---------------- */
-const div_img_txt = document.getElementById("main-img-tx");
+const div_img_txt = document.getElementById("main-img-txt");
 const  btn_descargar_meme = document.getElementById("btn-descargar-meme");
 btn_descargar_meme.addEventListener("click", () => {
     domtoimage.toBlob(div_img_txt).then((blob) => {
@@ -484,6 +503,7 @@ function funcionesAEjecutar(){
     dispositivoMovil();       /* Carga la pg, y es un celu? */
     cargarFuentes();          /* Para el panel de TXT */
     altoContenedorPpal();     /*Calcula el alto del contenedor-ppal, según el alto de la Ventaga Gráfica*/
+    mostarValorFiltros();
 }
 
 /* Cuando se termina de cargar la página  */
