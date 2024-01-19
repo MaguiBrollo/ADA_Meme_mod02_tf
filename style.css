@@ -90,6 +90,7 @@
 
     --color-hover:  #9d9ea0;
     --color-focus: #111827; /*grey 900*/
+    --color_btn-desc-arriba-abajo: #FFFB19;
     color-scheme: dark;   /*color por defecto de win, para barras de scroll*/
    
     --transition: color 0.1s, background-color 0.2s ease-in-out;
@@ -249,7 +250,7 @@ body{
 .main-btn-descargar{
     /*  all: unset;       Quita todo estilo por defecto.*/
     border: 0;
-    background-color: #89a105;
+    background-color: var(--color_btn-desc-arriba-abajo); /*#89a105;*/
     box-shadow: 3px 3px 3px var(--color-header);
     border-radius: 5px ;
     padding: 10px;
@@ -260,7 +261,7 @@ body{
     color: black;
 }
 .main-btn-descargar:hover{
-    background-color: #e2f092;
+    background-color: #c5c361;/* #e2f092;*/
 }
 
 
@@ -610,7 +611,7 @@ input[type="color"] :hover,
 /*   BOTONES ARRIBA-ABAJO solo en pantala  <=breakPointDos (850px) */
 .ir-arriba-abajo{
 	padding:5px;
-    background-color: #89a105;
+    background-color:var(--color_btn-desc-arriba-abajo);    /* #89a105;*/
 	font-size: 1rem;
 	color:var(--color-fuente);
     box-shadow: 3px 3px 5px var(--color-fuente);
@@ -619,12 +620,15 @@ input[type="color"] :hover,
 	position: fixed;
     right:8px;
 }
+
 .arriba{
 	top:60px;
 }
-
 .abajo{
 	bottom:20px;
+}
+.ir-arriba-abajo:hover{ 
+    background-color: #c5c361;/* #e2f092;*/   
 }
 
 /* -----  MEDIA QUERY  "SECTION" -------  */
