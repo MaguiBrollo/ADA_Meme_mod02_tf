@@ -22,7 +22,7 @@
      =========================================================== -->
 
 
-## *Generador de Memes*
+## :small_orange_diamond: *Generador de Memes*
 
 > El presente proyecto denominado `Generador de Memes` contempla el desarrollo de una App responsive adaptable a diferentes dispositivos móviles, como también a computadoras de escritorio.
 Esta app permite que cualquier usuario pueda plasmar toda su creatividad al diseñar sus propios memes. Este generador de meme fue desarrollado como Trabajo Final del "Módulo 2 - JavaScript", de la capacitación de `"Desarrollo Frontend"` dictado por **ADA**. 
@@ -39,8 +39,8 @@ El proyecto, Generador de Memes, está incluido en mi Portfolio Personal, de tal
 
 <br>
 
-:small_orange_diamond: 
-## Tecnologías:
+
+## :small_orange_diamond: *Tecnologías:*
 EL Generador de Meme fue desarrollado utilizando las siguientes tecnologías:  
 
 
@@ -49,7 +49,7 @@ EL Generador de Meme fue desarrollado utilizando las siguientes tecnologías:
 |Es el lenguaje de marcado de hipertexto. Consiste en marcas basado en etiquetas que otorgan la estructura básica de la app.| Hojas de estilo en cascada. Son las declaraciones que otorgan estilos visuales al HTML.  | Lenguaje de programación. Otorga interactividad a las distintas secciones que conforman la app.|
 
 
-## Construcción:
+## :small_orange_diamond: *Construcción:*
 El Generador presenta una pantalla principal que contiene tres botones que permiten abrir el panel de edición de `Imagen`, abrir el panel de edición de `Texto`, e intercambiar entre `Modo claro` y `Modo Oscuro`.
 Luego  se encuentra el sector de la vista previa del Meme, y por último el botón de `Descargar Meme`.
 A continuación se detalla cada una de las secciones y paneles.
@@ -75,7 +75,7 @@ A continuación se detalla cada una de las secciones y paneles.
 (texto e img Panel TEXTO)
 
 
-## *Mobile*
+## :small_orange_diamond: *Mobile:*
 (capturas celu )
 
 
@@ -83,7 +83,7 @@ A continuación se detalla cada una de las secciones y paneles.
 <br>
 
 ---
-### *Contáctame:*
+## :small_orange_diamond: *Contáctame:*
 
 [![Gmail](https://img.shields.io/badge/-GMAIL-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:maguieb@gmail.com)
 [![LinkedIn](https://img.shields.io/badge/-LINKEDIN-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/magui-brollo/)
