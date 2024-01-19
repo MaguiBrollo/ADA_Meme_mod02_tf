@@ -40,16 +40,16 @@
     <header class="contenedor-header" id="contenedor-header">
         <h1 class="header-titulo animate__animated animate__fadeInLeft">Generador de Memes</h1>
         <nav>
-            <button class="nav-btn" id="nav-btn-img">
+            <button class="nav-btn" id="nav-btn-img" tabindex="0">
                 <i class="fa-solid fa-camera"></i>
                 Imagen
             </button>
-            <button class="nav-btn" id="nav-btn-txt">
+            <button class="nav-btn" id="nav-btn-txt" tabindex="0">
                 <i class="fa fa-font icon-col" aria-hidden="true"></i>
                 Texto
             </button>
 
-            <button class="nav-btn" id="nav-btn-claroOscuro">
+            <button class="nav-btn" id="nav-btn-claroOscuro" tabindex="0">
                 <i class="fa fa-sun-o"></i>
                 Modo Claro
             </button>
@@ -62,24 +62,23 @@
 
         <!--  Main  (sector principal para la imagen y el texto del MEME) -->
         <main class="contenedor-main">
-            <div class="contenedor-extra">
-                <div class="main-img-txt" id="main-img-txt">
-                    <p class="main-txt" id="main-txt-superior" >TEXTO SUPERIOR</p>
-                        <div class="main-img" id="main-img">
-                    </div>
-                    <p class="main-txt" id="main-txt-inferior" >TEXTO INFERIOR</p>
-                </div>
+            
+            <div class="main-img-txt" id="main-img-txt">
+                <p class="main-txt" id="main-txt-superior" >TEXTO SUPERIOR</p>
+                <div class="main-img" id="main-img"></div>
+                <p class="main-txt" id="main-txt-inferior" >TEXTO INFERIOR</p>
             </div>
            
-            <button class="main-btn-descargar" id="btn-descargar-meme">
+            <button class="main-btn-descargar" id="btn-descargar-meme" tabindex="0">
                 <i class="fa fa-download" aria-hidden="true"></i>
                 Descargar Meme
             </button>
+
         </main>
 
         <!--  SECTION  (controles para img y txt) -->
         <section class="contenedor-paneles ocultar" id="contenedor-paneles">
-            <button class="panel-btn-cerrar" id="panel-btn-cerrar">
+            <button class="panel-btn-cerrar" id="panel-btn-cerrar" tabindex="0">
                 <i class="fa fa-times-circle-o" aria-hidden="true"></i>
             </button>
 
@@ -94,12 +93,12 @@
                         <h6>ORIGEN</h6>
 
                         <div class="panel-sectores">
-                            <button class="seccion-img-btn-subir" id="subir-url-btn">
+                            <button class="seccion-img-btn-subir" id="subir-url-btn" tabindex="0">
                                 <i class="fa-solid fa-link"></i>
                                 URL
                             </button>
 
-                            <button class="seccion-img-btn-subir" id="subir-pc-btn">
+                            <button class="seccion-img-btn-subir" id="subir-pc-btn" tabindex="0">
                                 <i class="fa-solid fa-desktop"></i>
                                 Computadora
                             </button>
@@ -107,15 +106,15 @@
 
                         <div class="ocultar" id="subir-url-input">
                             <input type="url" aria-label="Seleccionar archivo desde una URL"
-                                placeholder="URL de la imagen">
+                                placeholder="URL de la imagen" tabindex="0">
                         </div>
 
                         <div class="ocultar" id="subir-pc-input" >
-                            <div class="archivo-img">
-                                <label for="input-file">
+                            <div class="archivo-img" >
+                                <label for="input-file" tabindex="0">
                                     <i class="fa-solid fa-upload"> </i>. Seleccionar Archivo</label>
                                 <input type="file" id="input-file" accept="image/png, image/gif, image/jpeg"
-                                    aria-label="Seleccionar archivo desde PC">
+                                    aria-label="Seleccionar archivo desde PC"  tabindex="0">
                             </div>
                         </div>
 
@@ -129,7 +128,7 @@
                             <div class="panel-sector-fondo-color">
                                 <input type="color" class="input-color" id="input-color" value="#FFFFFF"
                                     oninput="colorhex.value=value.toUpperCase()"
-                                    aria-label="Color de fondo de la imagen">
+                                    aria-label="Color de fondo de la imagen" tabindex="0">
                                 <output id="colorhex">#FFFFFF</output>
                             </div>
 
@@ -158,27 +157,27 @@
                         <div class="filtros-col">
                             <div class="filtros">
                                 <label for="brillo">BRILLO</label>
-                                <input type="range" id="brillo" min="0" max="1" value="1" step="0.1">
+                                <input type="range" id="brillo" min="0" max="1" value="1" step="0.1" tabindex="0">
                             </div>
 
                             <div class="filtros">
                                 <label for="opacidad">OPACIDAD</label>
-                                <input type="range" id="opacidad" min="0" max="1" value="1" step="0.1">
+                                <input type="range" id="opacidad" min="0" max="1" value="1" step="0.1" tabindex="0">
                             </div>
 
                             <div class="filtros">
                                 <label for="contraste">CONTRASTE</label>
-                                <input type="range" id="contraste" min="100" max="1000" value="100" step="1">
+                                <input type="range" id="contraste" min="100" max="1000" value="100" step="1" tabindex="0">
                             </div>
 
                             <div class="filtros">
                                 <label for="desenfoque">DESENFOQUE</label>
-                                <input type="range" id="desenfoque" min="0" max="10" value="0" step="0.1">
+                                <input type="range" id="desenfoque" min="0" max="10" value="0" step="0.1" tabindex="0">
                             </div>
 
                             <div class="filtros">
                                 <label for="grises">ESCALA DE GRISES</label>
-                                <input type="range" id="grises" min="0" max="100" value="0" step="1">
+                                <input type="range" id="grises" min="0" max="100" value="0" step="1" tabindex="0">
                             </div>
 
                         </div>
@@ -186,25 +185,25 @@
                         <div class="filtros-col">
                             <div class="filtros">
                                 <label for="sepia">SEPIA</label>
-                                <input type="range" id="sepia" min="0" max="100" value="0" step="1">
+                                <input type="range" id="sepia" min="0" max="100" value="0" step="1" tabindex="0">
                             </div>
 
                             <div class="filtros">
                                 <label for="hue">ROTACIÓN DE COLOR</label>
-                                <input type="range" id="hue" min="0" max="359" value="0" step="1">
+                                <input type="range" id="hue" min="0" max="359" value="0" step="1" tabindex="0">
                             </div>
 
                             <div class="filtros">
                                 <label for="saturacion">SATURACIÓN</label>
-                                <input type="range" id="saturacion" min="100" max="1000" value="100" step="10">
+                                <input type="range" id="saturacion" min="100" max="1000" value="100" step="10" tabindex="0">
                             </div>
 
                             <div class="filtros">
                                 <label for="invertido">INVERTIDO</label>
-                                <input type="range" id="invertido" min="0" max="1" value="0" step="0.1">
+                                <input type="range" id="invertido" min="0" max="1" value="0" step="0.1" vtabindex="0">
                             </div>
 
-                            <button class="seccion-img-btn-reestablecer" id="btn-reestablecer-filtros">
+                            <button class="seccion-img-btn-reestablecer" id="btn-reestablecer-filtros" tabindex="0">
                                 <i class="fa fa-undo" aria-hidden="true"></i>
                                 Restablecer Filtros
                             </button>
@@ -225,7 +224,7 @@
                         <textarea class="input-textarea-supInf" id="input-txt-sup" aria-label="Escriba el texto superior"
                             placeholder="Texto superior..."></textarea>
                         <div class="checkbox-txt-supInf">
-                            <input type="checkbox" id="sin-txt-sup">
+                            <input type="checkbox" id="sin-txt-sup" tabindex="0">
                             <label for="sin-txt-sup">Sin texto superior</label>
                         </div>
                     </div>
@@ -235,7 +234,7 @@
                         <textarea class="input-textarea-supInf" id="input-txt-inf"
                             aria-label="Escriba el texto inferior" placeholder="Texto inferior..."></textarea>
                         <div class="checkbox-txt-supInf">
-                            <input type="checkbox" id="sin-txt-inf">
+                            <input type="checkbox" id="sin-txt-inf" tabindex="0">
                             <label for="sin-txt-inf">Sin texto inferior</label>
                         </div>
                     </div>
@@ -253,19 +252,16 @@
 
                         <div class="contenedor-tmnTxt-alinear filtros-col">
                             <input type="number" class="tamanio-txt-meme" id="tamanio-txt-meme" 
-                                min="10" max="80" value="50" step="2" aria-label="Tamaño del texto"/>
+                                min="10" max="80" value="50" step="2" aria-label="Tamaño del texto" tabindex="0"/>
                          
                             <div>
-                                <button class="btn-alinear" id="btn-alinear-izq"
-                                    aria-label="Alineación a izquierda">
+                                <button class="btn-alinear" id="btn-alinear-izq" aria-label="Alineación a izquierda" tabindex="0">
                                     <i class="fa-solid fa-align-left"></i>
                                 </button>
-                                    <button class="btn-alinear" id="btn-alinear-cen"
-                                    aria-label="Alineación al centro">
+                                    <button class="btn-alinear" id="btn-alinear-cen" aria-label="Alineación al centro" tabindex="0">
                                     <i class="fa-solid fa-align-center"></i>
                                 </button>
-                                    <button class="btn-alinear" id="btn-alinear-der"
-                                    aria-label="Alineación a derecha">
+                                    <button class="btn-alinear" id="btn-alinear-der" aria-label="Alineación a derecha" tabindex="0">
                                     <i class="fa-solid fa-align-right"></i>
                                 </button>
 
@@ -283,7 +279,7 @@
                                 <div class="panel-sector-fondo-color tamanio">
                                     <input type="color" class="input-color" id="input-color-txt" value="#FFFFFF"
                                         oninput="colorhexFuente.value=value.toUpperCase()"
-                                        aria-label="Color del texto">
+                                        aria-label="Color del texto" tabindex="0">
                                     <output id="colorhexFuente">#FFFFFF</output>
                                 </div>
                             </div>
@@ -293,14 +289,14 @@
                                 <div class="panel-sector-fondo-color tamanio">
                                     <input type="color" class="input-color" id="input-color-fon" value="#FFFFFF"
                                         oninput="colorhexFondo.value=value.toUpperCase()"
-                                        aria-label="Color de fondo del texto">
+                                        aria-label="Color de fondo del texto" tabindex="0">
                                     <output id="colorhexFondo">#FFFFFF</output>
                                 </div>
                             </div>  
                         </div>
 
                         <div class="checkbox-txt-fondo-transparente">
-                            <input type="checkbox" id="fondo-transparente">
+                            <input type="checkbox" id="fondo-transparente" tabindex="0">
                             <label for="fondo-transparente">Fondo transparente</label>
                         </div>
                     </div>
@@ -309,15 +305,15 @@
                     <div class="panel-sectores-controles columnas-txt">
                         <h6>CONTORNO</h6>
                         <div class="panel-sectores">
-                            <button class="btn-contorno" id="btn-contorno-ninguno">   
+                            <button class="btn-contorno" id="btn-contorno-ninguno" tabindex="0">   
                                 Ninguno
                             </button>
 
-                            <button class="btn-contorno" id="btn-contorno-claro">
+                            <button class="btn-contorno" id="btn-contorno-claro" tabindex="0">
                                 Claro
                             </button>
 
-                            <button class="btn-contorno" id="btn-contorno-oscuro">
+                            <button class="btn-contorno" id="btn-contorno-oscuro" tabindex="0">
                                 Oscuro
                             </button>
                         </div>
@@ -329,7 +325,7 @@
                     <div class="panel-sectores-controles columnas-txt">
                         <h6>ESPACIADO</h6>
                         <input type="number" class="ancho-alto-esp-inter" id="espaciado-txt-meme" 
-                        min="10" max="50" value="30" step="1" aria-label="Separación entre el texto y la imagen" />
+                        min="10" max="50" value="30" step="1" aria-label="Separación entre el texto y la imagen"  tabindex="0"/>
                     </div>
 
                     <div class="panel-sectores-controles columnas-txt">

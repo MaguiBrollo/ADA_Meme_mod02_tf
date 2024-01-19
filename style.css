@@ -206,55 +206,43 @@ body{
     align-items: center;
     justify-content: center;
     padding: 35px 0px;
-     /* position: relative;  hasta ahora no tiene uso, dps borrar*/
-}
-
-.contenedor-extra{ /* Contenedor extra para que Btn-descargar, no se mueva*/
-    width: 100%;
-    height: calc(var(--cajita_meme-tm-maximo) * 1px); 
-    max-width: calc(var(--cajita_meme-tm-maximo) * 1px);    
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;  
 }
 
 .main-img-txt{
     width: 100%;
     height: calc(var(--cajita_meme-tm-maximo) * 1px); 
     max-width: calc(var(--cajita_meme-tm-maximo) * 1px);    
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: absolute;  /* Atrapa a Txt-sup/inf cuando s epone "Fonfo transparente" en Panel TXT.*/
 }
 
     .main-img{
         width: 100%;
         height: 100%;
-        background-color: var(--color-header);
-        position: relative; 
+        background-color: var(--color-header); 
+        position: relative;
     }
 
-        .main-txt{
-            width: 100%;
-            font-family: 'Alegreya', serif;
-            font-size: 50px;
-            text-align:center;
-            color: black;
-            background-color: white;
-            padding: 10px 0px 10px 0px;
-        }
-        #main-txt-superior{
-            position: relative;
-            z-index: 1; /*Para cuando Panel de tx: fondo transparente*/
-            top: 0;
-        }
-        #main-txt-inferior{   
-           position: relative;
-            z-index: 1; /* Para cuando Panel de tx: fondo transparente*/
-            bottom: 0;
-        }
+    .main-txt{
+        width: 100%;
+        font-family: 'Alegreya', serif;
+        font-size: 50px;
+        text-align:center;
+        color: black;
+        background-color: white;
+        padding: 10px 0px 10px 0px;
+
+        position: static; /* ver absolute*/
+        z-index: 1; 
+    }
+    #main-txt-superior{ 
+        top: 0;
+    }
+    #main-txt-inferior{   
+       bottom: 0;
+    }
 
 
 /* ------ DESCARGAR MEME ---------*/
@@ -270,10 +258,6 @@ body{
     font-weight: bold;
     cursor: pointer;
     color: black;
-
-    position: relative;/**/
-    z-index: 1;
-    bottom: 0;
 }
 .main-btn-descargar:hover{
     background-color: #e2f092;
@@ -478,10 +462,6 @@ input[type='range']::-webkit-slider-thumb {
     cursor: ew-resize;
     background: var(--color-header);
     box-shadow: -130px 0 0 130px var(--color-cont-ppal); /*parte izq*/
-}
-
-input[type='range']::after{
-    content: '';
 }
 
 .seccion-img-btn-reestablecer{ /*  BTN reestablecer */

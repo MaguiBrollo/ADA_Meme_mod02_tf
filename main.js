@@ -212,6 +212,29 @@ input_file.addEventListener("change", (e) => {
   });
   
 
+  input_file.addEventListener("keyup", (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        main_img.style.backgroundImage = `url("${e.target.result}")`;
+        formatearImg();
+      };
+      reader.readAsDataURL(file);
+    }
+  });
+
+//  intento de que funcione el ENTER
+// document.addEventListener("keyup", function(event) {
+//     if (event.key === 'Enter' ) {
+//         if(event.target.htmlFor === "input-file"){
+//             console.dir(event.target.htmlFor);
+            
+//         }
+//     }
+// });
+    
+
 /* ======================== Seleccionar color de FONDO img,  y BLEND MODE (se aplica al background) ======================== */
 const input_color = document.getElementById("input-color"); //input que selecciona color
 const modo_mezcla = document.getElementById("modo-mezcla"); 
@@ -276,8 +299,6 @@ function filtrarImg(bri, opa, con, blu, gri, sep, hue, sat, inv){
 }
 
 /* Mostrar valor de los filtros */
-
-
 function mostarValorFiltros(){
     const label_bri = document.querySelector('label[for="brillo"]'); 
     const label_opa = document.querySelector('label[for="opacidad"]'); 
