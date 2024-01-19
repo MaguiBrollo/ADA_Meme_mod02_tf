@@ -22,11 +22,10 @@
      =========================================================== -->
 
 
-
 ## *Generador de Memes*
 
 > El presente proyecto denominado `Generador de Memes` contempla el desarrollo de una App responsive adaptable a diferentes dispositivos móviles, como también a computadoras de escritorio.
-Esta app permite que cualquier usuario pueda plasmar toda su creatividad al diseñar sus propios meme. Este generador de meme fue desarrollado como Trabajo Final del "Módulo 2 - JavaScript", de la capacitación de `"Desarrollo Frontend"` dictado por **ADA**. 
+Esta app permite que cualquier usuario pueda plasmar toda su creatividad al diseñar sus propios memes. Este generador de meme fue desarrollado como Trabajo Final del "Módulo 2 - JavaScript", de la capacitación de `"Desarrollo Frontend"` dictado por **ADA**. 
 <br>
 <p align="center" >
    <img src="img/pantalla_ppal.png" width="600px" alt-text="Presentación">
@@ -37,18 +36,22 @@ El proyecto, Generador de Memes, está incluido en mi Portfolio Personal, de tal
 > [!NOTE]
 > Visite mi portafolio personal [PORTFOLIO](https://maguibrollo.github.io/ADA_Portafolio_mod01_tf/) 
 
-## Tecnologías:
-EL Generador de Meme fue desarrollado utilizando las siguientes tecnologías: HTML, CSS y JavaScript. 
 
-| HTML           | CSS           | JavaScript    |  
+<br>
+
+:small_orange_diamond: 
+## Tecnologías:
+EL Generador de Meme fue desarrollado utilizando las siguientes tecnologías:  
+
+
+| HTML <br><img src="img/icon-html5.png" width="40px"> | CSS<br><img src="img/icon-css3.png" width="40px">      | JavaScript <br> <img src="img/icon-js.png" width="40px">|  
 | :---: | :---: | :---: |
-|<img src="img/icon-html5.png" width="40px">| <img src="img/icon-css3.png" width="40px">  |<img src="img/icon-js.png" width="40px"> |
-|Es el lenguaje de marcado de hipertexto. Consiste en marcas basado en etiquetas que otorgan la estructura básica del sitio.| Hojas de estilo en cascada. Son las declaraciones que otorgan estilos visuales al HTML.  | Lenguaje de programación. Otorga interactividad a las distintas páginas que conforman el sitio.  |
+|Es el lenguaje de marcado de hipertexto. Consiste en marcas basado en etiquetas que otorgan la estructura básica de la app.| Hojas de estilo en cascada. Son las declaraciones que otorgan estilos visuales al HTML.  | Lenguaje de programación. Otorga interactividad a las distintas secciones que conforman la app.|
 
 
 ## Construcción:
-El Generador presenta una pantalla principal que contiene tres botones que permiten abrir el panel de edición de imágen, abrir el panel de edición de texto, e intercambiar entre modo claro y modo oscuro.
-Luego está el sector donde se ve la vista previa del Meme, y por último el botón de descargar meme.
+El Generador presenta una pantalla principal que contiene tres botones que permiten abrir el panel de edición de `Imagen`, abrir el panel de edición de `Texto`, e intercambiar entre `Modo claro` y `Modo Oscuro`.
+Luego  se encuentra el sector de la vista previa del Meme, y por último el botón de `Descargar Meme`.
 A continuación se detalla cada una de las secciones y paneles.
 
 
