@@ -282,6 +282,13 @@ function filtrarImg(bri, opa, con, blu, gri, sep, hue, sat, inv){
     mostarValorFiltros()
 }
 
+/* Las funciones de filtros grayscale(), sepia(), saturate(), opacity(), 
+brightness(), contrast() e invert() toman un PORCENTAJE ó NÚMERO un  como valor, esto 
+ocurre porque es posible proporcionporquear dicho valor de dos formas diferentes:
+* Porcentaje: Como valor porcentual: 0%, 50%, 100%, 150%...
+* Número: Como valor numérico: 0, 0.5, 1, 1.5...
+Así pues, indicar filter: contrast(0.5) es lo mismo que: contrast(50%). */
+
 /* Mostrar valor de los filtros */
 function mostarValorFiltros(){
     const label_bri = document.querySelector('label[for="brillo"]'); 
@@ -326,12 +333,12 @@ input_txt_inf.addEventListener("input", (e)=>{
 })
 
 const sin_txt_sup = document.getElementById("sin-txt-sup");
-sin_txt_sup.addEventListener('click', function() {
+sin_txt_sup.addEventListener('click', () => {
     main_txt_superior.classList.toggle("ocultar");
 });
 
 const sin_txt_inf = document.getElementById("sin-txt-inf");
-sin_txt_inf.addEventListener('click', function() {
+sin_txt_inf.addEventListener('click', () =>{
     main_txt_inferior.classList.toggle("ocultar");
 });
 
