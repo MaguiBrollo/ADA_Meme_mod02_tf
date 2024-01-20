@@ -74,6 +74,7 @@ Luego de realizar todos los ajustes deseados es posible descargar el meme genera
 A continuación se detalla cada una de las secciones y paneles.
 
 ### *Secciones y Paneles*
+[:top:](#tabla-de-contenidos) <br>
 
 - [Principal](#sección-principal)
 - [Imagen](#panel-de-imagen)
@@ -127,6 +128,7 @@ Mediante el panel de texto se podrá editar:
 </p>
 
 <br>
+
 > [!NOTE]
 > Si se minimiza el tamaño de la ventana, horizontalmente, se visualizará el botón `Cerrar`. Este botón, permite cerrar el panel que se encuentre visible.
 
@@ -135,6 +137,7 @@ Mediante el panel de texto se podrá editar:
 </p>
 
 <br>
+
 > [!NOTE]
 > Si se minimiza el tamaño de la ventana, horizontalmente, el panel seleccionado se visualizará debajo de la sección principal, y aparecerán las flechas de desplazamiento `Arriba` y `Abajo`.
 
@@ -145,25 +148,45 @@ Mediante el panel de texto se podrá editar:
 
 ## *Mobile:*
 [:top:](#tabla-de-contenidos) <br>
-Todos las opciones de edición explicadas anteriormente, se encuentran disponibles en dispositivos móviles:
+Todos las opciones de edición explicadas anteriormente, se encuentran disponibles para dispositivos móviles:
+
+<p align="center" >
 
 |Modo Oscuro| Modo Claro|
 |:---:|:---:|
 |<img src="img/p1_oscuro.jpg" width="200px">|<img src="img/p2_claro.jpg" width="200px" >|
 
+</p>
+
+<br>
+
+<p align="center" >
 
 |Panel de Imagen| Panel de Texto|
 |:---:|:---:|
 |<img src="img/p4_img.jpg" width="200px">|<img src="img/p5_txt.jpg" width="200px" >|
 
+</p>
+
+<br>
+
+<p align="center" >
+
 |Flechas Up/Down | Edición|
 |:---:|:---:|
 |<img src="img/p3_flechas.jpg" width="200px">|<img src="img/p6_meme.jpg" width="200px" >|
 
+</p>
+
+<br>
+
+<p align="center" >
 
 |Pantalla Horizontal| Edición Horizontal|
 |:---:|:---:|
 |<img src="img/p7_hor1.jpg" width="200px">|<img src="img/p7_hor2.jpg" width="200px">|
+
+</p>
 
 
 <br>
