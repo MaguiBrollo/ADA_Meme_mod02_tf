@@ -150,44 +150,28 @@ Mediante el panel de texto se podrá editar:
 [:top:](#tabla-de-contenidos) <br>
 Todos las opciones de edición explicadas anteriormente, se encuentran disponibles para dispositivos móviles:
 
-<p align="center" >
 
 |Modo Oscuro| Modo Claro|
 |:---:|:---:|
 |<img src="img/p1_oscuro.jpg" width="200px">|<img src="img/p2_claro.jpg" width="200px" >|
 
-</p>
-
 <br>
-
-<p align="center" >
 
 |Panel de Imagen| Panel de Texto|
 |:---:|:---:|
 |<img src="img/p4_img.jpg" width="200px">|<img src="img/p5_txt.jpg" width="200px" >|
 
-</p>
-
 <br>
-
-<p align="center" >
 
 |Flechas Up/Down | Edición|
 |:---:|:---:|
 |<img src="img/p3_flechas.jpg" width="200px">|<img src="img/p6_meme.jpg" width="200px" >|
 
-</p>
-
 <br>
-
-<p align="center" >
 
 |Pantalla Horizontal| Edición Horizontal|
 |:---:|:---:|
 |<img src="img/p7_hor1.jpg" width="200px">|<img src="img/p7_hor2.jpg" width="200px">|
-
-</p>
-
 
 <br>
 
