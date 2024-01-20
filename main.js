@@ -211,28 +211,14 @@ input_file.addEventListener("change", (e) => {
     }
   });
   
-
-  input_file.addEventListener("keyup", (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = (e) => {
-        main_img.style.backgroundImage = `url("${e.target.result}")`;
-        formatearImg();
-      };
-      reader.readAsDataURL(file);
+// Funciona el ENTER en input-file
+document.addEventListener("keyup", function(event) {
+    if (event.key === 'Enter' ) {
+        if(event.target.htmlFor === "input-file"){
+            input_file.click();
+        }
     }
-  });
-
-//  intento de que funcione el ENTER
-// document.addEventListener("keyup", function(event) {
-//     if (event.key === 'Enter' ) {
-//         if(event.target.htmlFor === "input-file"){
-//             console.dir(event.target.htmlFor);
-            
-//         }
-//     }
-// });
+});
     
 
 /* ======================== Seleccionar color de FONDO img,  y BLEND MODE (se aplica al background) ======================== */
@@ -277,11 +263,9 @@ btn_reestablecer_filtros.addEventListener("click",()=>{
 })
 
 function obtenerValorFiltros(){
-    filtrarImg( brillo.value,   opacidad.value, 
-                contraste.value,desenfoque.value, 
-                grises.value,   sepia.value, 
-                hueR.value,     saturacion.value, 
-                invertido.value);
+    filtrarImg( brillo.value,     opacidad.value, contraste.value,
+                desenfoque.value, grises.value,   sepia.value, 
+                hueR.value,      saturacion.value, invertido.value);
 }
 
 function filtrarImg(bri, opa, con, blu, gri, sep, hue, sat, inv){
@@ -343,20 +327,12 @@ input_txt_inf.addEventListener("input", (e)=>{
 
 const sin_txt_sup = document.getElementById("sin-txt-sup");
 sin_txt_sup.addEventListener('click', function() {
-    if(sin_txt_sup.checked) {
-        main_txt_superior.classList.add("ocultar");
-    } else {
-        main_txt_superior.classList.remove("ocultar");
-    }
+    main_txt_superior.classList.toggle("ocultar");
 });
 
 const sin_txt_inf = document.getElementById("sin-txt-inf");
 sin_txt_inf.addEventListener('click', function() {
-    if(sin_txt_inf.checked) {
-        main_txt_inferior.classList.add("ocultar");
-    } else {
-        main_txt_inferior.classList.remove("ocultar");
-    }
+    main_txt_inferior.classList.toggle("ocultar");
 });
 
 /* ======================== Fuente - Tamaño - Alineación ======================== */
@@ -523,7 +499,7 @@ function funcionesAEjecutar(){
     mostrarPanelImagen1300(); /* El Panel de IMG debe ser VISIBLE, si la ventana está a mas de 1300px*/
     dispositivoMovil();       /* Carga la pg, y es un celu? */
     cargarFuentes();          /* Para el panel de TXT */
-    altoContenedorPpal();     /*Calcula el alto del contenedor-ppal, según el alto de la Ventaga Gráfica*/
+    //altoContenedorPpal();     /*Calcula el alto del contenedor-ppal, según el alto de la Ventaga Gráfica*/
     mostarValorFiltros();
 }
 

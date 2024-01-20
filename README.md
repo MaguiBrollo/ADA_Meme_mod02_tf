@@ -16,13 +16,14 @@
 - [Mobile](#Mobile)
 - [Contáctame](#Contáctame)
 
+---
+<br>
 
 <!-- ===========================================================
                             CONTENIDO 
      =========================================================== -->
 
-
-## :small_orange_diamond: *Generador de Memes*
+## *Generador de Memes*
 
 > El presente proyecto denominado `Generador de Memes` contempla el desarrollo de una App responsive adaptable a diferentes dispositivos móviles, como también a computadoras de escritorio.
 Esta app permite que cualquier usuario pueda plasmar toda su creatividad al diseñar sus propios memes. Este generador de meme fue desarrollado como Trabajo Final del "Módulo 2 - JavaScript", de la capacitación de `"Desarrollo Frontend"` dictado por **ADA**. 
@@ -31,7 +32,7 @@ Esta app permite que cualquier usuario pueda plasmar toda su creatividad al dise
    <img src="img/pantalla_ppal.png" width="600px" alt-text="Presentación">
 </p>
 
-El proyecto, Generador de Memes, está incluido en mi Portfolio Personal, de tal manera de reflejar los avances en mi capacitación y perfeccionamiento.
+El proyecto, Generador de Memes, está incluido en mi `Portfolio Personal`, de tal manera de reflejar mis avances en cuanto capacitación y perfeccionamiento.
 
 > [!NOTE]
 > Visite mi portafolio personal [PORTFOLIO](https://maguibrollo.github.io/ADA_Portafolio_mod01_tf/) 
@@ -39,8 +40,7 @@ El proyecto, Generador de Memes, está incluido en mi Portfolio Personal, de tal
 
 <br>
 
-
-## :small_orange_diamond: *Tecnologías:*
+## *Tecnologías*
 EL Generador de Meme fue desarrollado utilizando las siguientes tecnologías:  
 
 
@@ -49,7 +49,9 @@ EL Generador de Meme fue desarrollado utilizando las siguientes tecnologías:
 |Es el lenguaje de marcado de hipertexto. Consiste en marcas basado en etiquetas que otorgan la estructura básica de la app.| Hojas de estilo en cascada. Son las declaraciones que otorgan estilos visuales al HTML.  | Lenguaje de programación. Otorga interactividad a las distintas secciones que conforman la app.|
 
 
-## :small_orange_diamond: *Construcción:*
+<br>
+
+## :small_orange_diamond: *Construcción*
 El Generador presenta una pantalla principal que contiene tres botones que permiten abrir el panel de edición de `Imagen`, abrir el panel de edición de `Texto`, e intercambiar entre `Modo claro` y `Modo Oscuro`.
 Luego  se encuentra el sector de la vista previa del Meme, y por último el botón de `Descargar Meme`.
 A continuación se detalla cada una de las secciones y paneles.
@@ -57,27 +59,41 @@ A continuación se detalla cada una de las secciones y paneles.
 
 ### *Secciones y Paneles*
 
-- [Principal](#Panel-Principal)
+- [Principal](#Sección-Principal)
 - [Imagen](#Panel-de-Imagen)
 - [Texto](#Panel-de-Texto)
 
 
-#### Sección Principal:
+#### Sección Principal
+
 (texto e imagenes Panel ppal)
 
 
 
-#### Panel de Imagen:
+#### Panel de Imagen
 (texto e imagenes Panel IMAGEN)
 
+<p align="center" >
+   <img src="img/ppal_img.gif" width="300px" alt-text="Panel de Imagen">
+</p>
 
-#### Panel de Texto:
+
+
+Al minimizar el tamaño de la ventana, se puede observar el botón `Cerrar`, de cualquiera de los dos paneles.
+
+<p align="center" >
+   <img src="img/ppal_btn_cerrar.gif" width="300px" alt-text="Botón Cerrar">
+</p>
+
+#### Panel de Texto
 (texto e img Panel TEXTO)
 
+<p align="center" >
+   <img src="img/ppal_txt.gif" width="300px" alt-text="Panel de Texto">
+</p>
 
 ## :small_orange_diamond: *Mobile:*
 (capturas celu )
-
 
 
 <br>
