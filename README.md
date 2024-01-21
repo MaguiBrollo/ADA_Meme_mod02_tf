@@ -10,7 +10,7 @@
 
  ## Tabla de Contenidos:
  
-- [Proyecto: Generador de Memes](#generador-de-memes)
+- [Generador de Memes](#generador-de-memes)
 - [Tecnologías](#tecnologías)
 - [Construcción](#construcción)
 - [Secciones y Paneles](#secciones-y-paneles)
@@ -27,15 +27,23 @@
 ## *Generador de Memes*
 [:top:](#tabla-de-contenidos) <br>
 
-> El presente proyecto denominado `Generador de Memes` contempla el desarrollo de una App responsive, adaptable a diferentes dispositivos móviles, como también a computadoras de escritorio. <br>
-Esta app permite que cualquier usuario pueda plasmar toda su creatividad al diseñar sus propios memes. <br>
-Este generador de meme fue desarrollado como Trabajo Final del "Módulo 2 - JavaScript", de la capacitación de `"Desarrollo Frontend"` dictado por [ADA ITW](https://www.linkedin.com/school/ada-itw/). 
-<br>
+> Las aplicaciones web, comúnmente conocidas como apps, se han convertido en una parte esencial de nuestra vida cotidiana. Desde simplificar tareas diarias hasta ofrecer entretenimiento. <br>
+El `Generador de Memes` es una app web, que permite que cualquier usuario pueda plasmar toda su creatividad al diseñar sus propios memes.<br>
+El Generador de Memes permite añadir imágenes propias o de la web, para crear memes personalizados, editando el texto elegido además de aplicar diferentes filtros. Por último, permite guardar el meme creado y compartirlo con los amigos.
+
 <p align="center" >
    <img src="img/pantalla_ppal.png" width="600px" alt-text="Presentación">
 </p>
 
-El proyecto, Generador de Memes, está incluido en mi `Portfolio Personal`, de tal manera de reflejar el grado de avance, apropiación y uso de los conocimiento adquiridos y asimilados durante la capacitación.
+El `Generador de Memes`, fue diseñado de tal manera que puede ser utilizado en diferentes dispositivos, lo que implica un correcto diseño responsive. 
+
+<p align="center" >
+   <img src="img/aTodos.png" width="600px" alt-text="Presentación">
+</p>
+
+<br>
+
+Fue desarrollado como Trabajo Final del "Módulo 2 - JavaScript", de la capacitación de `"Desarrollo Frontend"` dictado por [ADA ITW](https://www.linkedin.com/school/ada-itw/), y se encuentra incluido en mi `Portfolio Personal`, de tal manera de reflejar el grado de avance, apropiación y uso de los conocimiento adquiridos y asimilados durante la capacitación.
 
 > [!NOTE]
 > Visite mi portafolio personal: [PORTFOLIO](https://maguibrollo.github.io/ADA_Portafolio_mod01_tf/).
@@ -69,11 +77,12 @@ Luego de realizar todos los ajustes deseados es posible descargar el meme genera
    <img src="img/meme.png" width="250px" alt-text="Presentación">
 </p>
 
+<br>
+
 ---
 
-A continuación se detalla cada una de las secciones y paneles.
 
-### *Secciones y Paneles*
+## *Secciones y Paneles*
 [:top:](#tabla-de-contenidos) <br>
 
 - [Principal](#sección-principal)
@@ -116,6 +125,10 @@ Mediante el panel de imagen se podrá editar:
 #### Panel de Texto
 [:top:](#secciones-y-paneles)
 
+<p align="center" >
+   <img src="img/ppal_txt.gif" width="400px" alt-text="Panel de Texto">
+</p>
+
 Mediante el panel de texto se podrá editar:
 - Texto superior e inferior: permite escribir una breve frase, o bien optar por no incluir frase.
 - Fuente: permite seleccionar tipos de fuente, tamaño y alineación.
@@ -123,9 +136,6 @@ Mediante el panel de texto se podrá editar:
 - Contorno: permite aplicar un borde a cada letra del texto. 
 - Espaciado e Interlineado: permite dejar espacio entre la imagen y el texto, y entre las líneas del texto, en caso de escribir más de una línea.
 
-<p align="center" >
-   <img src="img/ppal_txt.gif" width="400px" alt-text="Panel de Texto">
-</p>
 
 <br>
 
@@ -145,10 +155,13 @@ Mediante el panel de texto se podrá editar:
    <img src="img/flechas.gif" width="300px" alt-text="Botón Ir hacia Arriba y Botón de Ir hacia Abajo">
 </p>
 
+<br>
+
+---
 
 ## *Mobile:*
 [:top:](#tabla-de-contenidos) <br>
-Todos las opciones de edición explicadas anteriormente, se encuentran disponibles para dispositivos móviles:
+Todas las opciones de edición explicadas anteriormente, se encuentran disponibles para dispositivos móviles:
 
 
 |Modo Oscuro| Modo Claro|
@@ -169,9 +182,14 @@ Todos las opciones de edición explicadas anteriormente, se encuentran disponibl
 
 <br>
 
-|Pantalla Horizontal| Edición Horizontal|
-|:---:|:---:|
-|<img src="img/p7_hor1.jpg" width="200px">|<img src="img/p7_hor2.jpg" width="200px">|
+|Pantalla Horizontal| 
+|:---:|
+|<img src="img/p7_hor1.jpg" width="420px">|
+
+
+| Edición Horizontal|
+|:---:|
+|<img src="img/p7_hor2.jpg" width="420px">|
 
 <br>
 
