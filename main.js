@@ -479,8 +479,8 @@ const espaciado_txt_meme = document.getElementById("espaciado-txt-meme");
 const interlineado_txt_meme = document.getElementById("interlineado-txt-meme");
 
 espaciado_txt_meme.addEventListener("input", () => {
-    main_txt_superior.style.padding = `${espaciado_txt_meme.value}px 20px`;
-    main_txt_inferior.style.padding = `${espaciado_txt_meme.value}px 20px`;
+    main_txt_superior.style.letterSpacing = `${espaciado_txt_meme.value}px`;
+    main_txt_inferior.style.letterSpacing = `${espaciado_txt_meme.value}px`;
 });
   
 interlineado_txt_meme.addEventListener("change", () => {

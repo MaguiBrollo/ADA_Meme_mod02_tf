@@ -134,7 +134,7 @@ Mediante el panel de texto se podrá editar:
 - Fuente: permite seleccionar tipos de fuente, tamaño y alineación.
 - Color y Fondo: hace referencia al color del texto superior e inferior, y el color del fondo del texto, como también es posible no incluir fondo.
 - Contorno: permite aplicar un borde a cada letra del texto. 
-- Espaciado e Interlineado: permite dejar espacio entre la imagen y el texto, y entre las líneas del texto, en caso de escribir más de una línea.
+- Espaciado e Interlineado: permite dejar espacio entre las letras del texto, y entre las líneas del texto, en caso de escribir más de una línea.
 
 
 <br>
