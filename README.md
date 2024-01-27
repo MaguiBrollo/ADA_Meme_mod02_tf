@@ -66,12 +66,15 @@ Fue desarrollado como Trabajo Final del "Módulo 2 - JavaScript", de la capacita
 [:top:](#tabla-de-contenidos) <br>
 EL Generador de Memes fue desarrollado utilizando las siguientes tecnologías:  
 
+<div align="center">
+
 |  ![HTML5](https://img.shields.io/badge/-HTML5-333333?style=flat&logo=HTML5) |   ![CSS](https://img.shields.io/badge/-CSS-333333?style=flat&logo=CSS3&logoColor=1572B6) |  ![JavaScript](https://img.shields.io/badge/-JavaScript-333333?style=flat&logo=javascript)|  
 | :---: | :---: | :---: |
 |Lenguaje de marcado de hipertexto. Consiste en marcas basado en etiquetas que otorgan la estructura básica de la app.| Hojas de estilo en cascada. Son las declaraciones que otorgan estilos visuales al HTML.  | Lenguaje de programación. Otorga interactividad a las distintas secciones que conforman la app.|
 
-
 <br>
+
+</div>
 
 ## *Construcción*
 [:top:](#tabla-de-contenidos) <br>
@@ -106,9 +109,13 @@ Luego de realizar todos los ajustes deseados es posible descargar el meme genera
 Al abrir la app, si el tamaño de la pantalla del dispositivo utilizado, es superior a 1300px, se verá el [Panel de Imagen](#panel-de-imagen), de lo contrario se podrá activar dicho panel, o el [Panel de Texto](#panel-de-texto), mediante el botón correspondiente. <br>
 La visualización se realiza por defecto en Modo Oscuro, pudiendo ser cambiada con el botón correspondiente.
 
+<div align="center">
+
 |MODO OSCURO| MODO CLARO|
-| :---: | :---: |
+|    :---:  |   :---:  |
 |<img src="img/modo_oscuro.png" width="400px" alt-text="Panel de Imagen">| <img src="img/modo_claro.png" width="400px" alt-text="Panel de Imagen">|
+
+</div>
 
 El botón `Descargar Meme`, permitirá descargar, al dispositivo utilizado, el meme en formato *.PNG.
 
@@ -174,24 +181,37 @@ Mediante el panel de texto se podrá editar:
 [:top:](#tabla-de-contenidos) <br>
 Todas las opciones de edición explicadas anteriormente, se encuentran disponibles para dispositivos móviles:
 
+<div align="center">
 
 |Modo Oscuro| Modo Claro|
 |:---:|:---:|
 |<img src="img/p1_oscuro.jpg" width="200px">|<img src="img/p2_claro.jpg" width="200px" >|
 
+</div>
+
 <br>
+
+<div align="center">
 
 |Panel de Imagen| Panel de Texto|
 |:---:|:---:|
 |<img src="img/p4_img.jpg" width="200px">|<img src="img/p5_txt.jpg" width="200px" >|
 
+</div>
+
 <br>
+
+<div align="center">
 
 |Flechas Up/Down | Edición|
 |:---:|:---:|
 |<img src="img/p3_flechas.jpg" width="200px">|<img src="img/p6_meme.jpg" width="200px" >|
 
+</div>
+
 <br>
+
+<div align="center">
 
 |Pantalla Horizontal| 
 |:---:|
@@ -201,6 +221,8 @@ Todas las opciones de edición explicadas anteriormente, se encuentran disponibl
 | Edición Horizontal|
 |:---:|
 |<img src="img/p7_hor2.jpg" width="420px">|
+
+</div>
 
 <br>
 
