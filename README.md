@@ -8,7 +8,13 @@
 
 ***
 
-[![Generador de Memes - LIMK](https://img.shields.io/badge/Generador_de_Memes-LINK-FCFF33?logo=%23EA4335&logoColor=FCFF33)](https://maguibrollo.github.io/ADA_Meme_mod02_tf/)
+<div align="center">
+
+[![generador de memes - link](https://img.shields.io/static/v1?label=generador+de+memes&message=link&color=yellow&logo=EA4335&logoColor=yellow)](https://maguibrollo.github.io/ADA_Meme_mod02_tf/ "Visita la App: Generador de Memes")
+[![GitHub tag](https://img.shields.io/github/tag/MaguiBrollo/ADA_Meme_mod02_tf?include_prereleases=&sort=semver&color=yellow)](https://github.com/MaguiBrollo/ADA_Meme_mod02_tf/releases/ "Versión")
+
+</div>
+
 
 ***
 
@@ -205,8 +211,8 @@ Todas las opciones de edición explicadas anteriormente, se encuentran disponibl
 
 <a href="https://www.linkedin.com/in/magui-brollo/"><img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-Magdalena%20Brollo-blue?style=flat-square&logo=linkedin"></a>
 <a href="mailto:maguieb@gmail.com"><img alt="Email" src="https://img.shields.io/badge/Gmail-maguieb@gmail.com-blue?style=flat-square&logo=gmail"></a>
-<a href="#"><img alt="Email" src="https://img.shields.io/badge/Discord-Magui-blue?style=flat-square&logo=discord"></a> 
+<a href="https://discord.gg/v7cZYHDz"><img alt="Discord" src="https://img.shields.io/badge/Discord-Magui-blue?style=flat-square&logo=discord"></a> 
 
 
 ---
-![Profile Views](https://komarev.com/ghpvc/?username=MaguiBrollo&color=yellow)
+![Profile Views](https://komarev.com/ghpvc/?username=MaguiBrollo&color=yellow "Visitas")
